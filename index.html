@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日富足英語肯定句朗讀學習</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Cinzel', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Wool Felt Background Pattern */
+    body {
+      background-color: #f5ede1;
+      background-image: 
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.5) 0%, transparent 65%),
+        radial-gradient(circle at 15% 25%, rgba(190, 168, 138, 0.15) 0%, transparent 35%),
+        radial-gradient(circle at 85% 75%, rgba(190, 168, 138, 0.15) 0%, transparent 35%),
+        repeating-linear-gradient(45deg, rgba(160, 135, 110, 0.035) 0px, rgba(160, 135, 110, 0.035) 2px, transparent 2px, transparent 5px),
+        repeating-linear-gradient(-45deg, rgba(160, 135, 110, 0.03) 0px, rgba(160, 135, 110, 0.03) 2px, transparent 2px, transparent 5px);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Falling Gold Dust & Coins Canvas Layer */
+    #goldCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Wool Felted Pillowy Cards with Soft Needlework Stitches */
+    .felt-card {
+      background-color: #fcf9f4;
+      border: 2.5px dashed #caa885;
+      border-radius: 1.5rem;
+      box-shadow: 
+        0 10px 24px -5px rgba(110, 85, 60, 0.09),
+        0 3px 8px rgba(110, 85, 60, 0.05),
+        inset 0 1px 2px rgba(255, 255, 255, 0.95),
+        inset 0 -3px 5px rgba(180, 155, 130, 0.18);
+      transition: all 0.25s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .felt-card:hover {
+      border-color: #d19736;
+      transform: translateY(-2px);
+      box-shadow: 
+        0 14px 28px -6px rgba(130, 95, 45, 0.18),
+        inset 0 1px 3px rgba(255, 255, 255, 1);
+    }
+
+    .felt-card.reading-active {
+      border-color: #c98e2b;
+      background-color: #fffefb;
+      box-shadow: 
+        0 0 0 4px rgba(228, 178, 80, 0.45),
+        0 16px 32px -4px rgba(166, 114, 40, 0.28),
+        inset 0 2px 4px rgba(255, 255, 255, 0.95);
+      transform: translateY(-3px);
+    }
+
+    /* Felt Patch Badge with Stitched Borders */
+    .felt-badge {
+      background: #ede3d3;
+      border: 1.5px dashed #b89d7d;
+      border-radius: 9999px;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.85), 0 2px 5px rgba(90,70,50,0.08);
+    }
+
+    /* Metallic Reflective Gold Button Styling */
+    .btn-gold-metallic {
+      position: relative;
+      background: linear-gradient(135deg, 
+        #c68b2c 0%, 
+        #ffe28a 22%, 
+        #e5a943 45%, 
+        #fff8db 65%, 
+        #b87417 85%, 
+        #fde59b 100%
+      );
+      color: #3f2300;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+      border: 1px solid #b87c1c;
+      border-top: 1.5px solid #fff5be;
+      border-bottom: 2px solid #854f0a;
+      border-radius: 0.85rem;
+      box-shadow: 
+        0 5px 12px rgba(143, 90, 17, 0.38),
+        0 2px 4px rgba(0, 0, 0, 0.12),
+        inset 0 1.5px 2px rgba(255, 255, 255, 0.95),
+        inset 0 -2px 3px rgba(115, 68, 5, 0.35);
+      font-weight: 700;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    /* Metallic Shimmer Reflection Bar */
+    .btn-gold-metallic::before {
+      content: '';
+      position: absolute;
+      top: -60%;
+      left: -70%;
+      width: 50%;
+      height: 220%;
+      background: linear-gradient(
+        90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.65), 
+        transparent
+      );
+      transform: rotate(30deg);
+      pointer-events: none;
+      transition: all 0.65s ease;
+    }
+
+    .btn-gold-metallic:hover::before {
+      left: 130%;
+    }
+
+    .btn-gold-metallic:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1.5px);
+      box-shadow: 
+        0 8px 18px rgba(143, 90, 17, 0.48),
+        inset 0 1px 2px rgba(255, 255, 255, 1),
+        inset 0 -2px 4px rgba(115, 68, 5, 0.4);
+    }
+
+    .btn-gold-metallic:active {
+      transform: translateY(1px);
+      box-shadow: 
+        0 2px 4px rgba(143, 90, 17, 0.4),
+        inset 0 2px 4px rgba(115, 68, 5, 0.45);
+    }
+
+    /* Metallic Gold for Small Step Buttons (+ / -) */
+    .btn-gold-step {
+      background: linear-gradient(145deg, #ffe28f 0%, #d89832 50%, #fff4c2 100%);
+      border: 1px solid #9e6712;
+      border-top: 1.5px solid #fff9d1;
+      border-bottom: 2px solid #734505;
+      box-shadow: 
+        0 3px 6px rgba(120, 75, 10, 0.35),
+        inset 0 1px 2px rgba(255, 255, 255, 0.95),
+        inset 0 -1.5px 2px rgba(100, 60, 5, 0.3);
+      color: #3d1f00;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+      transition: all 0.15s ease;
+    }
+    .btn-gold-step:hover {
+      filter: brightness(1.12);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(120, 75, 10, 0.45);
+    }
+    .btn-gold-step:active {
+      transform: translateY(1px);
+      box-shadow: inset 0 2px 4px rgba(90, 50, 0, 0.5);
+    }
+
+    /* Metallic Subtle Secondary Buttons */
+    .btn-metallic-subtle {
+      background: linear-gradient(135deg, #f5ebd9 0%, #fffbf2 50%, #e6d3ba 100%);
+      border: 1px solid #cbb190;
+      border-top: 1px solid #ffffff;
+      color: #634726;
+      box-shadow: 
+        0 3px 6px rgba(100, 80, 60, 0.12),
+        inset 0 1px 1px rgba(255, 255, 255, 0.9),
+        inset 0 -1px 2px rgba(140, 115, 85, 0.18);
+    }
+    .btn-metallic-subtle:hover {
+      background: linear-gradient(135deg, #fff3dc 0%, #ffffff 50%, #edd8bd 100%);
+      color: #462e13;
+      border-color: #b59265;
+    }
+  </style>
+</head>
+<body class="text-stone-800 min-h-screen flex flex-col font-sans antialiased selection:bg-amber-200">
+  <!-- Ambient Falling Gold Dust & Gold Coins Canvas -->
+  <canvas id="goldCanvas"></canvas>
+
+  <!-- Top Header with Felt-Wool Banner Style -->
+  <header class="bg-[#f7f2e8]/95 backdrop-blur border-b-2 border-dashed border-[#d8c5af] sticky top-0 z-30 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 py-3.5 sm:px-6 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center space-x-3">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-700 via-amber-500 to-amber-300 flex items-center justify-center text-white shadow-md shadow-amber-900/20 border border-amber-200/50">
+          <i class="fa-solid fa-sparkles text-lg drop-shadow"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-tight text-amber-950 font-serif">Daily Wealth Affirmations</h1>
+          <p class="text-xs text-amber-800/80 font-medium">每日 10 句富足英語 · 音標伴讀 · 羊毛氈美學朗讀器</p>
+        </div>
+      </div>
+
+      <!-- Quick Group Indicator -->
+      <div class="flex items-center gap-2 text-xs sm:text-sm felt-badge text-stone-700 px-3.5 py-1.5 font-medium">
+        <i class="fa-solid fa-layer-group text-amber-700"></i>
+        <span>組別：<span id="currentGroupLabel" class="font-bold text-amber-900">第 1 / 15 組</span></span>
+        <span class="text-stone-400">|</span>
+        <span id="totalSentenceCounter" class="text-stone-600">共 150 句</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="max-w-5xl mx-auto px-4 py-6 sm:px-6 flex-1 w-full space-y-6">
+
+    <!-- Control Center Card in Wool Felt & Metallic Gold -->
+    <section class="felt-card p-4 sm:p-6 space-y-4">
+      <div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-3">
+        <div class="min-w-0">
+          <h2 class="text-lg font-bold text-stone-800 flex items-center gap-2 flex-wrap">
+            <span>今日朗讀研習</span>
+            <span id="readingBadge" class="hidden text-xs felt-badge text-emerald-800 px-2.5 py-0.5 font-medium items-center gap-1 border-emerald-300 bg-emerald-50">
+              <i class="fa-solid fa-volume-high animate-pulse text-emerald-600"></i> 朗讀進行中
+            </span>
+          </h2>
+          <p class="text-xs text-stone-500 mt-0.5">點選「朗讀此 10 句」依序播放當前組別，亦可點擊右側喇叭單獨朗讀，隨時微調語速。</p>
+        </div>
+
+        <!-- Main Interaction Buttons with Metallic Gold Finish (Fixed on the same line) -->
+        <div class="flex items-center gap-2 sm:gap-2.5 flex-nowrap shrink-0 overflow-x-auto max-w-full pb-1 xl:pb-0">
+          <!-- Switch 10 Sentences Button -->
+          <button id="btnNextBatch" class="btn-gold-metallic shrink-0 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm whitespace-nowrap active:scale-95">
+            <i class="fa-solid fa-arrows-rotate text-xs sm:text-sm"></i>
+            <span>輪流更新 10 句</span>
+          </button>
+
+          <!-- Toggle Chinese Translation Button -->
+          <button id="btnToggleChinese" class="btn-metallic-subtle shrink-0 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap active:scale-95 transition">
+            <i class="fa-solid fa-language text-sm sm:text-base text-amber-700"></i>
+            <span id="lblToggleChinese">顯示中文翻譯</span>
+          </button>
+
+          <!-- Auto Read All 10 Sentences Button -->
+          <button id="btnPlayAll" class="btn-gold-metallic shrink-0 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm whitespace-nowrap active:scale-95">
+            <i id="iconPlayAll" class="fa-solid fa-play text-xs sm:text-sm"></i>
+            <span id="textPlayAll">朗讀此 10 句</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Audio Settings Toolbar with + and - Fine Tuning -->
+      <div class="pt-3.5 border-t-2 border-dashed border-[#e3d3c2] flex flex-wrap items-center justify-between gap-4 text-xs text-stone-700">
+        <div class="flex items-center gap-4 flex-wrap">
+          <!-- Voice Rate Control with 0.1x steps -->
+          <div class="flex items-center gap-2 bg-[#f4ebe0] px-3 py-1.5 rounded-xl border border-[#ddcbba] shadow-inner">
+            <span class="font-bold text-stone-600"><i class="fa-solid fa-gauge-high text-amber-700 mr-1"></i>朗讀語速:</span>
+            
+            <!-- Speed Down Button (-) 0.1x step -->
+            <button id="btnSpeedDown" type="button" title="減慢語速 (-0.1x)" class="btn-gold-step w-7 h-7 rounded-lg font-bold flex items-center justify-center text-sm transition active:scale-90">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+
+            <!-- Speed Value Display Badge -->
+            <span id="speedDisplay" class="font-mono font-bold text-amber-950 bg-white/90 border border-amber-300 px-2 py-0.5 rounded-md min-w-[54px] text-center shadow-sm">
+              0.9x
+            </span>
+
+            <!-- Speed Up Button (+) 0.1x step -->
+            <button id="btnSpeedUp" type="button" title="加快語速 (+0.1x)" class="btn-gold-step w-7 h-7 rounded-lg font-bold flex items-center justify-center text-sm transition active:scale-90">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+
+          <!-- Pronunciation Dialect -->
+          <div class="flex items-center gap-2 bg-[#f4ebe0] px-3 py-1.5 rounded-xl border border-[#ddcbba]">
+            <label for="voiceSelect" class="font-bold text-stone-600">語音口音:</label>
+            <select id="voiceSelect" class="bg-white/90 border border-stone-300 rounded-lg px-2 py-0.5 text-stone-700 max-w-[210px] truncate focus:outline-none focus:ring-1 focus:ring-amber-500 text-xs">
+              <option value="compat_default">🌐 系統最高相容 (標準發音)</option>
+              <option value="compat_us">🇺🇸 美式相容預設 (en-US)</option>
+              <option value="compat_gb">🇬🇧 英式相容預設 (en-GB)</option>
+            </select>
+          </div>
+
+          <!-- Reading Tone Style Selector (口吻發音) -->
+          <div class="flex items-center gap-2 bg-[#f4ebe0] px-3 py-1.5 rounded-xl border border-[#ddcbba]">
+            <label for="toneSelect" class="font-bold text-stone-600"><i class="fa-solid fa-wand-magic-sparkles text-amber-700 mr-1"></i>口吻風格:</label>
+            <select id="toneSelect" class="bg-white/90 border border-stone-300 rounded-lg px-2 py-0.5 text-stone-700 font-semibold focus:outline-none focus:ring-1 focus:ring-amber-500 text-xs shadow-sm">
+              <option value="gentle">🌿 溫和緩慢 (冥想放鬆)</option>
+              <option value="professional" selected>💼 專業沉穩 (標準自信)</option>
+              <option value="uplifting">✨ 陽光振奮 (明亮肯定)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Quick Jump to Any Group -->
+        <div class="flex items-center gap-2 ml-auto">
+          <label for="groupSelect" class="font-bold text-stone-600">切換組別:</label>
+          <select id="groupSelect" class="bg-white/90 border border-stone-300 rounded-lg px-2.5 py-1 text-stone-700 font-semibold focus:outline-none focus:ring-1 focus:ring-amber-500 shadow-sm">
+            <!-- Populated dynamically via JS -->
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sentence List Container -->
+    <div id="sentenceListContainer" class="space-y-4">
+      <!-- 10 sentence cards will be dynamically injected here -->
+    </div>
+
+    <!-- Bottom Navigation / Group Switchers -->
+    <div class="flex items-center justify-between pt-2 pb-6">
+      <button id="btnPrevBatch" class="btn-metallic-subtle px-4 py-2 rounded-xl text-sm font-semibold flex items-center gap-2">
+        <i class="fa-solid fa-chevron-left text-xs text-amber-700"></i> 上一組 10 句
+      </button>
+
+      <div class="text-xs text-stone-500 text-center font-medium">
+        溫潤羊毛氈風格 · 每日 10 句朗讀 · 重塑富裕潛意識
+      </div>
+
+      <button id="btnNextBatchBottom" class="btn-gold-metallic px-4 py-2 text-sm flex items-center gap-2">
+        下一組 10 句 <i class="fa-solid fa-chevron-right text-xs"></i>
+      </button>
+    </div>
+
+  </main>
+  <!-- Notification Toast Modal -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition duration-300 pointer-events-none bg-stone-900/90 backdrop-blur border border-amber-400 text-white text-xs px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2">
+    <i class="fa-solid fa-circle-info text-amber-300"></i>
+    <span id="toastMsg">通知訊息</span>
+  </div>
+
+  <script>
+    /* Complete Database extracted directly from the uploaded file with English text, International Phonetic Alphabet (IPA), and Traditional Chinese translation */
+    const affirmationsDatabase = [
+      {
+        en: "Money flows to me effortlessly and easily.",
+        ipa: "/ˈmʌni floʊz tu mi ˈɛfərtləsli ənd ˈizɪli/",
+        zh: "金錢輕鬆、不費吹灰之力地流向我。"
+      },
+      {
+        en: "I am a wealth magnet.",
+        ipa: "/aɪ æm ə wɛlθ ˈmæɡnɪt/",
+        zh: "我是一個財富磁鐵。"
+      },
+      {
+        en: "Financial freedom is my choice.",
+        ipa: "/faɪˈnænʃəl ˈfridəm ɪz maɪ tʃɔɪs/",
+        zh: "財務自由是我的選擇。"
+      },
+      {
+        en: "I have more than enough money.",
+        ipa: "/aɪ hæv mɔr ðæn ɪˈnʌf ˈmʌni/",
+        zh: "我擁有綽綽有餘的金錢。"
+      },
+      {
+        en: "I am rich.",
+        ipa: "/aɪ æm rɪtʃ/",
+        zh: "我是富有的。"
+      },
+      {
+        en: "I know there are even more unlimited ways that money can come to me.",
+        ipa: "/aɪ noʊ ðɛr ɑr ˈivɪn mɔr ʌnˈlɪmɪtɪd weɪz ðæt ˈmʌni kæn kʌm tu mi/",
+        zh: "我知道有更多無限的途徑能讓金錢來到我身邊。"
+      },
+      {
+        en: "I am becoming more abundant by the day.",
+        ipa: "/aɪ æm bɪˈkʌmɪŋ mɔr əˈbʌndənt baɪ ðə deɪ/",
+        zh: "我一天比一天更加富足豐盛。"
+      },
+      {
+        en: "I allow an even greater abundance of money to flow to me.",
+        ipa: "/aɪ əˈlaʊ ən ˈivɪn ˈɡreɪtər əˈbʌndəns ʌv ˈmʌni tu floʊ tu mi/",
+        zh: "我允許更大份量的豐盛金錢流向我。"
+      },
+      {
+        en: "I am grateful for all the money I have received in my life.",
+        ipa: "/aɪ æm ˈɡreɪtfəl fɔr ɔl ðə ˈmʌni aɪ hæv rɪˈsivd ɪn maɪ laɪf/",
+        zh: "我對生命中收到的所有金錢心懷感恩。"
+      },
+      {
+        en: "I intend financial freedom forevermore.",
+        ipa: "/aɪ ɪnˈtɛnd faɪˈnænʃəl ˈfridəm fɔrˈɛvərmɔr/",
+        zh: "我的意念設定在永遠享有財務自由。"
+      },
+      {
+        en: "Money is my friend.",
+        ipa: "/ˈmʌni ɪz maɪ frɛnd/",
+        zh: "金錢是我的好朋友。"
+      },
+      {
+        en: "I always have more money coming in than going out.",
+        ipa: "/aɪ ˈɔlweɪz hæv mɔr ˈmʌni ˈkʌmɪŋ ɪn ðæn ˈɡoʊɪŋ aʊt/",
+        zh: "我進帳的金錢總是多於支出的金錢。"
+      },
+      {
+        en: "I deserve money so I can do everything I want to do in this life.",
+        ipa: "/aɪ dɪˈzɜrv ˈmʌni soʊ aɪ kæn du ˈɛvriˌθɪŋ aɪ wɑnt tu du ɪn ðɪs laɪf/",
+        zh: "我值得擁有金錢，讓我在今生能做所有想做的事。"
+      },
+      {
+        en: "Sharing my abundance with others makes me feel good.",
+        ipa: "/ˈʃɛrɪŋ maɪ əˈbʌndəns wɪð ˈʌðərz meɪks mi fil ɡʊd/",
+        zh: "與他人分享我的豐盛讓我感到無比喜悅。"
+      },
+      {
+        en: "I have the exact knowledge that is required to make my success perfect.",
+        ipa: "/aɪ hæv ði ɪɡˈzækt ˈnɑlɪdʒ ðæt ɪz rɪˈkwaɪərd tu meɪk maɪ səkˈsɛs ˈpɜrfɪkt/",
+        zh: "我擁有成就圓滿成功所需的一切精準智慧與知識。"
+      },
+      {
+        en: "I am financially thriving.",
+        ipa: "/aɪ æm faɪˈnænʃəli ˈθraɪvɪŋ/",
+        zh: "我在財務上蓬勃興旺、蒸蒸日上。"
+      },
+      {
+        en: "I made the decision to become wealthy.",
+        ipa: "/aɪ meɪd ðə dɪˈsɪʒən tu bɪˈkʌm ˈwɛlθi/",
+        zh: "我已經下定決心變得富裕。"
+      },
+      {
+        en: "I love money and money loves me.",
+        ipa: "/aɪ lʌv ˈmʌni ənd ˈmʌni lʌvz mi/",
+        zh: "我熱愛金錢，金錢也深愛著我。"
+      },
+      {
+        en: "I am becoming richer and richer every day in every way.",
+        ipa: "/aɪ æm bɪˈkʌmɪŋ ˈrɪtʃər ənd ˈrɪtʃər ˈɛvri deɪ ɪn ˈɛvri weɪ/",
+        zh: "在各方面、每一天我都變得越來越富有。"
+      },
+      {
+        en: "I choose prosperity.",
+        ipa: "/aɪ tʃuz prɑˈspɛrɪti/",
+        zh: "我選擇繁榮興盛。"
+      },
+      {
+        en: "I am open to receiving all the riches the Universe wants to give me.",
+        ipa: "/aɪ æm ˈoʊpən tu rɪˈsivɪŋ ɔl ðə ˈrɪtʃɪz ðə ˈjunəˌvɜrs wɑnts tu ɡɪv mi/",
+        zh: "我敞開心胸接納宇宙想要賜予我的一切財富。"
+      },
+      {
+        en: "I attract all that I need to bring forth my success.",
+        ipa: "/aɪ əˈtrækt ɔl ðæt aɪ nid tu brɪŋ fɔrθ maɪ səkˈsɛs/",
+        zh: "我吸引展現成功所需的一切資源與支持。"
+      },
+      {
+        en: "I am becoming richer by the second.",
+        ipa: "/aɪ æm bɪˈkʌmɪŋ ˈrɪtʃər baɪ ðə ˈsɛkənd/",
+        zh: "我分分秒秒都在變得更加富有。"
+      },
+      {
+        en: "I am excited by other people receiving money.",
+        ipa: "/aɪ æm ɪkˈsaɪtɪd baɪ ˈʌðər ˈpipəl rɪˈsivɪŋ ˈmʌni/",
+        zh: "看到別人賺錢獲益，我也為之雀躍欣喜。"
+      },
+      {
+        en: "Everything I need for success comes to me effortlessly and easily.",
+        ipa: "/ˈɛvriˌθɪŋ aɪ nid fɔr səkˈsɛs kʌmz tu mi ˈɛfərtləsli ənd ˈizɪli/",
+        zh: "我成功所需的一切都毫不費力、輕而易舉地來到身邊。"
+      },
+      {
+        en: "I wish good fortune and happiness for myself—and everyone.",
+        ipa: "/aɪ wɪʃ ɡʊd ˈfɔrtʃən ənd ˈhæpinɪs fɔr maɪˈsɛlf—ənd ˈɛvriˌwʌn/",
+        zh: "我為自己以及所有人祝福好運與幸福快樂。"
+      },
+      {
+        en: "I am open to money coming to me from new ways that I've never imagined.",
+        ipa: "/aɪ æm ˈoʊpən tu ˈmʌni ˈkʌmɪŋ tu mi frʌm nu weɪz ðæt aɪv ˈnɛvər ɪˈmædʒɪnd/",
+        zh: "我樂於接受金錢以我從未想像過的全新方式流入。"
+      },
+      {
+        en: "I am using money to bless my life and other people’s lives.",
+        ipa: "/aɪ æm ˈjuzɪŋ ˈmʌni tu blɛs maɪ laɪf ənd ˈʌðər ˈpipəlz laɪvz/",
+        zh: "我運用金錢來祝福自己的生命以及他人的生命。"
+      },
+      {
+        en: "I am receiving more money today.",
+        ipa: "/aɪ æm rɪˈsivɪŋ mɔr ˈmʌni təˈdeɪ/",
+        zh: "我今天正在接收更多的金錢。"
+      },
+      {
+        en: "I always have whatever I need.",
+        ipa: "/aɪ ˈɔlweɪz hæv wʌtˈɛvər aɪ nid/",
+        zh: "我隨時都擁有我所需要的一切。"
+      },
+      {
+        en: "I am abundantly successful in everything I dedicate myself to.",
+        ipa: "/aɪ æm əˈbʌndəntli səkˈsɛsfəl ɪn ˈɛvriˌθɪŋ aɪ ˈdɛdəˌkeɪt maɪˈsɛlf tu/",
+        zh: "凡是我傾注心力之事，皆能大獲全勝、富足成功。"
+      },
+      {
+        en: "The Universe conspires to give me everything I need.",
+        ipa: "/ði ˈjunəˌvɜrs kənˈspaɪərz tu ɡɪv mi ˈɛvriˌθɪŋ aɪ nid/",
+        zh: "整個宇宙都在同心協力給予我所需的一切。"
+      },
+      {
+        en: "I am generous with money.",
+        ipa: "/aɪ æm ˈdʒɛnərəs wɪð ˈmʌni/",
+        zh: "我對待金錢慷慨大度。"
+      },
+      {
+        en: "When I pay bills, the money always returns to me multiplied.",
+        ipa: "/wɛn aɪ peɪ bɪlz, ðə ˈmʌni ˈɔlweɪz rɪˈtɜrnz tu mi ˈmʌltəˌplaɪd/",
+        zh: "當我支付帳單時，金錢總會成倍倍增地回到我手中。"
+      },
+      {
+        en: "I am eternally grateful for the abundance and prosperity in my life.",
+        ipa: "/aɪ æm ɪˈtɜrnəli ˈɡreɪtfəl fɔr ði əˈbʌndəns ənd prɑˈspɛrɪti ɪn maɪ laɪf/",
+        zh: "我對生命中的豐盛與富饒抱持永遠的感激。"
+      },
+      {
+        en: "I create wealth and prosperity with ease.",
+        ipa: "/aɪ kriˈeɪt wɛlθ ənd prɑˈspɛrɪti wɪð iz/",
+        zh: "我輕輕鬆鬆就能創造財富與繁榮。"
+      },
+      {
+        en: "Every day in every way, my wealth is increasing.",
+        ipa: "/ˈɛvri deɪ ɪn ˈɛvri weɪ, maɪ wɛlθ ɪz ɪnˈkrisɪŋ/",
+        zh: "每一天在每一個層面，我的財富都在不斷增加。"
+      },
+      {
+        en: "Money flows easily to me.",
+        ipa: "/ˈmʌni floʊz ˈizɪli tu mi/",
+        zh: "金錢輕鬆自在地流向我。"
+      },
+      {
+        en: "I always have enough money to meet my needs.",
+        ipa: "/aɪ ˈɔlweɪz hæv ɪˈnʌf ˈmʌni tu mit maɪ nidz/",
+        zh: "我永遠有充足的金錢滿足我的各項需求。"
+      },
+      {
+        en: "I am attracting more and more money every day.",
+        ipa: "/aɪ æm əˈtræktɪŋ mɔr ənd mɔr ˈmʌni ˈɛvri deɪ/",
+        zh: "我每天都在吸引越來越多的金錢。"
+      },
+      {
+        en: "I am happy to give because my abundance is limitless.",
+        ipa: "/aɪ æm ˈhæpi tu ɡɪv bɪˈkɔz maɪ əˈbʌndəns ɪz ˈlɪmɪtlɪs/",
+        zh: "我樂於給予，因為我的豐盛是無窮無盡的。"
+      },
+      {
+        en: "I attract money effortlessly and easily.",
+        ipa: "/aɪ əˈtrækt ˈmʌni ˈɛfərtləsli ənd ˈizɪli/",
+        zh: "我不費力且輕鬆地吸引金錢。"
+      },
+      {
+        en: "I deserve all good things.",
+        ipa: "/aɪ dɪˈzɜrv ɔl ɡʊd θɪŋz/",
+        zh: "我值得擁有世間一切美好的事物。"
+      },
+      {
+        en: "I have more than enough.",
+        ipa: "/aɪ hæv mɔr ðæn ɪˈnʌf/",
+        zh: "我所擁有的豐足有餘。"
+      },
+      {
+        en: "I love sharing my abundance with my loved ones.",
+        ipa: "/aɪ lʌv ˈʃɛrɪŋ maɪ əˈbʌndəns wɪð maɪ lʌvd wʌnz/",
+        zh: "我熱愛與所摯愛的人們分享我的豐盛。"
+      },
+      {
+        en: "There is an abundance of money, and it is on its way to me.",
+        ipa: "/ðɛr ɪz ən əˈbʌndəns ʌv ˈmʌni, ənd ɪt ɪz ɑn ɪts weɪ tu mi/",
+        zh: "世界上有著豐沛的金錢，且它們正朝著我而來。"
+      },
+      {
+        en: "I am receiving more money every day.",
+        ipa: "/aɪ æm rɪˈsivɪŋ mɔr ˈmʌni ˈɛvri deɪ/",
+        zh: "我每天都在接收到更多的金錢。"
+      },
+      {
+        en: "I am grateful for my ever-increasing wealth and prosperity.",
+        ipa: "/aɪ æm ˈɡreɪtfəl fɔr maɪ ˈɛvər-ɪnˈkrisɪŋ wɛlθ ənd prɑˈspɛrɪti/",
+        zh: "我對自己不斷增長的財富與繁榮心存感激。"
+      },
+      {
+        en: "I have the money to cover all my financial obligations—now and forevermore.",
+        ipa: "/aɪ hæv ðə ˈmʌni tu ˈkʌvər ɔl maɪ faɪˈnænʃəl ˌɑbləˈɡeɪʃənz—naʊ ənd fɔrˈɛvərmɔr/",
+        zh: "我擁有充足金錢支付所有財務責任——無論當下或永遠。"
+      },
+      {
+        en: "I welcome the abundance and all the riches of the planet into my life.",
+        ipa: "/aɪ ˈwɛlkəm ði əˈbʌndəns ənd ɔl ðə ˈrɪtʃɪz ʌv ðə ˈplænɪt ˈɪntu maɪ laɪf/",
+        zh: "我欣然歡迎地球上的豐盛與一切富足進入我生命。"
+      },
+      {
+        en: "I thank the Universe for all the prosperity that is mine today.",
+        ipa: "/aɪ θæŋk ðə ˈjunəˌvɜrs fɔr ɔl ðə prɑˈspɛrɪti ðæt ɪz maɪn təˈdeɪ/",
+        zh: "我感謝宇宙今天賜予我的所有繁榮興旺。"
+      },
+      {
+        en: "I am excited to see where more money is going to come from next.",
+        ipa: "/aɪ æm ɪkˈsaɪtɪd tu si wɛr mɔr ˈmʌni ɪz ˈɡoʊɪŋ tu kʌm frʌm nɛkst/",
+        zh: "我很期待看到下一筆金錢會從何種惊喜的方式來到。"
+      },
+      {
+        en: "Abundance and prosperity is my birthright.",
+        ipa: "/əˈbʌndəns ənd prɑˈspɛrɪti ɪz maɪ ˈbɜrθˌraɪt/",
+        zh: "豐盛與繁榮是我生來即有的權利。"
+      },
+      {
+        en: "I deserve to be wealthy.",
+        ipa: "/aɪ dɪˈzɜrv tu bi ˈwɛlθi/",
+        zh: "我值得享有富裕。"
+      },
+      {
+        en: "I intend that money will flow to me today.",
+        ipa: "/aɪ ɪnˈtɛnd ðæt ˈmʌni wɪl floʊ tu mi təˈdeɪ/",
+        zh: "我立下意圖，金錢今天將源源流向我。"
+      },
+      {
+        en: "I say YES to financial freedom for me and everyone around me.",
+        ipa: "/aɪ seɪ jɛs tu faɪˈnænʃəl ˈfridəm fɔr mi ənd ˈɛvriˌwʌn əˈraʊnd mi/",
+        zh: "我對自己和身邊所有人的財務自由大聲說「是的！」。"
+      },
+      {
+        en: "I am open to the possibility that money can flow to me from all directions.",
+        ipa: "/aɪ æm ˈoʊpən tu ðə ˌpɑsəˈbɪlɪti ðæt ˈmʌni kæn floʊ tu mi frʌm ɔl dəˈrɛkʃənz/",
+        zh: "我接納金錢能從四面八方流向我的各種可能性。"
+      },
+      {
+        en: "The world has never been richer, and I am receiving even more of those riches.",
+        ipa: "/ðə wɜrld hæz ˈnɛvər bɪn ˈrɪtʃər, ənd aɪ æm rɪˈsivɪŋ ˈivɪn mɔr ʌv ðoʊz ˈrɪtʃɪz/",
+        zh: "世界從未如此富庶，而我正承接其中更多的豐碩財富。"
+      },
+      {
+        en: "Financial freedom is up to me—I choose it for myself.",
+        ipa: "/faɪˈnænʃəl ˈfridəm ɪz ʌp tu mi—aɪ tʃuz ɪt fɔr maɪˈsɛlf/",
+        zh: "財務自由操之在我——這是我為自己做出的選擇。"
+      },
+      {
+        en: "I open myself to the possibility that good fortune is mine.",
+        ipa: "/aɪ ˈoʊpən maɪˈsɛlf tu ðə ˌpɑsəˈbɪlɪti ðæt ɡʊd ˈfɔrtʃən ɪz maɪn/",
+        zh: "我敞開自己，迎接屬於我的好運與幸運。"
+      },
+      {
+        en: "The Universe is constantly providing all of the abundance I require for a full, happy life.",
+        ipa: "/ði ˈjunəˌvɜrs ɪz ˈkɑnstəntli prəˈvaɪdɪŋ ɔl ʌv ði əˈbʌndəns aɪ rɪˈkwaɪər fɔr ə fʊl, ˈhæpi laɪf/",
+        zh: "宇宙源源不絕地提供我圓滿快樂人生所需的一切豐盛。"
+      },
+      {
+        en: "While I mentally dwell on them, prosperity, affluence, wealth, and riches are naturally available to me.",
+        ipa: "/waɪl aɪ ˈmɛntəli dwɛl ɑn ðɛm, prɑˈspɛrɪti, ˈæfluəns, wɛlθ, ənd ˈrɪtʃɪz ɑr ˈnætʃərəli əˈveɪləbəl tu mi/",
+        zh: "當我心中專注於此時，繁榮、富裕、豐饒自然會伴隨而來。"
+      },
+      {
+        en: "I have made a decision: “YES, YES, YES” to more money.",
+        ipa: "/aɪ hæv meɪd ə dɪˈsɪʒən: jɛs, jɛs, jɛs tu mɔr ˈmʌni/",
+        zh: "我已下定決心：對更多的金錢說「要、要、一定要！」"
+      },
+      {
+        en: "I allow money in all its forms to continually stream into my life.",
+        ipa: "/aɪ əˈlaʊ ˈmʌni ɪn ɔl ɪts fɔrmz tu kənˈtɪnjuəli strim ˈɪntu maɪ laɪf/",
+        zh: "我允許各種形式的金錢源源不斷地流進我的生命。"
+      },
+      {
+        en: "The Universe has received my order for more money and will make it appear to me.",
+        ipa: "/ði ˈjunəˌvɜrs hæz rɪˈsivd maɪ ˈɔrdər fɔr mɔr ˈmʌni ənd wɪl meɪk ɪt əˈpɪr tu mi/",
+        zh: "宇宙已經收到我對更多財富的訂單，並將為我顯現。"
+      },
+      {
+        en: "Enormous wealth is available to me at all times—I open myself to receive it.",
+        ipa: "/ɪˈnɔrməs wɛlθ ɪz əˈveɪləbəl tu mi æt ɔl taɪmz—aɪ ˈoʊpən maɪˈsɛlf tu rɪˈsiv ɪt/",
+        zh: "無比龐大的財富隨時供我取用——我敞開心胸接納。"
+      },
+      {
+        en: "Can I achieve financial freedom? Yes, I can.",
+        ipa: "/kæn aɪ əˈtʃiv faɪˈnænʃəl ˈfridəm? jɛs, aɪ kæn/",
+        zh: "我能達成財務自由嗎？是的，我一定能！"
+      },
+      {
+        en: "I receive unexpected checks in the mail.",
+        ipa: "/aɪ rɪˈsiv ˌʌnɪkˈspɛktɪd tʃɛks ɪn ðə meɪl/",
+        zh: "我經常在信箱中收到意料之外的進帳支票。"
+      },
+      {
+        en: "With the gesture of the palms of my hands facing upward, I welcome money to come into my life.",
+        ipa: "/wɪð ðə ˈdʒɛstʃər ʌv ðə pɑmz ʌv maɪ hændz ˈfeɪsɪŋ ˈʌpwərd, aɪ ˈwɛlkəm ˈmʌni tu kʌm ˈɪntu maɪ laɪf/",
+        zh: "我手心向上展現迎接姿態，欣然歡迎金錢進入我的生活。"
+      },
+      {
+        en: "Money is flowing to me.",
+        ipa: "/ˈmʌni ɪz ˈfloʊɪŋ tu mi/",
+        zh: "金錢正汩汩流向我。"
+      },
+      {
+        en: "I give myself permission to have all the things that I desire.",
+        ipa: "/aɪ ɡɪv maɪˈsɛlf pərˈmɪʃən tu hæv ɔl ðə θɪŋz ðæt aɪ dɪˈzaɪər/",
+        zh: "我允許自己擁有所有真心渴望的美好事物。"
+      },
+      {
+        en: "This is exactly the right time for me to be wealthy.",
+        ipa: "/ðɪs ɪz ɪɡˈzæktli ðə raɪt taɪm fɔr mi tu bi ˈwɛlθi/",
+        zh: "現在正是我享有富裕的最完美時機。"
+      },
+      {
+        en: "I have what it takes to succeed.",
+        ipa: "/aɪ hæv wʌt ɪt teɪks tu səkˈsid/",
+        zh: "我具備獲得成功所需要的一切特質與實力。"
+      },
+      {
+        en: "I welcome prosperity, health, and happiness into my life.",
+        ipa: "/aɪ ˈwɛlkəm prɑˈspɛrɪti, hɛlθ, ənd ˈhæpinɪs ˈɪntu maɪ laɪf/",
+        zh: "我熱烈歡迎繁榮、健康與幸福進駐我的生命。"
+      },
+      {
+        en: "Money DOES grow on trees.",
+        ipa: "/ˈmʌni dʌz ɡroʊ ɑn triz/",
+        zh: "金錢確實如繁花綠葉般自然豐收。"
+      },
+      {
+        en: "Money is unlimited; like the air and sky, it’s everywhere.",
+        ipa: "/ˈmʌni ɪz ʌnˈlɪmɪtɪd; laɪk ði ɛr ənd skaɪ, ɪts ˈɛvriˌwɛr/",
+        zh: "金錢是無窮盡的；如同空氣與青空，無所不在。"
+      },
+      {
+        en: "I don’t need to be wealthy to be happy, but I need to be happy in order to become wealthy.",
+        ipa: "/aɪ doʊnt nid tu bi ˈwɛlθi tu bi ˈhæpi, bʌt aɪ nid tu bi ˈhæpi ɪn ˈɔrdər tu bɪˈkʌm ˈwɛlθi/",
+        zh: "我不需要先富有才快樂，但我先感到快樂便能自然富有。"
+      },
+      {
+        en: "I am attracting all the money I need to live my fullest life.",
+        ipa: "/aɪ æm əˈtræktɪŋ ɔl ðə ˈmʌni aɪ nid tu lɪv maɪ ˈfʊləst laɪf/",
+        zh: "我正在吸引過上最圓滿豐盛生活所需的一切金錢。"
+      },
+      {
+        en: "Money is constantly appearing in my life in unexpected ways.",
+        ipa: "/ˈmʌni ɪz ˈkɑnstəntli əˈpɪrɪŋ ɪn maɪ laɪf ɪn ˌʌnɪkˈspɛktɪd weɪz/",
+        zh: "金錢不斷以出乎意料的驚喜形式出現在我的生命中。"
+      },
+      {
+        en: "I am a money magnet.",
+        ipa: "/aɪ æm ə ˈmʌni ˈmæɡnɪt/",
+        zh: "我是個吸金磁鐵。"
+      },
+      {
+        en: "Of course I can be financially free.",
+        ipa: "/ʌv kɔrs aɪ kæn bi faɪˈnænʃəli fri/",
+        zh: "我當然可以、也一定能實現財務自由。"
+      },
+      {
+        en: "Money comes to me from many sources.",
+        ipa: "/ˈmʌni kʌmz tu mi frʌm ˈmɛni ˈsɔrsɪz/",
+        zh: "金錢從各方多元管道匯聚到我這裡。"
+      },
+      {
+        en: "I am making a conscious decision to have financial freedom now.",
+        ipa: "/aɪ æm ˈmeɪkɪŋ ə ˈkɑnʃəs dɪˈsɪʒən tu hæv faɪˈnænʃəl ˈfridəm naʊ/",
+        zh: "我現在有意識地做出擁有財務自由的決定。"
+      },
+      {
+        en: "Money never stops flowing to me.",
+        ipa: "/ˈmʌni ˈnɛvər stɑps ˈfloʊɪŋ tu mi/",
+        zh: "金錢從未停止流向我。"
+      },
+      {
+        en: "I effortlessly attract wealth.",
+        ipa: "/aɪ ˈɛfərtləsli əˈtrækt wɛlθ/",
+        zh: "我毫不費力地吸引財富。"
+      },
+      {
+        en: "I am generous, and the Universe repays me a hundredfold.",
+        ipa: "/aɪ æm ˈdʒɛnərəs, ənd ðə ˈjunəˌvɜrs rɪˈpeɪz mi ə ˈhʌndrɪdˌfoʊld/",
+        zh: "我為人慷慨，而宇宙以百倍之多回饋於我。"
+      },
+      {
+        en: "I always have enough money for everything I want to do in this life.",
+        ipa: "/aɪ ˈɔlweɪz hæv ɪˈnʌf ˈmʌni fɔr ˈɛvriˌθɪŋ aɪ wɑnt tu du ɪn ðɪs laɪf/",
+        zh: "我想在今生實現的每件事，永遠都有充足的資金支持。"
+      },
+      {
+        en: "The more I share my wealth, the more my wealth grows.",
+        ipa: "/ðə mɔr aɪ ʃɛr maɪ wɛlθ, ðə mɔr maɪ wɛlθ ɡroʊz/",
+        zh: "我越是分享財富，我的財富便越發滋長。"
+      },
+      {
+        en: "I am a channel for life’s flow of abundance.",
+        ipa: "/aɪ æm ə ˈtʃænəl fɔr laɪfs floʊ ʌv əˈbʌndəns/",
+        zh: "我是生命豐盛之流暢通無阻的渠道。"
+      },
+      {
+        en: "Money belongs to me.",
+        ipa: "/ˈmʌni bɪˈlɔŋz tu mi/",
+        zh: "財富屬於我。"
+      },
+      {
+        en: "I am open to receiving even more abundance in every area of my life.",
+        ipa: "/aɪ æm ˈoʊpən tu rɪˈsivɪŋ ˈivɪn mɔr əˈbʌndəns ɪn ˈɛvri ˈɛriə ʌv maɪ laɪf/",
+        zh: "我敞開心懷，在生活的每個領域接納更多的豐盛。"
+      },
+      {
+        en: "I make money in my sleep.",
+        ipa: "/aɪ meɪk ˈmʌni ɪn maɪ slip/",
+        zh: "我連睡覺時都能創造財富。"
+      },
+      {
+        en: "I am so grateful to be able to share my wealth with others.",
+        ipa: "/aɪ æm soʊ ˈɡreɪtfəl tu bi ˈeɪbəl tu ʃɛr maɪ wɛlθ wɪð ˈʌðərz/",
+        zh: "我非常感恩自己有能力與他人分享財富。"
+      },
+      {
+        en: "The decision to have financial freedom is as simple as deciding to buy milk at the store.",
+        ipa: "/ðə dɪˈsɪʒən tu hæv faɪˈnænʃəl ˈfridəm ɪz æz ˈsɪmpəl æz dɪˈsaɪdɪŋ tu baɪ mɪlk æt ðə stɔr/",
+        zh: "做出享有財務自由的決定，就如走進店裡買牛奶般清晰自然。"
+      },
+      {
+        en: "I know that I am worthy of wealth right now—just as I am.",
+        ipa: "/aɪ noʊ ðæt aɪ æm ˈwɜrði ʌv wɛlθ raɪt naʊ—dʒʌst æz aɪ æm/",
+        zh: "我知道此時此刻的我，如其所是地值得擁有豐足財富。"
+      },
+      {
+        en: "I enjoy the freedom that money brings to my daily life.",
+        ipa: "/aɪ ɛnˈdʒɔɪ ðə ˈfridəm ðæt ˈmʌni brɪŋz tu maɪ ˈdeɪli laɪf/",
+        zh: "我享受金錢為我日常生活帶來的無拘無束與自由。"
+      },
+      {
+        en: "I am a wealth creator.",
+        ipa: "/aɪ æm ə wɛlθ kriˈeɪtər/",
+        zh: "我是一位財富創造者。"
+      },
+      {
+        en: "I am blessed with abundance every day of my life.",
+        ipa: "/aɪ æm blɛst wɪð əˈbʌndəns ˈɛvri deɪ ʌv maɪ laɪf/",
+        zh: "在我生命的每一天，我都蒙受豐盛的祝福。"
+      },
+      {
+        en: "I enjoy financial freedom.",
+        ipa: "/aɪ ɛnˈdʒɔɪ faɪˈnænʃəl ˈfridəm/",
+        zh: "我盡情享受財務自由。"
+      },
+      {
+        en: "I am grateful to receive all the money I need.",
+        ipa: "/aɪ æm ˈɡreɪtfəl tu rɪˈsiv ɔl ðə ˈmʌni aɪ nid/",
+        zh: "我感恩收到一切我所需的金錢。"
+      },
+      {
+        en: "My bank account is full, my heart is full, and my life is full.",
+        ipa: "/maɪ bæŋk əˈkaʊnt ɪz fʊl, maɪ hɑrt ɪz fʊl, ənd maɪ laɪf ɪz fʊl/",
+        zh: "我的銀行帳戶豐滿，我的心靈豐滿，我的人生圓滿。"
+      },
+      {
+        en: "I know how to tap the Universal flow of unlimited abundance.",
+        ipa: "/aɪ noʊ haʊ tu tæp ðə ˌjunəˈvɜrsəl floʊ ʌv ʌnˈlɪmɪtɪd əˈbʌndəns/",
+        zh: "我深知如何接通宇宙那無窮無盡的豐盛泉源。"
+      },
+      {
+        en: "Wealth is a blessing that enriches my daily life.",
+        ipa: "/wɛlθ ɪz ə ˈblɛsɪŋ ðæt ɛnˈrɪtʃɪz maɪ ˈdeɪli laɪf/",
+        zh: "財富是一份豐富我每日生活的恩典。"
+      },
+      {
+        en: "Financial freedom is not only possible, it is here now.",
+        ipa: "/faɪˈnænʃəl ˈfridəm ɪz nɑt ˈoʊnli ˈpɑsəbəl, ɪt ɪz hɪr naʊ/",
+        zh: "財務自由不僅有可能，它此時此刻就已臨在。"
+      },
+      {
+        en: "I smile with gratitude when I think of the abundance in my life.",
+        ipa: "/aɪ smaɪl wɪð ˈɡrætəˌtud wɛn aɪ θɪŋk ʌv ði əˈbʌndəns ɪn maɪ laɪf/",
+        zh: "每當想起生活中的豐富，我心中便泛起感激的微笑。"
+      },
+      {
+        en: "Money flows to me so easily that I can afford anything I want.",
+        ipa: "/ˈmʌni floʊz tu mi soʊ ˈizɪli ðæt aɪ kæn əˈfɔrd ˈɛniˌθɪŋ aɪ wɑnt/",
+        zh: "金錢來得如此順遂，任何我想要的事物我都負擔得起。"
+      },
+      {
+        en: "Thank you for the wealth I once longed for.",
+        ipa: "/θæŋk ju fɔr ðə wɛlθ aɪ wʌns lɔŋd fɔr/",
+        zh: "感謝宇宙，賜予我曾經深深企盼的財富。"
+      },
+      {
+        en: "The Universe wants to give me everything that I desire.",
+        ipa: "/ði ˈjunəˌvɜrs wɑnts tu ɡɪv mi ˈɛvriˌθɪŋ ðæt aɪ dɪˈzaɪər/",
+        zh: "宇宙渴望給予我心中嚮往的一切。"
+      },
+      {
+        en: "I let go of any and all beliefs that are not in line with my financial freedom.",
+        ipa: "/aɪ lɛt ɡoʊ ʌv ˈɛni ənd ɔl bɪˈlifs ðæt ɑr nɑt ɪn laɪn wɪð maɪ faɪˈnænʃəl ˈfridəm/",
+        zh: "我釋放所有與財務自由不相符的舊有信念。"
+      },
+      {
+        en: "A full and rich life is the birthright of every human being.",
+        ipa: "/ə fʊl ənd rɪtʃ laɪf ɪz ðə ˈbɜrθˌraɪt ʌv ˈɛvri ˈhjumən ˈbiɪŋ/",
+        zh: "富足與豐盛的人生是每個人生而享有的權利。"
+      },
+      {
+        en: "I give thanks that I am rich, healthy, and happy, and that my life is governed by divine order.",
+        ipa: "/aɪ ɡɪv θæŋks ðæt aɪ æm rɪtʃ, ˈhɛlθi, ənd ˈhæpi, ənd ðæt maɪ laɪf ɪz ˈɡʌvərnd baɪ dɪˈvaɪn ˈɔrdər/",
+        zh: "我心懷感恩，我是富足、健康、快樂的，生命井然有序。"
+      },
+      {
+        en: "Money, money, money—manifest here and now in rich abundance.",
+        ipa: "/ˈmʌni, ˈmʌni, ˈmʌni—ˈmænəˌfɛst hɪr ənd naʊ ɪn rɪtʃ əˈbʌndəns/",
+        zh: "金錢、財富，此時此刻化為豐沛實相顯現！"
+      },
+      {
+        en: "Every day is prosperous for me; every situation is prosperous for me.",
+        ipa: "/ˈɛvri deɪ ɪz ˈprɑspərəs fɔr mi; ˈɛvri ˌsɪtʃuˈeɪʃən ɪz ˈprɑspərəs fɔr mi/",
+        zh: "對我而言，每一天皆是繁盛之日，每一種境遇皆能帶來興旺。"
+      },
+      {
+        en: "I always have far more money than I need.",
+        ipa: "/aɪ ˈɔlweɪz hæv fɑr mɔr ˈmʌni ðæn aɪ nid/",
+        zh: "我所擁有的金錢永遠遠多於我的所需。"
+      },
+      {
+        en: "Lavish abundance fills my life every day and in every way.",
+        ipa: "/ˈlævɪʃ əˈbʌndəns fɪlz maɪ laɪf ˈɛvri deɪ ənd ɪn ˈɛvri weɪ/",
+        zh: "滿溢豐厚的富饒每天在各方面充盈著我的人生。"
+      },
+      {
+        en: "I deserve all of the riches I desire.",
+        ipa: "/aɪ dɪˈzɜrv ɔl ʌv ðə ˈrɪtʃɪz aɪ dɪˈzaɪər/",
+        zh: "我值得享有我渴望的所有財富。"
+      },
+      {
+        en: "The Universe wants everyone to live in abundance.",
+        ipa: "/ði ˈjunəˌvɜrs wɑnts ˈɛvriˌwʌn tu lɪv ɪn əˈbʌndəns/",
+        zh: "宇宙期望每個人都能生活在豐盛之中。"
+      },
+      {
+        en: "I am financially independent today and forever.",
+        ipa: "/aɪ æm faɪˈnænʃəli ˌɪndɪˈpɛndənt təˈdeɪ ənd fɔrˈɛvər/",
+        zh: "今天直到永遠，我都享有財務獨立自主。"
+      },
+      {
+        en: "I command that every financial door and channel open for me, and that they flow with endless abundance.",
+        ipa: "/aɪ kəˈmænd ðæt ˈɛvri faɪˈnænʃəl dɔr ənd ˈtʃænəl ˈoʊpən fɔr mi, ənd ðæt ðeɪ floʊ wɪð ˈɛndlɪs əˈbʌndəns/",
+        zh: "我宣告所有財務的大門與渠道向我敞開，湧流無盡豐盛。"
+      },
+      {
+        en: "I always receive all the money I need to live a full life.",
+        ipa: "/aɪ ˈɔlweɪz rɪˈsiv ɔl ðə ˈmʌni aɪ nid tu lɪv ə fʊl laɪf/",
+        zh: "我始終能獲得過上圓滿人生所需的一切金錢。"
+      },
+      {
+        en: "I turn away from any doubt and steadfastly maintain my financial freedom.",
+        ipa: "/aɪ tɜrn əˈweɪ frʌm ˈɛni daʊt ənd ˈstɛdfæstli meɪnˈteɪn maɪ faɪˈnænʃəl ˈfridəm/",
+        zh: "我摒除所有疑惑，堅定不移地守護與體現財務自由。"
+      },
+      {
+        en: "Now is the perfect time for money to flow to me in abundance.",
+        ipa: "/naʊ ɪz ðə ˈpɜrfɪkt taɪm fɔr ˈmʌni tu floʊ tu mi ɪn əˈbʌndəns/",
+        zh: "此時此刻正是金錢大量流向我的最完美時刻。"
+      },
+      {
+        en: "I am thrilled by all the ways that money comes to me.",
+        ipa: "/aɪ æm θrɪld baɪ ɔl ðə weɪz ðæt ˈmʌni kʌmz tu mi/",
+        zh: "金錢以各種驚奇方式向我匯流，令我由衷驚喜振奮。"
+      },
+      {
+        en: "The more money I share and give, the more money flows into my bank account.",
+        ipa: "/ðə mɔr ˈmʌni aɪ ʃɛr ənd ɡɪv, ðə mɔr ˈmʌni floʊz ˈɪntu maɪ bæŋk əˈkaʊnt/",
+        zh: "我付出與分享的金錢越多，流進我銀行帳戶的金錢就越多。"
+      },
+      {
+        en: "Large sums of money come to me in the most effortless ways.",
+        ipa: "/lɑrdʒ sʌmz ʌv ˈmʌni kʌm tu mi ɪn ðə moʊst ˈɛfərtləs weɪz/",
+        zh: "龐大的財富以最自然輕鬆的方式來到我身邊。"
+      },
+      {
+        en: "I am one with the infinite riches of my true being.",
+        ipa: "/aɪ æm wʌn wɪð ði ˈɪnfənɪt ˈrɪtʃɪz ʌv maɪ tru ˈbiɪŋ/",
+        zh: "我與本我中無限的富足完全合一。"
+      },
+      {
+        en: "I trust divine power to surround me with abundance.",
+        ipa: "/aɪ trʌst dɪˈvaɪn ˈpaʊər tu səˈraʊnd mi wɪð əˈbʌndəns/",
+        zh: "我深信神聖指引的大能會以豐盛圍繞著我。"
+      },
+      {
+        en: "It is my birthright to be rich, successful, and happy.",
+        ipa: "/ɪt ɪz maɪ ˈbɜrθˌraɪt tu bi rɪtʃ, səkˈsɛsfəl, ənd ˈhæpi/",
+        zh: "享有富足、成功與快樂是我天賦的權利。"
+      },
+      {
+        en: "It feels so good to be financially free.",
+        ipa: "/ɪt filz soʊ ɡʊd tu bi faɪˈnænʃəli fri/",
+        zh: "享有財務自由的感覺實在太美妙了！"
+      },
+      {
+        en: "I love my abundant life!",
+        ipa: "/aɪ lʌv maɪ əˈbʌndənt laɪf/",
+        zh: "我熱愛我這充滿豐盛的人生！"
+      },
+      {
+        en: "Infinite Intelligence fills me with wisdom, success, and prosperity at all times.",
+        ipa: "/ˈɪnfənɪt ɪnˈtɛlədʒəns fɪlz mi wɪð ˈwɪzdəm, səkˈsɛs, ənd prɑˈspɛrɪti æt ɔl taɪmz/",
+        zh: "無窮智慧隨時隨地以聰慧、成功與興旺充滿我的身心。"
+      },
+      {
+        en: "Only the best comes to me no matter where I am or what I’m doing.",
+        ipa: "/ˈoʊnli ðə bɛst kʌmz tu mi noʊ ˈmætər wɛr aɪ æm ɔr wʌt aɪm ˈduɪŋ/",
+        zh: "無論我在何處、在做什麼，來到我身邊的都是最美好的事物。"
+      },
+      {
+        en: "I let go of all fear of not having enough.",
+        ipa: "/aɪ lɛt ɡoʊ ʌv ɔl fɪr ʌv nɑt ˈhævɪŋ ɪˈnʌf/",
+        zh: "我徹底釋放對於匱乏與不足的恐懼。"
+      },
+      {
+        en: "Far more money is flowing in this year than any other year.",
+        ipa: "/fɑr mɔr ˈmʌni ɪz ˈfloʊɪŋ ɪn ðɪs jɪr ðæn ˈɛni ˈʌðər jɪr/",
+        zh: "今年湧入的金錢遠遠超越以往任何一年。"
+      },
+      {
+        en: "Infinite Intelligence guides me every day to have happiness, prosperity, and riches.",
+        ipa: "/ˈɪnfənɪt ɪnˈtɛlədʒəns ɡaɪdz mi ˈɛvri deɪ tu hæv ˈhæpinɪs, prɑˈspɛrɪti, ənd ˈrɪtʃɪz/",
+        zh: "無限智慧每天引導我享有快樂、繁榮與豐盛富足。"
+      },
+      {
+        en: "Money flows to me in copious amounts.",
+        ipa: "/ˈmʌni floʊz tu mi ɪn ˈkoʊpiəs əˈmaʊnts/",
+        zh: "金錢以巨量豐沛的姿態流向我。"
+      },
+      {
+        en: "Everything is working out for my highest good.",
+        ipa: "/ˈɛvriˌθɪŋ ɪz ˈwɜrkɪŋ aʊt fɔr maɪ ˈhaɪɪst ɡʊd/",
+        zh: "萬事萬物都在為我的最高利益與圓滿而運作。"
+      },
+      {
+        en: "I always wondered what it would feel like to be wealthy and now I know.",
+        ipa: "/aɪ ˈɔlweɪz ˈwʌndərd wʌt ɪt wʊd fil laɪk tu bi ˈwɛlθi ənd naʊ aɪ noʊ/",
+        zh: "我曾好奇擁有財富會是什麼感受，如今我已親身體會。"
+      },
+      {
+        en: "I love being surprised by all the ways the Universe brings money to me.",
+        ipa: "/aɪ lʌv ˈbiɪŋ sərˈpraɪzd baɪ ɔl ðə weɪz ðə ˈjunəˌvɜrs brɪŋz ˈmʌni tu mi/",
+        zh: "我喜歡宇宙用各種驚喜的方式將金錢送到我面前。"
+      },
+      {
+        en: "Every dollar that I spend returns to me multiplied.",
+        ipa: "/ˈɛvri ˈdɑlər ðæt aɪ spɛnd rɪˈtɜrnz tu mi ˈmʌltəˌplaɪd/",
+        zh: "我花出去的每一塊錢，都會成倍翻番地回到身邊。"
+      },
+      {
+        en: "My whole life is abundant.",
+        ipa: "/maɪ hoʊl laɪf ɪz əˈbʌndənt/",
+        zh: "我的整個人生充滿豐饒富足。"
+      },
+      {
+        en: "I am a magnet for riches and wealth.",
+        ipa: "/aɪ æm ə ˈmæɡnɪt fɔr ˈrɪtʃɪz ənd wɛlθ/",
+        zh: "我是吸納財富與富貴的強大磁鐵。"
+      },
+      {
+        en: "I can attract more money with every thought I think.",
+        ipa: "/aɪ kæn əˈtrækt mɔr ˈmʌni wɪð ˈɛvri θɔt aɪ θɪŋk/",
+        zh: "我的每一個起心動念都能吸引更多金錢。"
+      },
+      {
+        en: "I am wealthy, wealthy, wealthy.",
+        ipa: "/aɪ æm ˈwɛlθi, ˈwɛlθi, ˈwɛlθi/",
+        zh: "我是富有的、富有的、無比富有的。"
+      },
+      {
+        en: "I never have to worry about money again.",
+        ipa: "/aɪ ˈnɛvər hæv tu ˈwɜri əˈbaʊt ˈmʌni əˈɡɛn/",
+        zh: "我再也不必為金錢擔憂掛慮。"
+      },
+      {
+        en: "I only think thoughts of abundance and prosperity.",
+        ipa: "/aɪ ˈoʊnli θɪŋk θɔts ʌv əˈbʌndəns ənd prɑˈspɛrɪti/",
+        zh: "我心中只保有豐足與繁榮的積極思維。"
+      },
+      {
+        en: "I have dreamt of being this wealthy for a long time.",
+        ipa: "/aɪ hæv drɛmt ʌv ˈbiɪŋ ðɪs ˈwɛlθi fɔr ə lɔŋ taɪm/",
+        zh: "我長久以來夢寐以求的富足，如今已然成真。"
+      },
+      {
+        en: "I let go of all thoughts and beliefs that do not serve my prosperity.",
+        ipa: "/aɪ lɛt ɡoʊ ʌv ɔl θɔts ənd bɪˈlifs ðæt du nɑt sɜrv maɪ prɑˈspɛrɪti/",
+        zh: "我放下所有無助於我走向繁榮的思想與限制信念。"
+      },
+      {
+        en: "I am determined to cultivate a wealth mindset.",
+        ipa: "/aɪ æm dɪˈtɜrmənd tu ˈkʌltəˌveɪt ə wɛlθ ˈmaɪndˌsɛt/",
+        zh: "我堅定不移地培育強大的致富思維與豐盛心態。"
+      },
+      {
+        en: "Prosperity fills every cell of my body.",
+        ipa: "/prɑˈspɛrɪti fɪlz ˈɛvri sɛl ʌv maɪ ˈbɑdi/",
+        zh: "繁榮的能量充盈著我身體的每一個細胞。"
+      },
+      {
+        en: "I know everything I need to know to be wealthy NOW.",
+        ipa: "/aɪ noʊ ˈɛvriˌθɪŋ aɪ nid tu noʊ tu bi ˈwɛlθi naʊ/",
+        zh: "我已通曉當下實現富足所需的一切真理。"
+      },
+      {
+        en: "I allow money to flow to me in large quantities.",
+        ipa: "/aɪ əˈlaʊ ˈmʌni tu floʊ tu mi ɪn lɑrdʒ ˈkwɑntətiz/",
+        zh: "我允許金錢以龐大的數量源源流向我。"
+      },
+      {
+        en: "I am open to receiving riches to live a full and happy life.",
+        ipa: "/aɪ æm ˈoʊpən tu rɪˈsivɪŋ ˈrɪtʃɪz tu lɪv ə fʊl ənd ˈhæpi laɪf/",
+        zh: "我敞開胸懷接納財富，過上圓滿幸福的生活。"
+      },
+      {
+        en: "I always have more than enough money.",
+        ipa: "/aɪ ˈɔlweɪz hæv mɔr ðæn ɪˈnʌf ˈmʌni/",
+        zh: "我手中的金錢永遠豐裕有餘。"
+      },
+      {
+        en: "Every dollar I pay out with gratitude returns to me multiplied.",
+        ipa: "/ˈɛvri ˈdɑlər aɪ peɪ aʊt wɪð ˈɡrætəˌtud rɪˈtɜrnz tu mi ˈmʌltəˌplaɪd/",
+        zh: "我帶著感恩支付的每一分錢，都以加倍的財富回到我身上。"
+      },
+      {
+        en: "I am rich beyond my wildest dreams.",
+        ipa: "/aɪ æm rɪtʃ bɪˈjɑnd maɪ ˈwaɪldɪst drimz/",
+        zh: "我的富有程度超越了我最奔放的夢想。"
+      },
+      {
+        en: "I am a walking, breathing money magnet.",
+        ipa: "/aɪ æm ə ˈwɔkɪŋ, ˈbriðɪŋ ˈmʌni ˈmæɡnɪt/",
+        zh: "我就是一個行走著、呼吸著的活體吸金磁鐵。"
+      },
+      {
+        en: "With every abundant thought, I attract even more money to me.",
+        ipa: "/wɪð ˈɛvri əˈbʌndənt θɔt, aɪ əˈtrækt ˈivɪn mɔr ˈmʌni tu mi/",
+        zh: "伴隨著每一個豐盛的想法，我吸引著更多金錢前來。"
+      },
+      {
+        en: "Every day I am open to receiving money from surprising sources.",
+        ipa: "/ˈɛvri deɪ aɪ æm ˈoʊpən tu rɪˈsivɪŋ ˈmʌni frʌm sərˈpraɪzɪŋ ˈsɔrsɪz/",
+        zh: "每一天我都敞開心胸，接受來自驚喜管道的財富。"
+      },
+      {
+        en: "I allow more money to flow into my life than ever before.",
+        ipa: "/aɪ əˈlaʊ mɔr ˈmʌni tu floʊ ˈɪntu maɪ laɪf ðæn ˈɛvər bɪˈfɔr/",
+        zh: "我允許前所未有的大筆金錢湧入我的生命中。"
+      },
+      {
+        en: "Prosperity and abundance of every kind are attracted to me.",
+        ipa: "/prɑˈspɛrɪti ənd əˈbʌndəns ʌv ˈɛvri kaɪnd ɑr əˈtræktɪd tu mi/",
+        zh: "各種形式的繁榮與豐盛都被我深深吸引。"
+      },
+      {
+        en: "I am incredibly grateful for all the money I have had in my life.",
+        ipa: "/aɪ æm ɪnˈkrɛdəbli ˈɡreɪtfəl fɔr ɔl ðə ˈmʌni aɪ hæv hæd ɪn maɪ laɪf/",
+        zh: "我無比感激在我生命中曾擁有的每一分金錢。"
+      },
+      {
+        en: "Every wealthy thought I think is changing my finances and my life.",
+        ipa: "/ˈɛvri ˈwɛlθi θɔt aɪ θɪŋk ɪz ˈtʃeɪndʒɪŋ maɪ faɪˈnænsɪz ənd maɪ laɪf/",
+        zh: "我思維中的每個致富之念，都在轉化我的財務與人生。"
+      },
+      {
+        en: "I release all resistance around money, so it flows freely into my life.",
+        ipa: "/aɪ rɪˈlis ɔl rɪˈzɪstəns əˈraʊnd ˈmʌni, soʊ ɪt floʊz ˈfrili ˈɪntu maɪ laɪf/",
+        zh: "我放下對金錢的所有抗拒，讓它自由自在地奔向我。"
+      },
+      {
+        en: "All is well.",
+        ipa: "/ɔl ɪz wɛl/",
+        zh: "一切安好，萬事圓滿。"
+      },
+      {
+        en: "I allow happiness and joy to be my predominant state.",
+        ipa: "/aɪ əˈlaʊ ˈhæpinɪs ənd dʒɔɪ tu bi maɪ prɪˈdɑmənənt steɪt/",
+        zh: "我讓幸福與喜悅成為我生命的主導狀態。"
+      },
+      {
+        en: "I am open and receptive to all the good the Universe has to offer.",
+        ipa: "/aɪ æm ˈoʊpən ənd rɪˈsɛptɪv tu ɔl ðə ɡʊd ðə ˈjunəˌvɜrs hæz tu ˈɔfər/",
+        zh: "我敞開心胸接納宇宙賜予的所有美好事物。"
+      },
+      {
+        en: "More money is flowing back to me.",
+        ipa: "/mɔr ˈmʌni ɪz ˈfloʊɪŋ bæk tu mi/",
+        zh: "更多金錢正在源源不絕地回流到我身上。"
+      },
+      {
+        en: "Every month the money in my bank account is climbing dramatically.",
+        ipa: "/ˈɛvri mʌnθ ðə ˈmʌni ɪn maɪ bæŋk əˈkaʊnt ɪz ˈklaɪmɪŋ drəˈmætɪkli/",
+        zh: "每個月我銀行帳戶裡的存款都在大幅攀升。"
+      },
+      {
+        en: "I am grateful for every amount of money that I receive.",
+        ipa: "/aɪ æm ˈɡreɪtfəl fɔr ˈɛvri əˈmaʊnt ʌv ˈmʌni ðæt aɪ rɪˈsiv/",
+        zh: "無論金額大小，收到的每筆金錢我都深懷感激。"
+      },
+      {
+        en: "My mind is a money magnet.",
+        ipa: "/maɪ maɪnd ɪz ə ˈmʌni ˈmæɡnɪt/",
+        zh: "我的心靈就是一具吸金磁鐵。"
+      },
+      {
+        en: "I am already wealthy, and I am now tuning my mind to receive it.",
+        ipa: "/aɪ æm ɔlˈrɛdi ˈwɛlθi, ənd aɪ æm naʊ ˈtunɪŋ maɪ maɪnd tu rɪˈsiv ɪt/",
+        zh: "我本自俱足富有，現在我正調頻心智以接納它顯現。"
+      },
+      {
+        en: "Whenever I pay money out, it always returns to me multiplied.",
+        ipa: "/wɛnˈɛvər aɪ peɪ ˈmʌni aʊt, ɪt ˈɔlweɪz rɪˈtɜrnz tu mi ˈmʌltəˌplaɪd/",
+        zh: "每當我支付金錢，它總是倍數地回流進我身邊。"
+      },
+      {
+        en: "Money naturally flows to me, just like the air I breathe.",
+        ipa: "/ˈmʌni ˈnætʃərəli floʊz tu mi, dʒʌst laɪk ði ɛr aɪ brið/",
+        zh: "金錢自然而然流向我，就像我呼吸空氣那樣容易自然。"
+      },
+      {
+        en: "Visualizing my wealthy life makes me so excited.",
+        ipa: "/ˈvɪʒuəˌlaɪzɪŋ maɪ ˈwɛlθi laɪf meɪks mi soʊ ɪkˈsaɪtɪd/",
+        zh: "在腦海中想像富足生活，令我無比興奮與期待。"
+      },
+      {
+        en: "Money comes to me from unexpected directions.",
+        ipa: "/ˈmʌni kʌmz tu mi frʌm ˌʌnɪkˈspɛktɪd dəˈrɛkʃənz/",
+        zh: "金錢從各個未曾料想的方向朝我湧現。"
+      },
+      {
+        en: "I have the power to create the wealth I dream of.",
+        ipa: "/aɪ hæv ðə ˈpaʊər tu kriˈeɪt ðə wɛlθ aɪ drim ʌv/",
+        zh: "我擁有創造自己夢想財富的力量。"
+      },
+      {
+        en: "My mind is constantly giving me wealthy thoughts.",
+        ipa: "/maɪ maɪnd ɪz ˈkɑnstəntli ˈɡɪvɪŋ mi ˈwɛlθi θɔts/",
+        zh: "我的心智源源不斷地帶給我富有與豐盛的想法。"
+      },
+      {
+        en: "I am attracting my dream rich life.",
+        ipa: "/aɪ æm əˈtræktɪŋ maɪ drim rɪtʃ laɪf/",
+        zh: "我正吸引著我夢寐以求的富足人生。"
+      },
+      {
+        en: "My bank balance is increasing every day.",
+        ipa: "/maɪ bæŋk ˈbæləns ɪz ɪnˈkrisɪŋ ˈɛvri deɪ/",
+        zh: "我的銀行存款餘額每天都在增長。"
+      },
+      {
+        en: "I attract all the money I need for everything I want.",
+        ipa: "/aɪ əˈtrækt ɔl ðə ˈmʌni aɪ nid fɔr ˈɛvriˌθɪŋ aɪ wɑnt/",
+        zh: "我吸引著實現一切願望所需的所有資金。"
+      },
+      {
+        en: "I am so grateful to finally be financially free—thank you, thank you, thank you.",
+        ipa: "/aɪ æm soʊ ˈɡreɪtfəl tu ˈfaɪnəli bi faɪˈnænʃəli fri—θæŋk ju, θæŋk ju, θæŋk ju/",
+        zh: "我無比感激終於獲得財務自由——謝謝您，謝謝您，謝謝您。"
+      },
+      {
+        en: "I love sharing my wealth with my family and friends.",
+        ipa: "/aɪ lʌv ˈʃɛrɪŋ maɪ wɛlθ wɪð maɪ ˈfæməli ənd frɛndz/",
+        zh: "我熱愛與我的家人和朋友分享我的財富。"
+      },
+      {
+        en: "The Universe is always taking care of me.",
+        ipa: "/ði ˈjunəˌvɜrs ɪz ˈɔlweɪz ˈteɪkɪŋ kɛr ʌv mi/",
+        zh: "宇宙始終細心照料著我的一切需求。"
+      },
+      {
+        en: "I can see money flowing to me.",
+        ipa: "/aɪ kæn si ˈmʌni ˈfloʊɪŋ tu mi/",
+        zh: "我清楚看見金錢正向著我奔流而來。"
+      },
+      {
+        en: "I am wealthy, healthy, and so happy.",
+        ipa: "/aɪ æm ˈwɛlθi, ˈhɛlθi, ənd soʊ ˈhæpi/",
+        zh: "我富有、健康，而且無比幸福快樂。"
+      },
+      {
+        en: "The more I give, the more I receive.",
+        ipa: "/ðə mɔr aɪ ɡɪv, ðə mɔr aɪ rɪˈsiv/",
+        zh: "我給予得越多，收穫的就越多。"
+      },
+      {
+        en: "I love my happy, abundant life.",
+        ipa: "/aɪ lʌv maɪ ˈhæpi, əˈbʌndənt laɪf/",
+        zh: "我熱愛我這幸福快樂且充實豐盛的生活。"
+      },
+      {
+        en: "My finances are growing every day.",
+        ipa: "/maɪ faɪˈnænsɪz ɑr ˈɡroʊɪŋ ˈɛvri deɪ/",
+        zh: "我的財務狀況一天比一天茁壯成長。"
+      },
+      {
+        en: "I have an unshakeable wealth mindset.",
+        ipa: "/aɪ hæv ən ʌnˈʃeɪkəbəl wɛlθ ˈmaɪndˌsɛt/",
+        zh: "我擁有一顆堅不可摧的致富心態。"
+      },
+      {
+        en: "There is unlimited abundance available.",
+        ipa: "/ðɛr ɪz ʌnˈlɪmɪtɪd əˈbʌndəns əˈveɪləbəl/",
+        zh: "世間有著無窮無盡的豐盛隨時可供取用。"
+      },
+      {
+        en: "I deserve to have my dreams come true.",
+        ipa: "/aɪ dɪˈzɜrv tu hæv maɪ drimz kʌm tru/",
+        zh: "我值得讓我的所有夢想成真。"
+      },
+      {
+        en: "The richer and happier I am, the more I have to share with others.",
+        ipa: "/ðə ˈrɪtʃər ənd ˈhæpiər aɪ æm, ðə mɔr aɪ hæv tu ʃɛr wɪð ˈʌðərz/",
+        zh: "我越富有越快樂，就有越多的餘裕能與他人分享。"
+      },
+      {
+        en: "I deserve to be wealthy.",
+        ipa: "/aɪ dɪˈzɜrv tu bi ˈwɛlθi/",
+        zh: "我天生就值得享有富裕。"
+      },
+      {
+        en: "Riches are my birthright.",
+        ipa: "/ˈrɪtʃɪz ɑr maɪ ˈbɜrθˌraɪt/",
+        zh: "富裕財富是我與生俱來的權利。"
+      },
+      {
+        en: "I love getting checks in the mail!",
+        ipa: "/aɪ lʌv ˈɡɛtɪŋ tʃɛks ɪn ðə meɪl/",
+        zh: "我好喜歡在信箱收到進帳支票的驚喜！"
+      },
+      {
+        en: "The Universe has unlimited ways to bring money to me.",
+        ipa: "/ði ˈjunəˌvɜrs hæz ʌnˈlɪmɪtɪd weɪz tu brɪŋ ˈmʌni tu mi/",
+        zh: "宇宙有無限多種方式把金錢送到我手中。"
+      },
+      {
+        en: "I am on the frequency of riches.",
+        ipa: "/aɪ æm ɑn ðə ˈfrikwənsi ʌv ˈrɪtʃɪz/",
+        zh: "我正處於調和豐盛財富的最高同頻共振中。"
+      },
+      {
+        en: "Financial freedom is easy.",
+        ipa: "/faɪˈnænʃəl ˈfridəm ɪz ˈizi/",
+        zh: "實現財務自由是簡單輕省的。"
+      },
+      {
+        en: "I am open to receiving all of the riches I desire.",
+        ipa: "/aɪ æm ˈoʊpən tu rɪˈsivɪŋ ɔl ʌv ðə ˈrɪtʃɪz aɪ dɪˈzaɪər/",
+        zh: "我敞開身心，接納一切我所渴望的豐盛。"
+      },
+      {
+        en: "I am a match to wealth.",
+        ipa: "/aɪ æm ə mætʃ tu wɛlθ/",
+        zh: "我與財富頻率完美契合。"
+      },
+      {
+        en: "I am receiving abundance in many different forms.",
+        ipa: "/aɪ æm rɪˈsivɪŋ əˈbʌndəns ɪn ˈmɛni ˈdɪfərənt fɔrmz/",
+        zh: "我正以多元豐富的形態接收著各樣豐盛。"
+      },
+      {
+        en: "Thank you for the lavish abundance that continues to surround and permeate me.",
+        ipa: "/θæŋk ju fɔr ðə ˈlævɪʃ əˈbʌndəns ðæt kənˈtɪnjuz tu səˈraʊnd ənd ˈpɜrmiˌeɪt mi/",
+        zh: "感恩那持續環繞並浸潤我全人的盛大富足。"
+      },
+      {
+        en: "Money is magnetized to me, and I am magnetized to money.",
+        ipa: "/ˈmʌni ɪz ˈmæɡnəˌtaɪzd tu mi, ənd aɪ æm ˈmæɡnəˌtaɪzd tu ˈmʌni/",
+        zh: "金錢被我吸引，我也強力吸引著金錢。"
+      },
+      {
+        en: "I have multiple income streams.",
+        ipa: "/aɪ hæv ˈmʌltəpəl ˈɪnˌkʌm strimz/",
+        zh: "我擁有源源不絕的多元被動收入來源。"
+      },
+      {
+        en: "I love my rich life!",
+        ipa: "/aɪ lʌv maɪ rɪtʃ laɪf/",
+        zh: "我深愛我這豐足精彩的富裕生活！"
+      },
+      {
+        en: "Wealth is constantly flowing into my life.",
+        ipa: "/wɛlθ ɪz ˈkɑnstəntli ˈfloʊɪŋ ˈɪntu maɪ laɪf/",
+        zh: "財富源源不絕地流灌進我的生命。"
+      },
+      {
+        en: "My intention is for financial freedom for myself and everyone.",
+        ipa: "/maɪ ɪnˈtɛnʃən ɪz fɔr faɪˈnænʃəl ˈfridəm fɔr maɪˈsɛlf ənd ˈɛvriˌwʌn/",
+        zh: "我的意圖是讓自己與所有人都能得享財務自由。"
+      },
+      {
+        en: "Money comes to me effortlessly.",
+        ipa: "/ˈmʌni kʌmz tu mi ˈɛfərtləsli/",
+        zh: "金錢毫不費力地來到我身邊。"
+      },
+      {
+        en: "I constantly keep my mind trained on wealth.",
+        ipa: "/aɪ ˈkɑnstəntli kip maɪ maɪnd treɪnd ɑn wɛlθ/",
+        zh: "我持續將心思鍛鍊並聚焦於財富之上。"
+      },
+      {
+        en: "The Universe is taking care of all of my needs.",
+        ipa: "/ði ˈjunəˌvɜrs ɪz ˈteɪkɪŋ kɛr ʌv ɔl ʌv maɪ nidz/",
+        zh: "宇宙全心呵護並打理我所有的需要。"
+      },
+      {
+        en: "I am so grateful for the wealth that I am attracting every day.",
+        ipa: "/aɪ æm soʊ ˈɡreɪtfəl fɔr ðə wɛlθ ðæt aɪ æm əˈtræktɪŋ ˈɛvri deɪ/",
+        zh: "我深深感恩我每天所吸引來的富足與財富。"
+      },
+      {
+        en: "My rich thoughts are changing my financial circumstances in this moment.",
+        ipa: "/maɪ rɪtʃ θɔts ɑr ˈtʃeɪndʒɪŋ maɪ faɪˈnænʃəl ˈsɜrkəmˌstænsɪz ɪn ðɪs ˈmoʊmənt/",
+        zh: "我富足的念頭在此刻便實質扭轉著我的財務處境。"
+      },
+      {
+        en: "I love thinking about having plenty of money.",
+        ipa: "/aɪ lʌv ˈθɪŋkɪŋ əˈbaʊt ˈhævɪŋ ˈplɛnti ʌv ˈmʌni/",
+        zh: "我喜愛沉浸在金錢富足盈餘的美好思緒中。"
+      },
+      {
+        en: "I am so grateful for the wealth I am blessed with.",
+        ipa: "/aɪ æm soʊ ˈɡreɪtfəl fɔr ðə wɛlθ aɪ æm blɛst wɪð/",
+        zh: "我深為自己所蒙受的富足恩澤而由衷感恩。"
+      },
+      {
+        en: "I inspire everyone around me to create wealth through the power of their mind.",
+        ipa: "/aɪ ɪnˈspaɪər ˈɛvriˌwʌn əˈraʊnd mi tu kriˈeɪt wɛlθ θru ðə ˈpaʊər ʌv ðɛr maɪnd/",
+        zh: "我啟發身邊的每一個人，透過心靈思維的力量創造財富。"
+      },
+      {
+        en: "I am deserving of wealth.",
+        ipa: "/aɪ æm dɪˈzɜrvɪŋ ʌv wɛlθ/",
+        zh: "我是全然值得享有富貴財富的。"
+      },
+      {
+        en: "The Universe wants me to be abundant.",
+        ipa: "/ði ˈjunəˌvɜrs wɑnts mi tu bi əˈbʌndənt/",
+        zh: "宇宙極度渴望我生活在無盡的豐盛之中。"
+      },
+      {
+        en: "I am focused on wealth, so wealth is mine.",
+        ipa: "/aɪ æm ˈfoʊkəst ɑn wɛlθ, soʊ wɛlθ ɪz maɪn/",
+        zh: "我的焦點放在財富上，因此財富必然屬於我。"
+      },
+      {
+        en: "The feeling of being financially free is so wonderful.",
+        ipa: "/ðə ˈfilɪŋ ʌv ˈbiɪŋ faɪˈnænʃəli fri ɪz soʊ ˈwʌndərfəl/",
+        zh: "擁抱財務自由的感覺實在無與倫比的美好。"
+      },
+      {
+        en: "My thoughts are constantly focused on wealth, prosperity, and riches.",
+        ipa: "/maɪ θɔts ɑr ˈkɑnstəntli ˈfoʊkəst ɑn wɛlθ, prɑˈspɛrɪti, ənd ˈrɪtʃɪz/",
+        zh: "我的思緒無時無刻聚焦在財富、繁榮與興盛上。"
+      },
+      {
+        en: "I am wealthy; I am wealthy; I am wealthy.",
+        ipa: "/aɪ æm ˈwɛlθi; aɪ æm ˈwɛlθi; aɪ æm ˈwɛlθi/",
+        zh: "我很富有；我很富有；我是無比富有的。"
+      },
+      {
+        en: "I am rich; I am rich; I am rich.",
+        ipa: "/aɪ æm rɪtʃ; aɪ æm rɪtʃ; aɪ æm rɪtʃ/",
+        zh: "我是富翁；我是富足的；我已豐盛圓滿。"
+      }
+    ];
+
+    // Application State
+    const BATCH_SIZE = 10;
+    const totalSentences = affirmationsDatabase.length;
+    const totalGroups = Math.ceil(totalSentences / BATCH_SIZE);
+
+    let currentGroupIndex = 0; // 0-based
+    let showChineseTranslation = false;
+    let isPlayingAll = false;
+    let currentReadingIndexInBatch = -1; // -1: none
+    let speechSynth = window.speechSynthesis;
+    let availableVoices = [];
+    let currentPlaybackRate = 0.9; // Default speech rate (0.1x step compatible)
+    let currentTone = 'professional'; // Default tone style
+
+    /* Tone Style Presets (調整語調 Pitch 與節奏步調) */
+    const toneProfiles = {
+      gentle: {
+        name: '溫和緩慢',
+        pitch: 0.88,
+        rateMultiplier: 0.88
+      },
+      professional: {
+        name: '專業沉穩',
+        pitch: 1.0,
+        rateMultiplier: 1.0
+      },
+      uplifting: {
+        name: '陽光振奮',
+        pitch: 1.18,
+        rateMultiplier: 1.08
+      }
+    };
+
+    // DOM Elements
+    const sentenceListContainer = document.getElementById('sentenceListContainer');
+    const btnNextBatch = document.getElementById('btnNextBatch');
+    const btnNextBatchBottom = document.getElementById('btnNextBatchBottom');
+    const btnPrevBatch = document.getElementById('btnPrevBatch');
+    const btnToggleChinese = document.getElementById('btnToggleChinese');
+    const lblToggleChinese = document.getElementById('lblToggleChinese');
+    const btnPlayAll = document.getElementById('btnPlayAll');
+    const iconPlayAll = document.getElementById('iconPlayAll');
+    const textPlayAll = document.getElementById('textPlayAll');
+    const currentGroupLabel = document.getElementById('currentGroupLabel');
+    const groupSelect = document.getElementById('groupSelect');
+    const voiceSelect = document.getElementById('voiceSelect');
+    const readingBadge = document.getElementById('readingBadge');
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    const btnSpeedDown = document.getElementById('btnSpeedDown');
+    const btnSpeedUp = document.getElementById('btnSpeedUp');
+    const speedDisplay = document.getElementById('speedDisplay');
+    const toneSelect = document.getElementById('toneSelect');
+
+    /* Update speed display & bound check (0.1x step) */
+    function updateSpeed(newRate) {
+      // Clamped between 0.5x and 2.0x, rounded to 1 decimal place
+      currentPlaybackRate = Math.min(Math.max(parseFloat(newRate.toFixed(1)), 0.5), 2.0);
+      speedDisplay.textContent = currentPlaybackRate.toFixed(1) + 'x';
+      showToast(`語速微調為 ${currentPlaybackRate.toFixed(1)}x`);
+    }
+
+    btnSpeedDown.addEventListener('click', () => {
+      updateSpeed(currentPlaybackRate - 0.1);
+    });
+
+    btnSpeedUp.addEventListener('click', () => {
+      updateSpeed(currentPlaybackRate + 0.1);
+    });
+
+    /* Tone Selection Change Listener */
+    toneSelect.addEventListener('change', (e) => {
+      currentTone = e.target.value;
+      const profile = toneProfiles[currentTone] || toneProfiles.professional;
+      showToast(`已切換口吻：${profile.name}`);
+    });
+
+    /* Show Toast Notification helper */
+    function showToast(text) {
+      toastMsg.textContent = text;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2200);
+    }
+    function renderCurrentBatch() {
+      // Stop ongoing speech when batch switches
+      stopReading();
+
+      const startIdx = currentGroupIndex * BATCH_SIZE;
+      const endIdx = Math.min(startIdx + BATCH_SIZE, totalSentences);
+      const currentBatch = affirmationsDatabase.slice(startIdx, endIdx);
+
+      // Update indicators
+      currentGroupLabel.textContent = `第 ${currentGroupIndex + 1} / ${totalGroups} 組`;
+      groupSelect.value = currentGroupIndex;
+
+      // Render Sentence Cards with Wool Felt & Metallic Details
+      sentenceListContainer.innerHTML = '';
+
+      currentBatch.forEach((item, index) => {
+        const globalNumber = startIdx + index + 1;
+        const card = document.createElement('div');
+        card.id = `card-${index}`;
+        card.className = "felt-card p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4";
+
+        card.innerHTML = `
+          <div class="flex items-start gap-3 sm:gap-4 flex-1">
+            <!-- Wool Felt Stitched Patch Number Badge -->
+            <div class="w-8 h-8 rounded-full bg-[#eee5d6] text-amber-900 border border-dashed border-[#b8a287] shadow-sm flex-shrink-0 flex items-center justify-center font-bold text-xs mt-0.5">
+              ${globalNumber}
+            </div>
+
+            <!-- Content Area: Sentence, IPA, Chinese -->
+            <div class="space-y-1.5 flex-1">
+              <!-- English Sentence -->
+              <p class="text-base sm:text-lg font-semibold text-stone-800 tracking-wide font-sans leading-relaxed">
+                ${item.en}
+              </p>
+
+              <!-- Phonetic Symbols (IPA) with Felt Label look -->
+              <div class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono text-amber-900 bg-[#f3ecdf] border border-dashed border-[#d8c5af] px-3 py-1 rounded-lg">
+                <i class="fa-solid fa-volume-low text-[10px] text-amber-600"></i>
+                <span class="tracking-wider">${item.ipa}</span>
+              </div>
+
+              <!-- Chinese Translation (Hidden or Shown based on toggle or individual click) -->
+              <div id="zh-${index}" class="chinese-content pt-1.5 text-sm text-stone-700 font-medium ${showChineseTranslation ? 'block' : 'hidden'}">
+                <span class="text-amber-800 font-bold mr-1.5"><i class="fa-solid fa-seedling text-xs"></i> 涵義:</span>${item.zh}
+              </div>
+            </div>
+          </div>
+
+          <!-- Individual Action Toolbar with Metallic Sheen -->
+          <div class="flex items-center justify-end gap-2.5 pt-2 md:pt-0 border-t md:border-t-0 border-[#eedecb] flex-shrink-0">
+            <!-- Individual Speak Button (Metallic Gold) -->
+            <button onclick="speakSingle(${index})" title="單句朗讀" class="btn-gold-metallic w-10 h-10 flex items-center justify-center text-sm active:scale-95">
+              <i id="speaker-icon-${index}" class="fa-solid fa-volume-high"></i>
+            </button>
+
+            <!-- Individual Chinese Toggle Button -->
+            <button onclick="toggleSingleChinese(${index})" title="查看此句翻譯" class="btn-metallic-subtle px-3.5 h-10 rounded-xl text-xs font-bold flex items-center gap-1.5 active:scale-95">
+              <i class="fa-solid fa-language text-sm text-amber-700"></i>
+              <span>中譯</span>
+            </button>
+          </div>
+        `;
+        sentenceListContainer.appendChild(card);
+      });
+
+      // Update Prev / Next button states
+      btnPrevBatch.disabled = currentGroupIndex === 0;
+      btnPrevBatch.classList.toggle('opacity-50', currentGroupIndex === 0);
+      btnPrevBatch.classList.toggle('cursor-not-allowed', currentGroupIndex === 0);
+    }
+
+    function speakSentenceText(text, onEndCallback) {
+      if (!('speechSynthesis' in window)) {
+        showToast('您的瀏覽器不支援語音朗讀');
+        if (onEndCallback) onEndCallback();
+        return;
+      }
+
+      speechSynth.cancel(); // Clear previous speech queue
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      
+      // Apply selected Tone Profile (Pitch & Rate Multiplier)
+      const tone = toneProfiles[currentTone] || toneProfiles.professional;
+      const effectiveRate = Math.min(Math.max(currentPlaybackRate * tone.rateMultiplier, 0.5), 2.0);
+      utterance.rate = parseFloat(effectiveRate.toFixed(2));
+      utterance.pitch = tone.pitch;
+
+      const selectedVoiceVal = voiceSelect.value;
+
+      // Compatibility Modes:
+      if (selectedVoiceVal === 'compat_default' || !selectedVoiceVal) {
+        // High compatibility pure system default: let browser pick the best native English voice
+        utterance.lang = 'en-US';
+        utterance.voice = null;
+      } else if (selectedVoiceVal === 'compat_us') {
+        utterance.lang = 'en-US';
+        const usVoice = availableVoices.find(v => v.lang === 'en-US' || v.lang === 'en_US');
+        if (usVoice) utterance.voice = usVoice;
+      } else if (selectedVoiceVal === 'compat_gb') {
+        utterance.lang = 'en-GB';
+        const gbVoice = availableVoices.find(v => v.lang === 'en-GB' || v.lang === 'en_GB');
+        if (gbVoice) utterance.voice = gbVoice;
+      } else if (selectedVoiceVal.startsWith('voice_')) {
+        const vIdx = parseInt(selectedVoiceVal.replace('voice_', ''), 10);
+        if (availableVoices[vIdx]) {
+          utterance.voice = availableVoices[vIdx];
+          utterance.lang = availableVoices[vIdx].lang;
+        } else {
+          utterance.lang = 'en-US';
+        }
+      }
+
+      let hasFinished = false;
+      const finishExecution = () => {
+        if (!hasFinished) {
+          hasFinished = true;
+          if (onEndCallback) onEndCallback();
+        }
+      };
+
+      utterance.onend = finishExecution;
+
+      // Error handler with automatic compatibility retry
+      utterance.onerror = (e) => {
+        console.warn('SpeechSynthesis error:', e);
+        // If a specific voice failed (common on mobile WebKit/Android), retry once with pure system default
+        if (utterance.voice) {
+          const fallbackUtterance = new SpeechSynthesisUtterance(text);
+          fallbackUtterance.lang = 'en-US';
+          fallbackUtterance.rate = utterance.rate;
+          fallbackUtterance.pitch = utterance.pitch;
+          fallbackUtterance.onend = finishExecution;
+          fallbackUtterance.onerror = () => finishExecution();
+          speechSynth.speak(fallbackUtterance);
+        } else {
+          finishExecution();
+        }
+      };
+
+      speechSynth.speak(utterance);
+    }
+
+    /* Highlight reading card */
+    function highlightCard(indexInBatch) {
+      clearHighlight();
+      currentReadingIndexInBatch = indexInBatch;
+      const card = document.getElementById(`card-${indexInBatch}`);
+      if (card) {
+        card.classList.add('reading-active');
+        const icon = document.getElementById(`speaker-icon-${indexInBatch}`);
+        if (icon) {
+          icon.className = "fa-solid fa-waveform-lines animate-bounce text-amber-700";
+        }
+      }
+      readingBadge.classList.remove('hidden');
+      readingBadge.classList.add('inline-flex');
+    }
+
+    /* Clear all active reading card highlights */
+    function clearHighlight() {
+      const cards = document.querySelectorAll('.felt-card');
+      cards.forEach(card => card.classList.remove('reading-active'));
+      const icons = document.querySelectorAll('[id^="speaker-icon-"]');
+      icons.forEach(ic => {
+        ic.className = "fa-solid fa-volume-high";
+      });
+      readingBadge.classList.add('hidden');
+      readingBadge.classList.remove('inline-flex');
+      currentReadingIndexInBatch = -1;
+    }
+
+    /* Stop speech engine and reading loops */
+    function stopReading() {
+      if (speechSynth) speechSynth.cancel();
+      isPlayingAll = false;
+      updatePlayAllButtonUI();
+      clearHighlight();
+    }
+
+    function loadVoices() {
+      if (!('speechSynthesis' in window)) return;
+      const allVoices = speechSynth.getVoices();
+      availableVoices = allVoices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+      if (availableVoices.length === 0) availableVoices = allVoices;
+
+      const currentValue = voiceSelect.value;
+      voiceSelect.innerHTML = '';
+
+      // 1. High compatibility preset group
+      const compatGroup = document.createElement('optgroup');
+      compatGroup.label = "相容通用模式 (推薦/相容性最佳)";
+
+      const optCompatDefault = document.createElement('option');
+      optCompatDefault.value = 'compat_default';
+      optCompatDefault.textContent = '🌐 系統最高相容 (標準發音)';
+
+      const optCompatUS = document.createElement('option');
+      optCompatUS.value = 'compat_us';
+      optCompatUS.textContent = '🇺🇸 美式相容預設 (en-US)';
+
+      const optCompatGB = document.createElement('option');
+      optCompatGB.value = 'compat_gb';
+      optCompatGB.textContent = '🇬🇧 英式相容預設 (en-GB)';
+
+      compatGroup.appendChild(optCompatDefault);
+      compatGroup.appendChild(optCompatUS);
+      compatGroup.appendChild(optCompatGB);
+      voiceSelect.appendChild(compatGroup);
+
+      // 2. Hardware / Browser Installed Voice List
+      if (availableVoices.length > 0) {
+        const hardwareGroup = document.createElement('optgroup');
+        hardwareGroup.label = "系統內建音色清單 (可指定)";
+
+        availableVoices.forEach((voice, index) => {
+          const option = document.createElement('option');
+          option.value = `voice_${index}`;
+          // Clean display name
+          const flag = voice.lang.includes('GB') ? '🇬🇧 ' : voice.lang.includes('US') ? '🇺🇸 ' : '🗣️ ';
+          option.textContent = `${flag}${voice.name} (${voice.lang})`;
+          hardwareGroup.appendChild(option);
+        });
+
+        voiceSelect.appendChild(hardwareGroup);
+      }
+
+      // Restore selection or default to universal compatible mode
+      if (currentValue && voiceSelect.querySelector(`option[value="${currentValue}"]`)) {
+        voiceSelect.value = currentValue;
+      } else {
+        voiceSelect.value = 'compat_default';
+      }
+    }
+
+    /* Initialize group jumping dropdown */
+    function initGroupSelect() {
+      groupSelect.innerHTML = '';
+      for (let i = 0; i < totalGroups; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = `第 ${i + 1} 組 (${i * BATCH_SIZE + 1} ~ ${Math.min((i + 1) * BATCH_SIZE, totalSentences)})`;
+        groupSelect.appendChild(option);
+      }
+    }
+
+    /* Read single sentence */
+    window.speakSingle = function(indexInBatch) {
+      if (isPlayingAll) {
+        stopReading();
+      }
+
+      const startIdx = currentGroupIndex * BATCH_SIZE;
+      const item = affirmationsDatabase[startIdx + indexInBatch];
+      if (!item) return;
+
+      highlightCard(indexInBatch);
+      speakSentenceText(item.en, () => {
+        clearHighlight();
+      });
+    };
+
+    /* Continuous play of the current 10 sentences */
+    function playAllCurrentBatch() {
+      if (isPlayingAll) {
+        stopReading();
+        showToast('已停止朗讀');
+        return;
+      }
+
+      const startIdx = currentGroupIndex * BATCH_SIZE;
+      const endIdx = Math.min(startIdx + BATCH_SIZE, totalSentences);
+      const currentBatch = affirmationsDatabase.slice(startIdx, endIdx);
+
+      if (currentBatch.length === 0) return;
+
+      isPlayingAll = true;
+      updatePlayAllButtonUI();
+      showToast(`開始依序朗讀第 ${currentGroupIndex + 1} 組的 10 個句子`);
+
+      let currentItemIndex = 0;
+
+      function speakNextInQueue() {
+        if (!isPlayingAll) return;
+
+        if (currentItemIndex >= currentBatch.length) {
+          // Finished reading the 10 sentences
+          stopReading();
+          showToast('當前 10 句朗讀完畢！');
+          return;
+        }
+
+        highlightCard(currentItemIndex);
+        const sentenceToRead = currentBatch[currentItemIndex].en;
+
+        speakSentenceText(sentenceToRead, () => {
+          currentItemIndex++;
+          // Small pause between sentences for clarity
+          setTimeout(() => {
+            if (isPlayingAll) {
+              speakNextInQueue();
+            }
+          }, 650);
+        });
+      }
+
+      speakNextInQueue();
+    }
+
+    function updatePlayAllButtonUI() {
+      if (isPlayingAll) {
+        btnPlayAll.classList.replace('btn-gold-metallic', 'bg-rose-600');
+        btnPlayAll.classList.add('text-white');
+        iconPlayAll.className = "fa-solid fa-pause";
+        textPlayAll.textContent = "停止朗讀";
+      } else {
+        btnPlayAll.classList.replace('bg-rose-600', 'btn-gold-metallic');
+        btnPlayAll.classList.remove('text-white');
+        iconPlayAll.className = "fa-solid fa-play";
+        textPlayAll.textContent = "朗讀此 10 句";
+      }
+    }
+
+    // Individual Chinese toggle
+    window.toggleSingleChinese = function(indexInBatch) {
+      const el = document.getElementById(`zh-${indexInBatch}`);
+      if (el) {
+        el.classList.toggle('hidden');
+      }
+    };
+
+    // Global Chinese translation toggle button
+    function toggleAllChinese() {
+      showChineseTranslation = !showChineseTranslation;
+      if (showChineseTranslation) {
+        lblToggleChinese.textContent = "隱藏中文翻譯";
+      } else {
+        lblToggleChinese.textContent = "顯示中文翻譯";
+      }
+
+      // Update all visible cards
+      const elements = document.querySelectorAll('.chinese-content');
+      elements.forEach(el => {
+        if (showChineseTranslation) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+
+      showToast(showChineseTranslation ? '已顯示全部中文翻譯' : '已隱藏中文翻譯');
+    }
+
+    // Switch to next batch of 10 sentences
+    function goToNextBatch() {
+      currentGroupIndex = (currentGroupIndex + 1) % totalGroups;
+      renderCurrentBatch();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      showToast(`已切換至第 ${currentGroupIndex + 1} 組 (共 10 句)`);
+    }
+
+    // Switch to previous batch of 10 sentences
+    function goToPrevBatch() {
+      if (currentGroupIndex > 0) {
+        currentGroupIndex--;
+        renderCurrentBatch();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        showToast(`已切換至第 ${currentGroupIndex + 1} 組 (共 10 句)`);
+      }
+    }
+
+    // Event Listeners
+    btnNextBatch.addEventListener('click', goToNextBatch);
+    btnNextBatchBottom.addEventListener('click', goToNextBatch);
+    btnPrevBatch.addEventListener('click', goToPrevBatch);
+    btnToggleChinese.addEventListener('click', toggleAllChinese);
+    btnPlayAll.addEventListener('click', playAllCurrentBatch);
+
+    groupSelect.addEventListener('change', (e) => {
+      currentGroupIndex = parseInt(e.target.value, 10);
+      renderCurrentBatch();
+      showToast(`已跳轉至第 ${currentGroupIndex + 1} 組`);
+    });
+
+    /* Falling Gold Dust & Abundant Shining Gold Coins Canvas Animation */
+    function initGoldCanvas() {
+      const canvas = document.getElementById('goldCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      const particles = [];
+      // Rich abundance of spinning coins and sparkling gold dust
+      const COIN_COUNT = 75;
+      const DUST_COUNT = 55;
+
+      // Initialize Coins
+      for (let i = 0; i < COIN_COUNT; i++) {
+        particles.push(createCoin(true));
+      }
+      // Initialize Sparkling Stardust
+      for (let i = 0; i < DUST_COUNT; i++) {
+        particles.push(createDust(true));
+      }
+
+      function createCoin(randomY = false) {
+        const radius = Math.random() * 8 + 8; // Sizes from 8px to 16px radius
+        return {
+          type: 'coin',
+          x: Math.random() * width,
+          y: randomY ? Math.random() * height : -30 - Math.random() * 50,
+          radius: radius,
+          speedY: Math.random() * 1.5 + 1.1,
+          speedX: (Math.random() - 0.5) * 0.9,
+          // 3D rotation & wobble angles
+          rotZ: Math.random() * Math.PI * 2,
+          rotZSpeed: (Math.random() - 0.5) * 0.04,
+          spinAngle: Math.random() * Math.PI * 2,
+          spinSpeed: Math.random() * 0.065 + 0.035, // Rate of coin tumbling
+          wobbleAngle: Math.random() * Math.PI * 2,
+          wobbleSpeed: Math.random() * 0.03 + 0.015,
+          glintPhase: Math.random() * Math.PI * 2,
+          glintSpeed: Math.random() * 0.08 + 0.05,
+          opacity: Math.random() * 0.35 + 0.65
+        };
+      }
+
+      function createDust(randomY = false) {
+        return {
+          type: 'dust',
+          x: Math.random() * width,
+          y: randomY ? Math.random() * height : -15,
+          radius: Math.random() * 2.8 + 1.2,
+          speedY: Math.random() * 0.75 + 0.35,
+          speedX: (Math.random() - 0.5) * 0.6,
+          pulse: Math.random() * Math.PI * 2,
+          pulseSpeed: Math.random() * 0.07 + 0.03,
+          sparkleRays: Math.random() < 0.35 // 35% chance to draw 4-point sparkle star
+        };
+      }
+
+      function drawCoin(c) {
+        ctx.save();
+        ctx.translate(c.x, c.y);
+        ctx.rotate(c.rotZ);
+
+        // 3D vertical coin flipping compression
+        const flip = Math.sin(c.spinAngle);
+        const absFlip = Math.max(Math.abs(flip), 0.08); // Maintain minimal thickness edge
+        ctx.scale(1, flip);
+
+        // Ambient coin glow
+        ctx.shadowColor = 'rgba(255, 215, 0, 0.65)';
+        ctx.shadowBlur = 10 * absFlip;
+
+        // Outer rim gradient
+        const rimGrad = ctx.createLinearGradient(-c.radius, -c.radius, c.radius, c.radius);
+        rimGrad.addColorStop(0, '#fff4b8');
+        rimGrad.addColorStop(0.2, '#f5c042');
+        rimGrad.addColorStop(0.5, '#e0981b');
+        rimGrad.addColorStop(0.8, '#ffeaa5');
+        rimGrad.addColorStop(1, '#9b5b03');
+
+        ctx.beginPath();
+        ctx.arc(0, 0, c.radius, 0, Math.PI * 2);
+        ctx.fillStyle = rimGrad;
+        ctx.globalAlpha = c.opacity;
+        ctx.fill();
+
+        // High-contrast inner rim
+        ctx.beginPath();
+        ctx.arc(0, 0, c.radius * 0.8, 0, Math.PI * 2);
+        const innerGrad = ctx.createRadialGradient(0, 0, 1, 0, 0, c.radius * 0.85);
+        innerGrad.addColorStop(0, '#fff9d6');
+        innerGrad.addColorStop(0.5, '#f4ba3b');
+        innerGrad.addColorStop(1, '#c97e0d');
+        ctx.fillStyle = innerGrad;
+        ctx.fill();
+
+        // Stitched/embossed concentric ring
+        ctx.beginPath();
+        ctx.arc(0, 0, c.radius * 0.72, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.75)';
+        ctx.lineWidth = Math.max(0.8, c.radius * 0.08);
+        ctx.stroke();
+
+        // Dollar sign ($) relief engraving
+        if (absFlip > 0.35) {
+          ctx.font = `bold ${Math.round(c.radius * 0.95)}px "Cinzel", "Times New Roman", serif`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillStyle = 'rgba(97, 54, 2, 0.85)';
+          ctx.shadowColor = 'rgba(255, 255, 255, 0.7)';
+          ctx.shadowBlur = 2;
+          ctx.fillText('$', 0, 0.8);
+        }
+
+        // Shimmering specular reflection bar
+        const glintVal = Math.sin(c.glintPhase);
+        if (glintVal > 0.4 && absFlip > 0.25) {
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(0, 0, c.radius, 0, Math.PI * 2);
+          ctx.clip();
+          
+          const glintPos = (glintVal - 0.7) * 2.5 * c.radius;
+          const glintGrad = ctx.createLinearGradient(glintPos - 5, -c.radius, glintPos + 5, c.radius);
+          glintGrad.addColorStop(0, 'rgba(255, 255, 255, 0)');
+          glintGrad.addColorStop(0.5, 'rgba(255, 255, 255, 0.9)');
+          glintGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+          
+          ctx.fillStyle = glintGrad;
+          ctx.fillRect(-c.radius, -c.radius, c.radius * 2, c.radius * 2);
+          ctx.restore();
+        }
+
+        ctx.restore();
+
+        // Exterior star glint burst when reflection peaks
+        if (glintVal > 0.88 && absFlip > 0.5) {
+          drawGlintStar(c.x + Math.cos(c.rotZ) * c.radius * 0.6, c.y + Math.sin(c.rotZ) * c.radius * 0.6, (glintVal - 0.88) * 45);
+        }
+      }
+
+      function drawGlintStar(x, y, size) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.fillStyle = '#ffffff';
+        ctx.shadowColor = '#ffe375';
+        ctx.shadowBlur = 8;
+        
+        ctx.beginPath();
+        for (let i = 0; i < 4; i++) {
+          ctx.rotate(Math.PI / 2);
+          ctx.lineTo(size, 0);
+          ctx.lineTo(size * 0.2, size * 0.2);
+        }
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+      }
+
+      function drawDust(d) {
+        ctx.save();
+        ctx.translate(d.x, d.y);
+        
+        const alpha = (Math.sin(d.pulse) + 1) * 0.45 + 0.15;
+        ctx.globalAlpha = alpha;
+
+        const radGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, d.radius * 2);
+        radGrad.addColorStop(0, '#ffffff');
+        radGrad.addColorStop(0.35, '#ffdf79');
+        radGrad.addColorStop(0.8, '#f5a623');
+        radGrad.addColorStop(1, 'rgba(245, 166, 35, 0)');
+
+        ctx.fillStyle = radGrad;
+        ctx.beginPath();
+        ctx.arc(0, 0, d.radius * 2, 0, Math.PI * 2);
+        ctx.fill();
+
+        if (d.sparkleRays && alpha > 0.6) {
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+          ctx.lineWidth = 0.8;
+          ctx.beginPath();
+          ctx.moveTo(-d.radius * 3, 0);
+          ctx.lineTo(d.radius * 3, 0);
+          ctx.moveTo(0, -d.radius * 3);
+          ctx.lineTo(0, d.radius * 3);
+          ctx.stroke();
+        }
+
+        ctx.restore();
+      }
+
+      function updateAndAnimate() {
+        ctx.clearRect(0, 0, width, height);
+
+        particles.forEach((p, idx) => {
+          if (p.type === 'coin') {
+            p.y += p.speedY;
+            p.x += Math.sin(p.wobbleAngle) * 0.75 + p.speedX;
+            p.wobbleAngle += p.wobbleSpeed;
+            p.spinAngle += p.spinSpeed;
+            p.rotZ += p.rotZSpeed;
+            p.glintPhase += p.glintSpeed;
+
+            drawCoin(p);
+
+            // Recycle coin back to top
+            if (p.y > height + 35 || p.x < -35 || p.x > width + 35) {
+              particles[idx] = createCoin(false);
+            }
+          } else {
+            p.y += p.speedY;
+            p.x += p.speedX;
+            p.pulse += p.pulseSpeed;
+
+            drawDust(p);
+
+            // Recycle dust speck
+            if (p.y > height + 15 || p.x < -15 || p.x > width + 15) {
+              particles[idx] = createDust(false);
+            }
+          }
+        });
+
+        requestAnimationFrame(updateAndAnimate);
+      }
+
+      updateAndAnimate();
+    }
+
+    /* Initial bootstrap on page load */
+    window.onload = function() {
+      initGroupSelect();
+      renderCurrentBatch();
+      initGoldCanvas();
+
+      if ('speechSynthesis' in window) {
+        loadVoices();
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+        // Safety retry for browsers (e.g., Safari/Chrome) where voices load asynchronously
+        setTimeout(loadVoices, 350);
+        setTimeout(loadVoices, 1000);
+      }
+    };
+  </script>
+</body>
+</html>
