@@ -196,6 +196,164 @@
       color: #462e13;
       border-color: #b59265;
     }
+
+    /* Golden Crystal Back-to-Top Floating Button */
+    .btn-gold-crystal {
+      background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.4) 0%, 
+        rgba(254, 240, 138, 0.35) 25%, 
+        rgba(245, 158, 11, 0.5) 60%, 
+        rgba(180, 83, 9, 0.6) 100%
+      ), linear-gradient(145deg, #eab308 0%, #b45309 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255, 250, 190, 0.85);
+      border-top: 2px solid #ffffff;
+      box-shadow: 
+        0 10px 25px -4px rgba(180, 83, 9, 0.45),
+        0 4px 10px rgba(0, 0, 0, 0.15),
+        inset 0 2px 5px rgba(255, 255, 255, 0.9),
+        inset 0 -3px 5px rgba(120, 53, 15, 0.55);
+      color: #fff9e6;
+      text-shadow: 0 1px 2px rgba(90, 35, 5, 0.8);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .btn-gold-crystal:hover {
+      transform: translateY(-4px) scale(1.06);
+      filter: brightness(1.12);
+      box-shadow: 
+        0 16px 30px -4px rgba(217, 119, 6, 0.6),
+        0 6px 14px rgba(0, 0, 0, 0.2),
+        inset 0 3px 6px rgba(255, 255, 255, 1),
+        inset 0 -3px 6px rgba(120, 53, 15, 0.6);
+    }
+
+    .btn-gold-crystal:active {
+      transform: translateY(0px) scale(0.96);
+    }
+
+    /* Constantly Gleaming Big Gold Coin - Exactly Matching Artwork */
+    .big-gold-coin-wrapper {
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .big-gold-coin {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: coinPulse 2.6s infinite ease-in-out;
+      cursor: pointer;
+      transition: transform 0.25s ease;
+      filter: drop-shadow(0 6px 14px rgba(186, 115, 12, 0.45));
+    }
+
+    .big-gold-coin:hover {
+      transform: scale(1.08) rotate(3deg);
+    }
+
+    /* Ambient Golden Aura Pulse Glow Layer */
+    .big-gold-coin-aura {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(254, 219, 88, 0.55) 0%, rgba(245, 158, 11, 0.25) 48%, transparent 72%);
+      animation: auraPulse 2.6s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Continuous Sweeping High-Reflectivity Light Bar */
+    .big-gold-coin-sweep {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 6;
+    }
+
+    .big-gold-coin-sweep::after {
+      content: '';
+      position: absolute;
+      top: -70%;
+      left: -120%;
+      width: 55%;
+      height: 240%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0.85) 50%,
+        rgba(255, 255, 255, 0.2) 80%,
+        transparent
+      );
+      transform: rotate(35deg);
+      animation: coinSweep 2.8s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Four-Point Diamond Star Glint on Edge */
+    .coin-sparkle-star {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 24px;
+      height: 24px;
+      pointer-events: none;
+      z-index: 10;
+      filter: drop-shadow(0 0 6px #fff7a1) drop-shadow(0 0 10px #f59e0b);
+      animation: starGlint 2.8s infinite ease-in-out;
+    }
+
+    @keyframes coinPulse {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 6px 14px rgba(186, 115, 12, 0.45));
+      }
+      50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 8px 22px rgba(245, 158, 11, 0.7)) drop-shadow(0 0 28px rgba(253, 224, 71, 0.75));
+      }
+    }
+
+    @keyframes auraPulse {
+      0%, 100% {
+        transform: scale(0.92);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scale(1.22);
+        opacity: 0.95;
+      }
+    }
+
+    @keyframes coinSweep {
+      0% { left: -120%; opacity: 0; }
+      12% { opacity: 0.9; }
+      48% { left: 140%; opacity: 0.9; }
+      55%, 100% { left: 140%; opacity: 0; }
+    }
+
+    @keyframes starGlint {
+      0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+      20% { transform: scale(0.2) rotate(15deg); opacity: 0.3; }
+      38% { transform: scale(1.4) rotate(90deg); opacity: 1; }
+      55% { transform: scale(0.4) rotate(150deg); opacity: 0.4; }
+      70%, 95% { transform: scale(0) rotate(180deg); opacity: 0; }
+    }
   </style>
 </head>
 <body class="text-stone-800 min-h-screen flex flex-col font-sans antialiased selection:bg-amber-200">
@@ -205,9 +363,101 @@
   <!-- Top Header with Felt-Wool Banner Style -->
   <header class="bg-[#f7f2e8]/95 backdrop-blur border-b-2 border-dashed border-[#d8c5af] sticky top-0 z-30 shadow-sm">
     <div class="max-w-5xl mx-auto px-4 py-3.5 sm:px-6 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center space-x-3">
-        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-700 via-amber-500 to-amber-300 flex items-center justify-center text-white shadow-md shadow-amber-900/20 border border-amber-200/50">
-          <i class="fa-solid fa-sparkles text-lg drop-shadow"></i>
+      <div class="flex items-center space-x-3.5">
+        <!-- Constantly Gleaming Big Gold Coin matching uploaded image -->
+        <div class="big-gold-coin-wrapper">
+          <!-- Golden Aura Pulse Background Layer -->
+          <div class="big-gold-coin-aura"></div>
+
+          <!-- Main Interactive Gleaming Gold Coin -->
+          <div class="big-gold-coin" title="繁榮金幣 · 財富豐盛">
+            <!-- Exact Vector Render of the Uploaded Gold Coin -->
+            <svg class="w-full h-full" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- 1. Outer Soft Bevel Rim Gradient -->
+                <linearGradient id="coinOuterRimGrad" x1="18%" y1="12%" x2="82%" y2="88%">
+                  <stop offset="0%" stop-color="#fff8d4" />
+                  <stop offset="28%" stop-color="#fde57c" />
+                  <stop offset="65%" stop-color="#ebb23e" />
+                  <stop offset="100%" stop-color="#cf8e1f" />
+                </linearGradient>
+
+                <!-- 2. Outer Ring Metal Bevel Gradient -->
+                <linearGradient id="coinMidRingGrad" x1="25%" y1="18%" x2="75%" y2="82%">
+                  <stop offset="0%" stop-color="#feef97" />
+                  <stop offset="45%" stop-color="#f8cd4d" />
+                  <stop offset="100%" stop-color="#df9a26" />
+                </linearGradient>
+
+                <!-- 3. Stitched Needlework Groove Gradient -->
+                <linearGradient id="coinStitchGrooveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#e29e24" />
+                  <stop offset="100%" stop-color="#b66f06" />
+                </linearGradient>
+
+                <!-- 4. Inner Convex Dome Radial Gradient (Spherical Highlight) -->
+                <radialGradient id="coinInnerDomeGrad" cx="39%" cy="36%" r="56%">
+                  <stop offset="0%" stop-color="#fff4a1" />
+                  <stop offset="20%" stop-color="#ffd54a" />
+                  <stop offset="55%" stop-color="#e99e1a" />
+                  <stop offset="85%" stop-color="#be6b02" />
+                  <stop offset="100%" stop-color="#8a4701" />
+                </radialGradient>
+
+                <!-- Inner Dome Edge Drop Shadow Filter -->
+                <filter id="domeInnerShadow" x="-10%" y="-10%" width="120%" height="120%">
+                  <feDropShadow dx="0" dy="2.5" stdDeviation="1.8" flood-color="#5a2f00" flood-opacity="0.38" />
+                </filter>
+              </defs>
+
+              <!-- 1. Outermost Ambient Rim Disc -->
+              <circle cx="60" cy="60" r="56.5" fill="url(#coinOuterRimGrad)" stroke="#fffbe3" stroke-width="1.6" />
+
+              <!-- 2. Intermediate Golden Ring Disc -->
+              <circle cx="60" cy="60" r="51.5" fill="url(#coinMidRingGrad)" />
+
+              <!-- 3. Needlework Stitched Track Disc with Shadow Contour -->
+              <circle cx="60" cy="60" r="47.5" stroke="url(#coinStitchGrooveGrad)" stroke-width="1.2" fill="none" opacity="0.4" />
+              <!-- Stitched White Dashed Needlework Ring (Matching Uploaded Artwork) -->
+              <circle cx="60" cy="60" r="46.5" 
+                      stroke="#fffceb" 
+                      stroke-width="2.6" 
+                      stroke-dasharray="5.8, 3.6" 
+                      stroke-linecap="round" 
+                      fill="none" 
+                      filter="drop-shadow(0 1px 1px rgba(90,45,0,0.4))" />
+
+              <!-- 4. 3D Convex Golden Dome (Central Spherical Button) -->
+              <circle cx="60" cy="60" r="41.5" fill="url(#coinInnerDomeGrad)" stroke="#c27204" stroke-width="1" filter="url(#domeInnerShadow)" />
+
+              <!-- Soft Top Convex Crescent Specular Accent -->
+              <path d="M26 53 A36 36 0 0 1 94 53 A38 33 0 0 0 26 53 Z" fill="#ffffff" opacity="0.32" />
+
+              <!-- 5. 3D Embossed Relief Dollar Sign ($) -->
+              <!-- Pale Gold Under-Bevel Shadow for 3D Carved Effect -->
+              <text x="61.2" y="76.2" font-family="'Cinzel', 'Times New Roman', Georgia, serif" font-size="52" font-weight="700" fill="#fff9c7" text-anchor="middle">$</text>
+              <!-- Deep Warm Umber / Bronze Main Lettering -->
+              <text x="60" y="74.8" font-family="'Cinzel', 'Times New Roman', Georgia, serif" font-size="52" font-weight="700" fill="#3a1c01" text-anchor="middle">$</text>
+            </svg>
+
+            <!-- Specular Light Sweep Overlay -->
+            <div class="big-gold-coin-sweep"></div>
+          </div>
+
+          <!-- Sparkling 4-Point Diamond Star Glint -->
+          <svg class="coin-sparkle-star" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Center Halo Disc -->
+            <circle cx="15" cy="15" r="4" fill="#ffffff" opacity="0.9" />
+            <!-- Four-Point Diamond Rays -->
+            <path d="M15 0 C15 9 10 15 0 15 C10 15 15 21 15 30 C15 21 20 15 30 15 C20 15 15 9 15 0 Z" fill="url(#starRayGrad)" />
+            <defs>
+              <radialGradient id="starRayGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="45%" stop-color="#fff694" />
+                <stop offset="100%" stop-color="#f59e0b" />
+              </radialGradient>
+            </defs>
+          </svg>
         </div>
         <div>
           <h1 class="text-xl font-bold tracking-tight text-amber-950 font-serif">Daily Wealth Affirmations</h1>
@@ -339,6 +589,16 @@
     </div>
 
   </main>
+
+  <!-- Golden Crystal Floating Back-to-Top Button -->
+  <button id="btnBackToTop" 
+          aria-label="回到最頂端" 
+          title="回到最頂端" 
+          class="btn-gold-crystal fixed bottom-7 right-7 z-40 w-12 h-12 sm:w-13 sm:h-13 rounded-full flex flex-col items-center justify-center opacity-0 translate-y-10 pointer-events-none transition-all duration-300 group cursor-pointer">
+    <i class="fa-solid fa-chevron-up text-sm sm:text-base transition-transform group-hover:-translate-y-0.5 drop-shadow"></i>
+    <span class="text-[9px] font-bold tracking-tight mt-0.5 scale-90">TOP</span>
+  </button>
+
   <!-- Notification Toast Modal -->
   <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition duration-300 pointer-events-none bg-stone-900/90 backdrop-blur border border-amber-400 text-white text-xs px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2">
     <i class="fa-solid fa-circle-info text-amber-300"></i>
@@ -1650,20 +1910,20 @@
             </div>
 
             <!-- Content Area: Sentence, IPA, Chinese -->
-            <div class="space-y-1.5 flex-1">
+            <div class="space-y-2 flex-1">
               <!-- English Sentence -->
               <p class="text-base sm:text-lg font-semibold text-stone-800 tracking-wide font-sans leading-relaxed">
                 ${item.en}
               </p>
 
-              <!-- Phonetic Symbols (IPA) with Felt Label look -->
-              <div class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono text-amber-900 bg-[#f3ecdf] border border-dashed border-[#d8c5af] px-3 py-1 rounded-lg">
-                <i class="fa-solid fa-volume-low text-[10px] text-amber-600"></i>
+              <!-- Phonetic Symbols (IPA) with Larger Font (One size bigger than the sentence) -->
+              <div class="inline-flex items-center gap-2 text-lg sm:text-xl md:text-2xl font-mono text-amber-950 font-bold bg-[#f4ebe0] border border-dashed border-[#d1baa2] px-3.5 py-1.5 rounded-xl shadow-inner">
+                <i class="fa-solid fa-volume-low text-xs sm:text-sm text-amber-700"></i>
                 <span class="tracking-wider">${item.ipa}</span>
               </div>
 
               <!-- Chinese Translation (Hidden or Shown based on toggle or individual click) -->
-              <div id="zh-${index}" class="chinese-content pt-1.5 text-sm text-stone-700 font-medium ${showChineseTranslation ? 'block' : 'hidden'}">
+              <div id="zh-${index}" class="chinese-content pt-1 text-sm text-stone-700 font-medium ${showChineseTranslation ? 'block' : 'hidden'}">
                 <span class="text-amber-800 font-bold mr-1.5"><i class="fa-solid fa-seedling text-xs"></i> 涵義:</span>${item.zh}
               </div>
             </div>
@@ -1775,7 +2035,7 @@
       speechSynth.speak(utterance);
     }
 
-    /* Highlight reading card */
+    /* Highlight reading card & smoothly scroll into view */
     function highlightCard(indexInBatch) {
       clearHighlight();
       currentReadingIndexInBatch = indexInBatch;
@@ -1786,6 +2046,12 @@
         if (icon) {
           icon.className = "fa-solid fa-waveform-lines animate-bounce text-amber-700";
         }
+        
+        // Smoothly scroll the screen to track the current reading sentence to center
+        card.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
       }
       readingBadge.classList.remove('hidden');
       readingBadge.classList.add('inline-flex');
@@ -2029,6 +2295,26 @@
       currentGroupIndex = parseInt(e.target.value, 10);
       renderCurrentBatch();
       showToast(`已跳轉至第 ${currentGroupIndex + 1} 組`);
+    });
+
+    /* Back-to-Top Floating Button Logic with Scroll Detection */
+    const btnBackToTop = document.getElementById('btnBackToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 250) {
+        btnBackToTop.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+        btnBackToTop.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      } else {
+        btnBackToTop.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+        btnBackToTop.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      }
+    }, { passive: true });
+
+    btnBackToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
 
     /* Falling Gold Dust & Abundant Shining Gold Coins Canvas Animation */
