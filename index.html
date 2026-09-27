@@ -290,6 +290,7 @@
           <div class="flex items-center gap-2 bg-[#f4ebe0] px-3 py-1.5 rounded-xl border border-[#ddcbba]">
             <label for="voiceSelect" class="font-bold text-stone-600">語音口音:</label>
             <select id="voiceSelect" class="bg-white/90 border border-stone-300 rounded-lg px-2 py-0.5 text-stone-700 max-w-[210px] truncate focus:outline-none focus:ring-1 focus:ring-amber-500 text-xs">
+              <option value="auto_recommended">✨ 系統推薦口音 (智慧識別)</option>
               <option value="compat_default">🌐 系統最高相容 (標準發音)</option>
               <option value="compat_us">🇺🇸 美式相容預設 (en-US)</option>
               <option value="compat_gb">🇬🇧 英式相容預設 (en-GB)</option>
@@ -1477,6 +1478,7 @@
     let availableVoices = [];
     let currentPlaybackRate = 0.9; // Default speech rate (0.1x step compatible)
     let currentTone = 'professional'; // Default tone style
+    let userSavedVoiceChoice = 'auto_recommended'; // User preference memory (defaults to smart auto)
 
     /* Tone Style Presets (調整語調 Pitch 與節奏步調) */
     const toneProfiles = {
@@ -1540,6 +1542,76 @@
       const profile = toneProfiles[currentTone] || toneProfiles.professional;
       showToast(`已切換口吻：${profile.name}`);
     });
+
+    /* Voice selection change listener with user preference memory */
+    voiceSelect.addEventListener('change', (e) => {
+      userSavedVoiceChoice = e.target.value;
+      const selectedOptionText = e.target.options[e.target.selectedIndex]?.textContent || '';
+      showToast(`已設定語音：${selectedOptionText.split('(')[0].trim()}`);
+    });
+
+    /* Smart Device & OS Detection */
+    function detectDeviceAndOS() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera || '';
+      const platform = navigator.platform || '';
+
+      const isIOS = /iPad|iPhone|iPod/.test(ua) || (platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      const isMac = !isIOS && (/Macintosh|MacIntel|MacPPC|Mac68K/.test(platform) || /Mac OS X/.test(ua));
+      const isWindows = /Win32|Win64|Windows|WinCE/.test(platform) || /Windows NT/.test(ua);
+      const isAndroid = /Android/.test(ua);
+
+      if (isIOS) return { type: 'ios', name: 'Apple iOS', platformTag: 'Apple iPhone/iPad' };
+      if (isMac) return { type: 'mac', name: 'macOS', platformTag: 'Apple Mac' };
+      if (isWindows) return { type: 'windows', name: 'Windows', platformTag: 'Windows PC' };
+      if (isAndroid) return { type: 'android', name: 'Android', platformTag: 'Android 行動裝置' };
+      return { type: 'generic', name: '當前裝置', platformTag: '通用裝置' };
+    }
+
+    /* Smart Voice Matcher for Current Platform */
+    function findBestVoiceForDevice(voices, deviceInfo) {
+      if (!voices || voices.length === 0) return null;
+
+      const enVoices = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+      const pool = enVoices.length > 0 ? enVoices : voices;
+
+      // 1. Apple ecosystem priority (Samantha, Daniel, Siri, Karen, Moira, Oliver, Tessa, Arthur)
+      if (deviceInfo.type === 'ios' || deviceInfo.type === 'mac') {
+        const appleKeywords = ['siri', 'samantha', 'daniel', 'karen', 'moira', 'oliver', 'tessa', 'arthur', 'kate', 'serena', 'alex'];
+        for (const kw of appleKeywords) {
+          const match = pool.find(v => v.name.toLowerCase().includes(kw));
+          if (match) return match;
+        }
+      }
+
+      // 2. Windows PC priority (Microsoft Natural, Jenny, Guy, Aria, David, Zira, Mark)
+      if (deviceInfo.type === 'windows') {
+        // Natural online voices are highest quality on Edge/Windows
+        const naturalMatch = pool.find(v => v.name.toLowerCase().includes('natural'));
+        if (naturalMatch) return naturalMatch;
+
+        const winKeywords = ['jenny', 'guy', 'aria', 'david', 'zira', 'mark', 'george', 'susan'];
+        for (const kw of winKeywords) {
+          const match = pool.find(v => v.name.toLowerCase().includes(kw));
+          if (match) return match;
+        }
+      }
+
+      // 3. Android priority (Google English high quality network voice)
+      if (deviceInfo.type === 'android') {
+        const googleMatch = pool.find(v => v.name.toLowerCase().includes('google') && v.lang.toLowerCase().includes('us'));
+        if (googleMatch) return googleMatch;
+        const anyGoogle = pool.find(v => v.name.toLowerCase().includes('google'));
+        if (anyGoogle) return anyGoogle;
+      }
+
+      // 4. General fallback: prefer en-US then en-GB
+      const usVoice = pool.find(v => v.lang.toLowerCase() === 'en-us' || v.lang.toLowerCase() === 'en_us');
+      if (usVoice) return usVoice;
+      const gbVoice = pool.find(v => v.lang.toLowerCase() === 'en-gb' || v.lang.toLowerCase() === 'en_gb');
+      if (gbVoice) return gbVoice;
+
+      return pool[0] || null;
+    }
 
     /* Show Toast Notification helper */
     function showToast(text) {
@@ -1638,9 +1710,20 @@
       utterance.pitch = tone.pitch;
 
       const selectedVoiceVal = voiceSelect.value;
+      const deviceInfo = detectDeviceAndOS();
 
-      // Compatibility Modes:
-      if (selectedVoiceVal === 'compat_default' || !selectedVoiceVal) {
+      // Compatibility & Smart Modes:
+      if (selectedVoiceVal === 'auto_recommended') {
+        // Smart device-adaptive selection
+        const bestVoice = findBestVoiceForDevice(availableVoices, deviceInfo);
+        if (bestVoice) {
+          utterance.voice = bestVoice;
+          utterance.lang = bestVoice.lang || 'en-US';
+        } else {
+          utterance.lang = 'en-US';
+          utterance.voice = null;
+        }
+      } else if (selectedVoiceVal === 'compat_default' || !selectedVoiceVal) {
         // High compatibility pure system default: let browser pick the best native English voice
         utterance.lang = 'en-US';
         utterance.voice = null;
@@ -1735,12 +1818,25 @@
       availableVoices = allVoices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
       if (availableVoices.length === 0) availableVoices = allVoices;
 
-      const currentValue = voiceSelect.value;
+      const deviceInfo = detectDeviceAndOS();
+      const bestRecommendedVoice = findBestVoiceForDevice(availableVoices, deviceInfo);
+
       voiceSelect.innerHTML = '';
 
-      // 1. High compatibility preset group
+      // 1. Smart OS & Device Recommended Group
+      const smartGroup = document.createElement('optgroup');
+      smartGroup.label = `✨ 智慧系統推薦 (${deviceInfo.platformTag})`;
+
+      const optSmart = document.createElement('option');
+      optSmart.value = 'auto_recommended';
+      const bestVoiceName = bestRecommendedVoice ? bestRecommendedVoice.name : '原生標準清晰發音';
+      optSmart.textContent = `✨ 系統推薦最佳 (${deviceInfo.name}: ${bestVoiceName})`;
+      smartGroup.appendChild(optSmart);
+      voiceSelect.appendChild(smartGroup);
+
+      // 2. High compatibility preset group
       const compatGroup = document.createElement('optgroup');
-      compatGroup.label = "相容通用模式 (推薦/相容性最佳)";
+      compatGroup.label = "🌐 相容通用模式 (跨系統備用)";
 
       const optCompatDefault = document.createElement('option');
       optCompatDefault.value = 'compat_default';
@@ -1759,28 +1855,30 @@
       compatGroup.appendChild(optCompatGB);
       voiceSelect.appendChild(compatGroup);
 
-      // 2. Hardware / Browser Installed Voice List
+      // 3. Hardware / Browser Installed Voice List
       if (availableVoices.length > 0) {
         const hardwareGroup = document.createElement('optgroup');
-        hardwareGroup.label = "系統內建音色清單 (可指定)";
+        hardwareGroup.label = `🗣️ 系統已安裝音色清單 (${deviceInfo.name})`;
 
         availableVoices.forEach((voice, index) => {
           const option = document.createElement('option');
           option.value = `voice_${index}`;
-          // Clean display name
+          // Clean display name with localized flags
           const flag = voice.lang.includes('GB') ? '🇬🇧 ' : voice.lang.includes('US') ? '🇺🇸 ' : '🗣️ ';
-          option.textContent = `${flag}${voice.name} (${voice.lang})`;
+          // Star highlight for recommended match in the full list
+          const isBest = bestRecommendedVoice && (voice.name === bestRecommendedVoice.name);
+          option.textContent = `${flag}${voice.name} (${voice.lang})${isBest ? ' ★推薦' : ''}`;
           hardwareGroup.appendChild(option);
         });
 
         voiceSelect.appendChild(hardwareGroup);
       }
 
-      // Restore selection or default to universal compatible mode
-      if (currentValue && voiceSelect.querySelector(`option[value="${currentValue}"]`)) {
-        voiceSelect.value = currentValue;
+      // Restore user's previous selection memory or default to smart auto recommendation
+      if (userSavedVoiceChoice && voiceSelect.querySelector(`option[value="${userSavedVoiceChoice}"]`)) {
+        voiceSelect.value = userSavedVoiceChoice;
       } else {
-        voiceSelect.value = 'compat_default';
+        voiceSelect.value = 'auto_recommended';
       }
     }
 
