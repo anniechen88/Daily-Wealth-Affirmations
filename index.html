@@ -1840,6 +1840,7 @@
     let currentEngine = 'gemini_tts'; // 'gemini_tts' or 'web_speech'
     let currentAiVoice = 'Sulafat'; // Default to Sulafat (溫柔平靜)
     let currentAudioElement = null;
+    let playAllTimer = null; // Timer for interval between sentences
     let isFetchingTTS = false;
     const ttsAudioCache = new Map(); // Cache audio URLs: key -> Blob ObjectURL
 
@@ -2173,7 +2174,8 @@
           return;
         }
 
-        stopReading(false); // Stop any currently playing audio
+        // Only stop currently playing audio element without cancelling the overall isPlayingAll queue
+        stopAudioOnly();
 
         // Visual spinner feedback on speaker icon if card is known
         const speakerIcon = currentCardIdx >= 0 ? document.getElementById(`speaker-icon-${currentCardIdx}`) : null;
@@ -2219,6 +2221,7 @@
             speakSentenceViaWebSpeech(text, onEndCallback);
           });
       } else {
+        stopAudioOnly();
         speakSentenceViaWebSpeech(text, onEndCallback);
       }
     }
@@ -2303,19 +2306,29 @@
       speechSynth.speak(utterance);
     }
 
-    /* Stop all current reading actions */
-    function stopReading(resetHighlight = true) {
+    /* Stop currently playing audio or speech without resetting queue state */
+    function stopAudioOnly() {
       if (currentAudioElement) {
         try {
           currentAudioElement.pause();
+          currentAudioElement.onended = null;
+          currentAudioElement.onerror = null;
           currentAudioElement.currentTime = 0;
         } catch (e) {}
         currentAudioElement = null;
       }
-
       if ('speechSynthesis' in window) {
         speechSynth.cancel();
       }
+    }
+
+    /* Stop all current reading actions completely */
+    function stopReading(resetHighlight = true) {
+      if (playAllTimer) {
+        clearTimeout(playAllTimer);
+        playAllTimer = null;
+      }
+      stopAudioOnly();
 
       isPlayingAll = false;
       if (resetHighlight) {
@@ -2532,7 +2545,7 @@
       }, indexInBatch);
     };
 
-    /* Continuous play of the current 10 sentences */
+    /* Continuous play of the current 10 sentences (Supports both Gemini TTS & Web Speech) */
     function playAllCurrentBatch() {
       if (isPlayingAll) {
         stopReading();
@@ -2557,20 +2570,28 @@
 
         if (currentItemIndex >= currentBatch.length) {
           stopReading();
-          showToast('當前 10 句朗讀完畢！');
+          showToast('🎉 當前 10 句朗讀完畢！');
           return;
         }
 
         highlightCard(currentItemIndex);
         const sentenceToRead = currentBatch[currentItemIndex].en;
 
+        // Smart background prefetching for the next sentence when using Gemini TTS
+        if (currentEngine === 'gemini_tts' && (currentItemIndex + 1) < currentBatch.length) {
+          const nextSentence = currentBatch[currentItemIndex + 1].en;
+          fetchGeminiTTSAudio(nextSentence, currentTone, currentAiVoice).catch(() => {});
+        }
+
         speakSentenceText(sentenceToRead, () => {
+          if (!isPlayingAll) return;
           currentItemIndex++;
-          setTimeout(() => {
+          // Comfortable natural pause between affirmations (550ms)
+          playAllTimer = setTimeout(() => {
             if (isPlayingAll) {
               speakNextInQueue();
             }
-          }, 650);
+          }, 550);
         }, currentItemIndex);
       }
 
