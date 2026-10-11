@@ -362,8 +362,9 @@
 
   <!-- Top Header with Felt-Wool Banner Style -->
   <header class="bg-[#f7f2e8]/95 backdrop-blur border-b-2 border-dashed border-[#d8c5af] sticky top-0 z-30 shadow-sm">
-    <div class="max-w-5xl mx-auto px-4 py-3.5 sm:px-6 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center space-x-3.5">
+    <div class="max-w-5xl mx-auto px-4 py-3 sm:px-6 flex items-center justify-between gap-3">
+      <!-- Left: Logo & Gleaming Gold Coin -->
+      <div class="flex items-center space-x-3 sm:space-x-4 min-w-0">
         <!-- Constantly Gleaming Big Gold Coin matching uploaded image -->
         <div class="big-gold-coin-wrapper">
           <!-- Golden Aura Pulse Background Layer -->
@@ -371,31 +372,23 @@
 
           <!-- Main Interactive Gleaming Gold Coin -->
           <div class="big-gold-coin" title="繁榮金幣 · 財富豐盛">
-            <!-- Exact Vector Render of the Uploaded Gold Coin -->
             <svg class="w-full h-full" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <!-- 1. Outer Soft Bevel Rim Gradient -->
                 <linearGradient id="coinOuterRimGrad" x1="18%" y1="12%" x2="82%" y2="88%">
                   <stop offset="0%" stop-color="#fff8d4" />
                   <stop offset="28%" stop-color="#fde57c" />
                   <stop offset="65%" stop-color="#ebb23e" />
                   <stop offset="100%" stop-color="#cf8e1f" />
                 </linearGradient>
-
-                <!-- 2. Outer Ring Metal Bevel Gradient -->
                 <linearGradient id="coinMidRingGrad" x1="25%" y1="18%" x2="75%" y2="82%">
                   <stop offset="0%" stop-color="#feef97" />
                   <stop offset="45%" stop-color="#f8cd4d" />
                   <stop offset="100%" stop-color="#df9a26" />
                 </linearGradient>
-
-                <!-- 3. Stitched Needlework Groove Gradient -->
                 <linearGradient id="coinStitchGrooveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#e29e24" />
                   <stop offset="100%" stop-color="#b66f06" />
                 </linearGradient>
-
-                <!-- 4. Inner Convex Dome Radial Gradient (Spherical Highlight) -->
                 <radialGradient id="coinInnerDomeGrad" cx="39%" cy="36%" r="56%">
                   <stop offset="0%" stop-color="#fff4a1" />
                   <stop offset="20%" stop-color="#ffd54a" />
@@ -403,22 +396,14 @@
                   <stop offset="85%" stop-color="#be6b02" />
                   <stop offset="100%" stop-color="#8a4701" />
                 </radialGradient>
-
-                <!-- Inner Dome Edge Drop Shadow Filter -->
                 <filter id="domeInnerShadow" x="-10%" y="-10%" width="120%" height="120%">
                   <feDropShadow dx="0" dy="2.5" stdDeviation="1.8" flood-color="#5a2f00" flood-opacity="0.38" />
                 </filter>
               </defs>
 
-              <!-- 1. Outermost Ambient Rim Disc -->
               <circle cx="60" cy="60" r="56.5" fill="url(#coinOuterRimGrad)" stroke="#fffbe3" stroke-width="1.6" />
-
-              <!-- 2. Intermediate Golden Ring Disc -->
               <circle cx="60" cy="60" r="51.5" fill="url(#coinMidRingGrad)" />
-
-              <!-- 3. Needlework Stitched Track Disc with Shadow Contour -->
               <circle cx="60" cy="60" r="47.5" stroke="url(#coinStitchGrooveGrad)" stroke-width="1.2" fill="none" opacity="0.4" />
-              <!-- Stitched White Dashed Needlework Ring (Matching Uploaded Artwork) -->
               <circle cx="60" cy="60" r="46.5" 
                       stroke="#fffceb" 
                       stroke-width="2.6" 
@@ -426,29 +411,16 @@
                       stroke-linecap="round" 
                       fill="none" 
                       filter="drop-shadow(0 1px 1px rgba(90,45,0,0.4))" />
-
-              <!-- 4. 3D Convex Golden Dome (Central Spherical Button) -->
               <circle cx="60" cy="60" r="41.5" fill="url(#coinInnerDomeGrad)" stroke="#c27204" stroke-width="1" filter="url(#domeInnerShadow)" />
-
-              <!-- Soft Top Convex Crescent Specular Accent -->
               <path d="M26 53 A36 36 0 0 1 94 53 A38 33 0 0 0 26 53 Z" fill="#ffffff" opacity="0.32" />
-
-              <!-- 5. 3D Embossed Relief Dollar Sign ($) -->
-              <!-- Pale Gold Under-Bevel Shadow for 3D Carved Effect -->
               <text x="61.2" y="76.2" font-family="'Cinzel', 'Times New Roman', Georgia, serif" font-size="52" font-weight="700" fill="#fff9c7" text-anchor="middle">$</text>
-              <!-- Deep Warm Umber / Bronze Main Lettering -->
               <text x="60" y="74.8" font-family="'Cinzel', 'Times New Roman', Georgia, serif" font-size="52" font-weight="700" fill="#3a1c01" text-anchor="middle">$</text>
             </svg>
-
-            <!-- Specular Light Sweep Overlay -->
             <div class="big-gold-coin-sweep"></div>
           </div>
 
-          <!-- Sparkling 4-Point Diamond Star Glint -->
           <svg class="coin-sparkle-star" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Center Halo Disc -->
             <circle cx="15" cy="15" r="4" fill="#ffffff" opacity="0.9" />
-            <!-- Four-Point Diamond Rays -->
             <path d="M15 0 C15 9 10 15 0 15 C10 15 15 21 15 30 C15 21 20 15 30 15 C20 15 15 9 15 0 Z" fill="url(#starRayGrad)" />
             <defs>
               <radialGradient id="starRayGrad" cx="50%" cy="50%" r="50%">
@@ -459,98 +431,93 @@
             </defs>
           </svg>
         </div>
-        <div>
-          <h1 class="text-xl font-bold tracking-tight text-amber-950 font-serif">Daily Wealth Affirmations</h1>
-          <p class="text-xs text-amber-800/80 font-medium">每日 10 句富足英語 · 音標伴讀 · 羊毛氈美學朗讀器</p>
+
+        <div class="truncate">
+          <h1 class="text-lg sm:text-xl font-bold tracking-tight text-amber-950 font-serif leading-tight">Daily Wealth Affirmations</h1>
+          <p class="text-xs text-amber-850/80 font-medium hidden sm:block">每日 10 句富足英語 · 音標伴讀 · 羊毛氈美學朗讀器</p>
         </div>
       </div>
 
-      <!-- Quick Group Indicator -->
-      <div class="flex items-center gap-2 text-xs sm:text-sm felt-badge text-stone-700 px-3.5 py-1.5 font-medium">
+      <!-- Right: Quick Group Indicator Pill -->
+      <div class="flex items-center gap-2 text-xs sm:text-sm felt-badge text-stone-700 px-3 py-1.5 font-medium shrink-0">
         <i class="fa-solid fa-layer-group text-amber-700"></i>
         <span>組別：<span id="currentGroupLabel" class="font-bold text-amber-900">第 1 / 15 組</span></span>
-        <span class="text-stone-400">|</span>
+        <span class="text-stone-300">|</span>
         <span id="totalSentenceCounter" class="text-stone-600">共 150 句</span>
       </div>
     </div>
   </header>
 
   <!-- Main Content Container -->
-  <main class="max-w-5xl mx-auto px-4 py-6 sm:px-6 flex-1 w-full space-y-6">
+  <main class="max-w-5xl mx-auto px-4 py-5 sm:px-6 flex-1 w-full space-y-5">
 
-    <!-- Control Center Card in Wool Felt & Metallic Gold -->
-    <section class="felt-card p-4 sm:p-6 space-y-4">
-      <div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-3">
-        <div class="min-w-0">
-          <h2 class="text-lg font-bold text-stone-800 flex items-center gap-2 flex-wrap">
-            <span>今日朗讀研習</span>
-            <span id="readingBadge" class="hidden text-xs felt-badge text-emerald-800 px-2.5 py-0.5 font-medium items-center gap-1 border-emerald-300 bg-emerald-50">
+    <!-- Structured Control Center Card in Wool Felt & Metallic Gold -->
+    <section class="felt-card p-4 sm:p-6 space-y-4 sm:space-y-5">
+      
+      <!-- Tier 1: Section Title & Group Selector -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-dashed border-[#e2d0bf]">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <h2 class="text-lg sm:text-xl font-bold text-stone-800 font-serif">今日朗讀研習</h2>
+            <span id="readingBadge" class="hidden text-xs felt-badge text-emerald-800 px-2.5 py-0.5 font-medium items-center gap-1.5 border-emerald-300 bg-emerald-50">
               <i class="fa-solid fa-volume-high animate-pulse text-emerald-600"></i> 朗讀進行中
             </span>
-          </h2>
-          <p class="text-xs text-stone-500 mt-0.5">點選「朗讀此 10 句」依序播放當前組別，亦可點擊右側喇叭單獨朗讀，隨時微調語速。</p>
+          </div>
+          <p class="text-xs text-stone-500 mt-0.5">每日 10 句冥想肯定句 · 支援單句點讀、循環伴讀與 AI 音色切換</p>
         </div>
 
-        <!-- Main Interaction Buttons with Metallic Gold Finish (Fixed on the same line) -->
-        <div class="flex items-center gap-2 sm:gap-2.5 flex-nowrap shrink-0 overflow-x-auto max-w-full pb-1 xl:pb-0">
-          <!-- Switch 10 Sentences Button -->
-          <button id="btnNextBatch" class="btn-gold-metallic shrink-0 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm whitespace-nowrap active:scale-95">
-            <i class="fa-solid fa-arrows-rotate text-xs sm:text-sm"></i>
-            <span>輪流更新 10 句</span>
-          </button>
-
-          <!-- Toggle Chinese Translation Button -->
-          <button id="btnToggleChinese" class="btn-metallic-subtle shrink-0 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap active:scale-95 transition">
-            <i class="fa-solid fa-language text-sm sm:text-base text-amber-700"></i>
-            <span id="lblToggleChinese">顯示中文翻譯</span>
-          </button>
-
-          <!-- Auto Read All 10 Sentences Button -->
-          <button id="btnPlayAll" class="btn-gold-metallic shrink-0 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm whitespace-nowrap active:scale-95">
-            <i id="iconPlayAll" class="fa-solid fa-play text-xs sm:text-sm"></i>
-            <span id="textPlayAll">朗讀此 10 句</span>
-          </button>
+        <!-- Jump to Group Dropdown -->
+        <div class="flex items-center gap-2 self-start sm:self-center bg-[#f5ecdf] px-3 py-1.5 rounded-xl border border-[#d8c5ae] shadow-inner shrink-0">
+          <label for="groupSelect" class="font-bold text-amber-950 text-xs sm:text-sm whitespace-nowrap flex items-center gap-1.5">
+            <i class="fa-solid fa-bookmark text-amber-700 text-xs"></i>切換組別:
+          </label>
+          <select id="groupSelect" class="bg-white/95 border border-amber-300/80 rounded-lg px-2.5 py-1 text-stone-700 font-semibold focus:outline-none focus:ring-1 focus:ring-amber-500 shadow-sm text-xs sm:text-sm cursor-pointer">
+            <!-- Populated dynamically via JS -->
+          </select>
         </div>
       </div>
 
-      <!-- Audio Settings Toolbar with + and - Fine Tuning -->
-      <div class="pt-3.5 border-t-2 border-dashed border-[#e3d3c2] flex flex-wrap items-center justify-between gap-4 text-xs text-stone-700">
-        <div class="flex items-center gap-4 flex-wrap">
-          <!-- Voice Rate Control with 0.1x steps -->
-          <div class="flex items-center gap-2 bg-[#f4ebe0] px-3 py-1.5 rounded-xl border border-[#ddcbba] shadow-inner">
-            <span class="font-bold text-stone-600"><i class="fa-solid fa-gauge-high text-amber-700 mr-1"></i>朗讀語速:</span>
-            
-            <!-- Speed Down Button (-) 0.1x step -->
-            <button id="btnSpeedDown" type="button" title="減慢語速 (-0.1x)" class="btn-gold-step w-7 h-7 rounded-lg font-bold flex items-center justify-center text-sm transition active:scale-90">
-              <i class="fa-solid fa-minus"></i>
-            </button>
+      <!-- Tier 2: Three Main Primary Action Buttons (Balanced 3-column Grid) -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3.5">
+        <!-- Switch 10 Sentences Button -->
+        <button id="btnNextBatch" class="btn-gold-metallic w-full inline-flex items-center justify-center gap-2 py-2.5 sm:py-3 px-4 text-xs sm:text-sm whitespace-nowrap active:scale-[0.98]">
+          <i class="fa-solid fa-arrows-rotate text-sm"></i>
+          <span>輪流更新 10 句</span>
+        </button>
 
-            <!-- Speed Value Display Badge -->
-            <span id="speedDisplay" class="font-mono font-bold text-amber-950 bg-white/90 border border-amber-300 px-2 py-0.5 rounded-md min-w-[54px] text-center shadow-sm">
-              0.9x
-            </span>
+        <!-- Toggle Chinese Translation Button -->
+        <button id="btnToggleChinese" class="btn-gold-metallic w-full inline-flex items-center justify-center gap-2 py-2.5 sm:py-3 px-4 text-xs sm:text-sm whitespace-nowrap active:scale-[0.98]">
+          <i class="fa-solid fa-language text-sm"></i>
+          <span id="lblToggleChinese">顯示中文翻譯</span>
+        </button>
 
-            <!-- Speed Up Button (+) 0.1x step -->
-            <button id="btnSpeedUp" type="button" title="加快語速 (+0.1x)" class="btn-gold-step w-7 h-7 rounded-lg font-bold flex items-center justify-center text-sm transition active:scale-90">
-              <i class="fa-solid fa-plus"></i>
-            </button>
-          </div>
+        <!-- Read All 10 Sentences Button -->
+        <button id="btnPlayAll" class="btn-gold-metallic w-full inline-flex items-center justify-center gap-2 py-2.5 sm:py-3 px-4 text-xs sm:text-sm whitespace-nowrap active:scale-[0.98]">
+          <i id="iconPlayAll" class="fa-solid fa-play text-sm"></i>
+          <span id="textPlayAll">朗讀此 10 句</span>
+        </button>
+      </div>
 
-          <!-- Pronunciation Dialect -->
-          <div class="flex items-center gap-2 bg-[#f4ebe0] px-3 py-1.5 rounded-xl border border-[#ddcbba]">
-            <label for="voiceSelect" class="font-bold text-stone-600">語音口音:</label>
-            <select id="voiceSelect" class="bg-white/90 border border-stone-300 rounded-lg px-2 py-0.5 text-stone-700 max-w-[210px] truncate focus:outline-none focus:ring-1 focus:ring-amber-500 text-xs">
-              <option value="auto_recommended">✨ 系統推薦口音 (智慧識別)</option>
-              <option value="compat_default">🌐 系統最高相容 (標準發音)</option>
-              <option value="compat_us">🇺🇸 美式相容預設 (en-US)</option>
-              <option value="compat_gb">🇬🇧 英式相容預設 (en-GB)</option>
+      <!-- Tier 3: Speech Audio Settings Strip (發音核心、口吻風格、語速微調) -->
+      <div class="bg-[#f5ede1] p-3 sm:p-3.5 rounded-2xl border border-[#dccaba] shadow-inner flex flex-wrap items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
+          <!-- 發音核心選單 -->
+          <div class="flex items-center gap-2 bg-white/80 px-2.5 py-1.5 rounded-xl border border-[#ddcbba] shadow-sm">
+            <label for="engineSelect" class="font-bold text-stone-700 text-xs whitespace-nowrap flex items-center gap-1">
+              <i class="fa-solid fa-microphone-lines text-amber-700"></i>發音核心:
+            </label>
+            <select id="engineSelect" class="bg-white border border-amber-300/80 rounded-lg px-2 py-1 text-amber-950 font-bold focus:outline-none focus:ring-1 focus:ring-amber-500 text-xs shadow-sm cursor-pointer">
+              <option value="gemini_tts" selected>🎙️ Gemini 官方真人 TTS</option>
+              <option value="web_speech">🔊 瀏覽器原生發音 (本機離線)</option>
             </select>
           </div>
 
-          <!-- Reading Tone Style Selector (口吻發音) -->
-          <div class="flex items-center gap-2 bg-[#f4ebe0] px-3 py-1.5 rounded-xl border border-[#ddcbba]">
-            <label for="toneSelect" class="font-bold text-stone-600"><i class="fa-solid fa-wand-magic-sparkles text-amber-700 mr-1"></i>口吻風格:</label>
-            <select id="toneSelect" class="bg-white/90 border border-stone-300 rounded-lg px-2 py-0.5 text-stone-700 font-semibold focus:outline-none focus:ring-1 focus:ring-amber-500 text-xs shadow-sm">
+          <!-- 口吻風格選單 -->
+          <div class="flex items-center gap-2 bg-white/80 px-2.5 py-1.5 rounded-xl border border-[#ddcbba] shadow-sm">
+            <label for="toneSelect" class="font-bold text-stone-700 text-xs whitespace-nowrap flex items-center gap-1">
+              <i class="fa-solid fa-wand-magic-sparkles text-amber-700"></i>口吻風格:
+            </label>
+            <select id="toneSelect" class="bg-white border border-stone-300 rounded-lg px-2 py-1 text-stone-700 font-semibold focus:outline-none focus:ring-1 focus:ring-amber-500 text-xs shadow-sm cursor-pointer">
               <option value="gentle">🌿 溫和緩慢 (冥想放鬆)</option>
               <option value="professional" selected>💼 專業沉穩 (標準自信)</option>
               <option value="uplifting">✨ 陽光振奮 (明亮肯定)</option>
@@ -558,12 +525,83 @@
           </div>
         </div>
 
-        <!-- Quick Jump to Any Group -->
-        <div class="flex items-center gap-2 ml-auto">
-          <label for="groupSelect" class="font-bold text-stone-600">切換組別:</label>
-          <select id="groupSelect" class="bg-white/90 border border-stone-300 rounded-lg px-2.5 py-1 text-stone-700 font-semibold focus:outline-none focus:ring-1 focus:ring-amber-500 shadow-sm">
-            <!-- Populated dynamically via JS -->
-          </select>
+        <!-- 語速微調控制列 (0.1x 單位微調) -->
+        <div class="flex items-center gap-2 bg-white/80 px-2.5 py-1.5 rounded-xl border border-[#ddcbba] shadow-sm ml-auto sm:ml-0">
+          <span class="text-xs font-bold text-stone-700 flex items-center gap-1 whitespace-nowrap">
+            <i class="fa-solid fa-gauge-high text-amber-700"></i> 語速:
+          </span>
+          <div class="flex items-center gap-1">
+            <button id="btnSpeedDown" type="button" title="減慢語速 (-0.1x)" class="btn-gold-step w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center font-bold text-xs select-none">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <span id="speedDisplay" class="font-mono font-bold text-xs sm:text-sm text-amber-950 px-1.5 py-0.5 bg-[#f5ede1] rounded-md border border-[#d8c5ae] min-w-[2.8rem] text-center">
+              0.9x
+            </span>
+            <button id="btnSpeedUp" type="button" title="加快語速 (+0.1x)" class="btn-gold-step w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center font-bold text-xs select-none">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tier 4: Gemini AI 真人導師音色面板 (Gemini AI TTS Mentor Panel) -->
+      <div id="aiVoicePanel" class="pt-2 border-t border-dashed border-[#e2d0bf] space-y-2.5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="font-bold text-amber-950 flex items-center gap-1.5">
+              <i class="fa-solid fa-sparkles text-amber-600"></i> Gemini AI 真人導師音色
+            </span>
+            <span class="text-[10px] bg-amber-100 text-amber-850 px-2 py-0.5 rounded-full font-medium border border-amber-300">
+              24kHz Studio HD
+            </span>
+          </div>
+          <div class="text-[11px] text-stone-500">
+            當前選定導師：<span id="currentMentorBadge" class="font-bold text-amber-900">溫柔平靜 · Sulafat</span>
+          </div>
+        </div>
+
+        <!-- 4大指定真人導師快速切換卡片 -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+          <!-- 1. Sulafat -->
+          <button type="button" data-mentor="Sulafat" class="mentor-card active group relative p-2.5 rounded-xl border-2 transition-all text-left bg-white border-amber-500 shadow-md">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-bold text-stone-800 text-xs sm:text-sm">Sulafat</span>
+              <span class="text-xs text-amber-600 group-hover:scale-110 transition"><i class="fa-solid fa-heart"></i></span>
+            </div>
+            <div class="text-[11px] text-amber-900 font-medium">溫柔平靜</div>
+            <div class="text-[10px] text-stone-500 truncate mt-0.5">心靈陪伴 · 沉靜溫潤</div>
+          </button>
+
+          <!-- 2. Zephyr -->
+          <button type="button" data-mentor="Zephyr" class="mentor-card group relative p-2.5 rounded-xl border-2 transition-all text-left bg-white/70 border-stone-200 hover:border-amber-300 hover:bg-white shadow-sm">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-bold text-stone-800 text-xs sm:text-sm">Zephyr</span>
+              <span class="text-xs text-amber-500 group-hover:scale-110 transition"><i class="fa-solid fa-sun"></i></span>
+            </div>
+            <div class="text-[11px] text-amber-900 font-medium">明亮溫暖</div>
+            <div class="text-[10px] text-stone-500 truncate mt-0.5">清晨朝氣 · 自信昂然</div>
+          </button>
+
+          <!-- 3. Kore -->
+          <button type="button" data-mentor="Kore" class="mentor-card group relative p-2.5 rounded-xl border-2 transition-all text-left bg-white/70 border-stone-200 hover:border-amber-300 hover:bg-white shadow-sm">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-bold text-stone-800 text-xs sm:text-sm">Kore</span>
+              <span class="text-xs text-amber-600 group-hover:scale-110 transition"><i class="fa-solid fa-shield"></i></span>
+            </div>
+            <div class="text-[11px] text-amber-900 font-medium">穩重沉著</div>
+            <div class="text-[10px] text-stone-500 truncate mt-0.5">磁性力量 · 堅定確信</div>
+          </button>
+
+          <!-- 4. Callirrhoe -->
+          <button type="button" data-mentor="Callirrhoe" class="mentor-card group relative p-2.5 rounded-xl border-2 transition-all text-left bg-white/70 border-stone-200 hover:border-amber-300 hover:bg-white shadow-sm">
+            <div class="flex items-center justify-between mb-1">
+              <span class="font-bold text-stone-800 text-xs sm:text-sm">Callirrhoe</span>
+              <span class="text-xs text-teal-600 group-hover:scale-110 transition"><i class="fa-solid fa-water"></i></span>
+            </div>
+            <div class="text-[11px] text-amber-900 font-medium">隨和舒緩</div>
+            <div class="text-[10px] text-stone-500 truncate mt-0.5">放鬆自然 · 冥想共鳴</div>
+          </button>
         </div>
       </div>
     </section>
@@ -1740,22 +1778,40 @@
     let currentTone = 'professional'; // Default tone style
     let userSavedVoiceChoice = 'auto_recommended'; // User preference memory (defaults to smart auto)
 
+    /* AI TTS Engine & Cache State */
+    let currentEngine = 'gemini_tts'; // 'gemini_tts' or 'web_speech'
+    let currentAiVoice = 'Sulafat'; // Default to Sulafat (溫柔平靜)
+    let currentAudioElement = null;
+    let isFetchingTTS = false;
+    const ttsAudioCache = new Map(); // Cache audio URLs: key -> Blob ObjectURL
+
+    /* 導師音色元數據 */
+    const mentorProfiles = {
+      Sulafat: { name: 'Sulafat', desc: '溫柔平靜', tag: '心靈陪伴導師' },
+      Zephyr: { name: 'Zephyr', desc: '明亮溫暖', tag: '陽光自信導師' },
+      Kore: { name: 'Kore', desc: '穩重沉著', tag: '堅定力量導師' },
+      Callirrhoe: { name: 'Callirrhoe', desc: '隨和舒緩', tag: '放鬆冥想導師' }
+    };
+
     /* Tone Style Presets (調整語調 Pitch 與節奏步調) */
     const toneProfiles = {
       gentle: {
         name: '溫和緩慢',
         pitch: 0.88,
-        rateMultiplier: 0.88
+        rateMultiplier: 0.88,
+        promptStyle: 'Say in a peaceful, gentle, relaxing, and soothing tone with deep warmth, clarity, and mindfulness: '
       },
       professional: {
         name: '專業沉穩',
         pitch: 1.0,
-        rateMultiplier: 1.0
+        rateMultiplier: 1.0,
+        promptStyle: 'Say with confident, articulate, inspiring, and poised pronunciation: '
       },
       uplifting: {
         name: '陽光振奮',
         pitch: 1.18,
-        rateMultiplier: 1.08
+        rateMultiplier: 1.08,
+        promptStyle: 'Say with an uplifting, joyous, vibrant, and prosperous energy: '
       }
     };
 
@@ -1779,180 +1835,223 @@
     const btnSpeedUp = document.getElementById('btnSpeedUp');
     const speedDisplay = document.getElementById('speedDisplay');
     const toneSelect = document.getElementById('toneSelect');
+    const engineSelect = document.getElementById('engineSelect');
+    const aiVoicePanel = document.getElementById('aiVoicePanel');
+    const currentMentorBadge = document.getElementById('currentMentorBadge');
 
-    /* Update speed display & bound check (0.1x step) */
-    function updateSpeed(newRate) {
-      // Clamped between 0.5x and 2.0x, rounded to 1 decimal place
-      currentPlaybackRate = Math.min(Math.max(parseFloat(newRate.toFixed(1)), 0.5), 2.0);
-      speedDisplay.textContent = currentPlaybackRate.toFixed(1) + 'x';
-      showToast(`語速微調為 ${currentPlaybackRate.toFixed(1)}x`);
-    }
-
-    btnSpeedDown.addEventListener('click', () => {
-      updateSpeed(currentPlaybackRate - 0.1);
+    /* Engine Selector Listener */
+    engineSelect.addEventListener('change', (e) => {
+      currentEngine = e.target.value;
+      if (currentEngine === 'gemini_tts') {
+        if (aiVoicePanel) aiVoicePanel.classList.remove('hidden');
+        showToast('已啟用 Google Gemini 官方 TTS 真人發音');
+      } else {
+        if (aiVoicePanel) aiVoicePanel.classList.add('hidden');
+        showToast('已切換為本機瀏覽器離線發音');
+      }
     });
 
-    btnSpeedUp.addEventListener('click', () => {
-      updateSpeed(currentPlaybackRate + 0.1);
-    });
+    /* Mentor Selection Cards Click Handler */
+    document.querySelectorAll('.mentor-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const selectedMentor = card.getAttribute('data-mentor');
+        if (!selectedMentor) return;
+        currentAiVoice = selectedMentor;
 
-    /* Tone Selection Change Listener */
-    toneSelect.addEventListener('change', (e) => {
-      currentTone = e.target.value;
-      const profile = toneProfiles[currentTone] || toneProfiles.professional;
-      showToast(`已切換口吻：${profile.name}`);
-    });
+        // Update UI Active States
+        document.querySelectorAll('.mentor-card').forEach(c => {
+          c.classList.remove('active', 'border-amber-500', 'bg-white', 'shadow-md');
+          c.classList.add('bg-white/70', 'border-stone-200');
+        });
+        card.classList.add('active', 'border-amber-500', 'bg-white', 'shadow-md');
+        card.classList.remove('bg-white/70', 'border-stone-200');
 
-    /* Voice selection change listener with user preference memory */
-    voiceSelect.addEventListener('change', (e) => {
-      userSavedVoiceChoice = e.target.value;
-      const selectedOptionText = e.target.options[e.target.selectedIndex]?.textContent || '';
-      showToast(`已設定語音：${selectedOptionText.split('(')[0].trim()}`);
-    });
-
-    /* Smart Device & OS Detection */
-    function detectDeviceAndOS() {
-      const ua = navigator.userAgent || navigator.vendor || window.opera || '';
-      const platform = navigator.platform || '';
-
-      const isIOS = /iPad|iPhone|iPod/.test(ua) || (platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-      const isMac = !isIOS && (/Macintosh|MacIntel|MacPPC|Mac68K/.test(platform) || /Mac OS X/.test(ua));
-      const isWindows = /Win32|Win64|Windows|WinCE/.test(platform) || /Windows NT/.test(ua);
-      const isAndroid = /Android/.test(ua);
-
-      if (isIOS) return { type: 'ios', name: 'Apple iOS', platformTag: 'Apple iPhone/iPad' };
-      if (isMac) return { type: 'mac', name: 'macOS', platformTag: 'Apple Mac' };
-      if (isWindows) return { type: 'windows', name: 'Windows', platformTag: 'Windows PC' };
-      if (isAndroid) return { type: 'android', name: 'Android', platformTag: 'Android 行動裝置' };
-      return { type: 'generic', name: '當前裝置', platformTag: '通用裝置' };
-    }
-
-    /* Smart Voice Matcher for Current Platform */
-    function findBestVoiceForDevice(voices, deviceInfo) {
-      if (!voices || voices.length === 0) return null;
-
-      const enVoices = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
-      const pool = enVoices.length > 0 ? enVoices : voices;
-
-      // 1. Apple ecosystem priority (Samantha, Daniel, Siri, Karen, Moira, Oliver, Tessa, Arthur)
-      if (deviceInfo.type === 'ios' || deviceInfo.type === 'mac') {
-        const appleKeywords = ['siri', 'samantha', 'daniel', 'karen', 'moira', 'oliver', 'tessa', 'arthur', 'kate', 'serena', 'alex'];
-        for (const kw of appleKeywords) {
-          const match = pool.find(v => v.name.toLowerCase().includes(kw));
-          if (match) return match;
+        const prof = mentorProfiles[selectedMentor] || { desc: '', name: selectedMentor };
+        if (currentMentorBadge) {
+          currentMentorBadge.textContent = `${prof.desc} · ${prof.name}`;
         }
-      }
-
-      // 2. Windows PC priority (Microsoft Natural, Jenny, Guy, Aria, David, Zira, Mark)
-      if (deviceInfo.type === 'windows') {
-        // Natural online voices are highest quality on Edge/Windows
-        const naturalMatch = pool.find(v => v.name.toLowerCase().includes('natural'));
-        if (naturalMatch) return naturalMatch;
-
-        const winKeywords = ['jenny', 'guy', 'aria', 'david', 'zira', 'mark', 'george', 'susan'];
-        for (const kw of winKeywords) {
-          const match = pool.find(v => v.name.toLowerCase().includes(kw));
-          if (match) return match;
-        }
-      }
-
-      // 3. Android priority (Google English high quality network voice)
-      if (deviceInfo.type === 'android') {
-        const googleMatch = pool.find(v => v.name.toLowerCase().includes('google') && v.lang.toLowerCase().includes('us'));
-        if (googleMatch) return googleMatch;
-        const anyGoogle = pool.find(v => v.name.toLowerCase().includes('google'));
-        if (anyGoogle) return anyGoogle;
-      }
-
-      // 4. General fallback: prefer en-US then en-GB
-      const usVoice = pool.find(v => v.lang.toLowerCase() === 'en-us' || v.lang.toLowerCase() === 'en_us');
-      if (usVoice) return usVoice;
-      const gbVoice = pool.find(v => v.lang.toLowerCase() === 'en-gb' || v.lang.toLowerCase() === 'en_gb');
-      if (gbVoice) return gbVoice;
-
-      return pool[0] || null;
-    }
-
-    /* Show Toast Notification helper */
-    function showToast(text) {
-      toastMsg.textContent = text;
-      toast.classList.remove('translate-y-20', 'opacity-0');
-      setTimeout(() => {
-        toast.classList.add('translate-y-20', 'opacity-0');
-      }, 2200);
-    }
-    function renderCurrentBatch() {
-      // Stop ongoing speech when batch switches
-      stopReading();
-
-      const startIdx = currentGroupIndex * BATCH_SIZE;
-      const endIdx = Math.min(startIdx + BATCH_SIZE, totalSentences);
-      const currentBatch = affirmationsDatabase.slice(startIdx, endIdx);
-
-      // Update indicators
-      currentGroupLabel.textContent = `第 ${currentGroupIndex + 1} / ${totalGroups} 組`;
-      groupSelect.value = currentGroupIndex;
-
-      // Render Sentence Cards with Wool Felt & Metallic Details
-      sentenceListContainer.innerHTML = '';
-
-      currentBatch.forEach((item, index) => {
-        const globalNumber = startIdx + index + 1;
-        const card = document.createElement('div');
-        card.id = `card-${index}`;
-        card.className = "felt-card p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4";
-
-        card.innerHTML = `
-          <div class="flex items-start gap-3 sm:gap-4 flex-1">
-            <!-- Wool Felt Stitched Patch Number Badge -->
-            <div class="w-8 h-8 rounded-full bg-[#eee5d6] text-amber-900 border border-dashed border-[#b8a287] shadow-sm flex-shrink-0 flex items-center justify-center font-bold text-xs mt-0.5">
-              ${globalNumber}
-            </div>
-
-            <!-- Content Area: Sentence, IPA, Chinese -->
-            <div class="space-y-2 flex-1">
-              <!-- English Sentence -->
-              <p class="text-base sm:text-lg font-semibold text-stone-800 tracking-wide font-sans leading-relaxed">
-                ${item.en}
-              </p>
-
-              <!-- Phonetic Symbols (IPA) with Larger Font (One size bigger than the sentence) -->
-              <div class="inline-flex items-center gap-2 text-lg sm:text-xl md:text-2xl font-mono text-amber-950 font-bold bg-[#f4ebe0] border border-dashed border-[#d1baa2] px-3.5 py-1.5 rounded-xl shadow-inner">
-                <i class="fa-solid fa-volume-low text-xs sm:text-sm text-amber-700"></i>
-                <span class="tracking-wider">${item.ipa}</span>
-              </div>
-
-              <!-- Chinese Translation (Hidden or Shown based on toggle or individual click) -->
-              <div id="zh-${index}" class="chinese-content pt-1 text-sm text-stone-700 font-medium ${showChineseTranslation ? 'block' : 'hidden'}">
-                <span class="text-amber-800 font-bold mr-1.5"><i class="fa-solid fa-seedling text-xs"></i> 涵義:</span>${item.zh}
-              </div>
-            </div>
-          </div>
-
-          <!-- Individual Action Toolbar with Metallic Sheen -->
-          <div class="flex items-center justify-end gap-2.5 pt-2 md:pt-0 border-t md:border-t-0 border-[#eedecb] flex-shrink-0">
-            <!-- Individual Speak Button (Metallic Gold) -->
-            <button onclick="speakSingle(${index})" title="單句朗讀" class="btn-gold-metallic w-10 h-10 flex items-center justify-center text-sm active:scale-95">
-              <i id="speaker-icon-${index}" class="fa-solid fa-volume-high"></i>
-            </button>
-
-            <!-- Individual Chinese Toggle Button -->
-            <button onclick="toggleSingleChinese(${index})" title="查看此句翻譯" class="btn-metallic-subtle px-3.5 h-10 rounded-xl text-xs font-bold flex items-center gap-1.5 active:scale-95">
-              <i class="fa-solid fa-language text-sm text-amber-700"></i>
-              <span>中譯</span>
-            </button>
-          </div>
-        `;
-        sentenceListContainer.appendChild(card);
+        showToast(`已切換真人導師：${prof.desc} (${selectedMentor})`);
       });
+    });
 
-      // Update Prev / Next button states
-      btnPrevBatch.disabled = currentGroupIndex === 0;
-      btnPrevBatch.classList.toggle('opacity-50', currentGroupIndex === 0);
-      btnPrevBatch.classList.toggle('cursor-not-allowed', currentGroupIndex === 0);
+    /* Toast Notification Helper */
+    function showToast(msg) {
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2600);
     }
 
-    function speakSentenceText(text, onEndCallback) {
+    /* Convert PCM16 to playable WAV Blob */
+    function base64ToArrayBuffer(base64) {
+      const binaryString = window.atob(base64);
+      const len = binaryString.length;
+      const bytes = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+      }
+      return bytes.buffer;
+    }
+
+    function pcmToWav(pcmData, sampleRate = 24000) {
+      const numChannels = 1;
+      const bytesPerSample = 2; // Signed 16-bit PCM
+      const blockAlign = numChannels * bytesPerSample;
+      const byteRate = sampleRate * blockAlign;
+      const dataSize = pcmData.byteLength;
+      const buffer = new ArrayBuffer(44 + dataSize);
+      const view = new DataView(buffer);
+
+      function writeString(v, offset, str) {
+        for (let i = 0; i < str.length; i++) {
+          v.setUint8(offset + i, str.charCodeAt(i));
+        }
+      }
+
+      writeString(view, 0, 'RIFF');
+      view.setUint32(4, 36 + dataSize, true);
+      writeString(view, 8, 'WAVE');
+      writeString(view, 12, 'fmt ');
+      view.setUint32(16, 16, true);
+      view.setUint16(20, 1, true); // Linear PCM
+      view.setUint16(22, numChannels, true);
+      view.setUint32(24, sampleRate, true);
+      view.setUint32(28, byteRate, true);
+      view.setUint16(32, blockAlign, true);
+      view.setUint16(34, 16, true);
+      writeString(view, 36, 'data');
+      view.setUint32(40, dataSize, true);
+
+      const pcmBytes = new Uint8Array(pcmData.buffer, pcmData.byteOffset, pcmData.byteLength);
+      const outBytes = new Uint8Array(buffer, 44);
+      outBytes.set(pcmBytes);
+
+      return new Blob([buffer], { type: 'audio/wav' });
+    }
+
+    /* Fetch Human-like TTS Audio from Gemini API with Exponential Backoff Retry */
+    async function fetchGeminiTTSAudio(text, toneKey, voiceName) {
+      const cacheKey = `${voiceName}_${toneKey}_${text}`;
+      if (ttsAudioCache.has(cacheKey)) {
+        return ttsAudioCache.get(cacheKey);
+      }
+
+      const tone = toneProfiles[toneKey] || toneProfiles.professional;
+      const promptText = `${tone.promptStyle}${text}`;
+
+      const apiKey = ""; // Canvas runtime automatically supplies the API key
+      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+
+      const payload = {
+        contents: [{
+          parts: [{ text: promptText }]
+        }],
+        generationConfig: {
+          responseModalities: ["AUDIO"],
+          speechConfig: {
+            voiceConfig: {
+              prebuiltVoiceConfig: { voiceName: voiceName }
+            }
+          }
+        },
+        model: "gemini-2.5-flash-preview-tts"
+      };
+
+      const maxRetries = 2;
+      let delay = 1000;
+
+      for (let attempt = 0; attempt <= maxRetries; attempt++) {
+        try {
+          const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+
+          const result = await response.json();
+          const part = result?.candidates?.[0]?.content?.parts?.[0];
+          const audioBase64 = part?.inlineData?.data;
+          const mimeType = part?.inlineData?.mimeType || 'audio/L16;rate=24000';
+
+          if (audioBase64) {
+            const sampleRateMatch = mimeType.match(/rate=(\d+)/);
+            const sampleRate = sampleRateMatch ? parseInt(sampleRateMatch[1], 10) : 24000;
+            const pcmBuffer = base64ToArrayBuffer(audioBase64);
+            const pcm16 = new Int16Array(pcmBuffer);
+            const wavBlob = pcmToWav(pcm16, sampleRate);
+            const audioUrl = URL.createObjectURL(wavBlob);
+            ttsAudioCache.set(cacheKey, audioUrl);
+            return audioUrl;
+          } else {
+            throw new Error('No audio in response');
+          }
+        } catch (err) {
+          if (attempt === maxRetries) throw err;
+          await new Promise(res => setTimeout(res, delay));
+          delay *= 2;
+        }
+      }
+    }
+
+    /* Master Speech Function: Routes to Gemini AI TTS or Web Speech Fallback */
+    function speakSentenceText(text, onEndCallback, currentCardIdx = -1) {
+      if (currentEngine === 'gemini_tts') {
+        stopReading(false); // Stop any currently playing audio
+
+        // Visual spinner feedback on speaker icon if card is known
+        const speakerIcon = currentCardIdx >= 0 ? document.getElementById(`speaker-icon-${currentCardIdx}`) : null;
+        if (speakerIcon) {
+          speakerIcon.className = "fa-solid fa-circle-notch animate-spin text-amber-600";
+        }
+
+        fetchGeminiTTSAudio(text, currentTone, currentAiVoice)
+          .then(audioUrl => {
+            if (speakerIcon) {
+              speakerIcon.className = "fa-solid fa-waveform-lines animate-pulse text-amber-700";
+            }
+            const audio = new Audio(audioUrl);
+            currentAudioElement = audio;
+
+            // Apply selected playback rate
+            audio.playbackRate = currentPlaybackRate;
+
+            audio.onended = () => {
+              currentAudioElement = null;
+              if (onEndCallback) onEndCallback();
+            };
+
+            audio.onerror = () => {
+              console.warn('Gemini audio playback error, falling back to Web Speech');
+              currentAudioElement = null;
+              speakSentenceViaWebSpeech(text, onEndCallback);
+            };
+
+            audio.play().catch(e => {
+              console.warn('Playback error:', e);
+              speakSentenceViaWebSpeech(text, onEndCallback);
+            });
+          })
+          .catch(err => {
+            console.warn('Gemini TTS API error, falling back to Web Speech:', err);
+            showToast('Gemini TTS 離線中，自動切換至相容發音');
+            speakSentenceViaWebSpeech(text, onEndCallback);
+          });
+      } else {
+        speakSentenceViaWebSpeech(text, onEndCallback);
+      }
+    }
+
+    /* Local Browser Web Speech Implementation */
+    function speakSentenceViaWebSpeech(text, onEndCallback) {
       if (!('speechSynthesis' in window)) {
         showToast('您的瀏覽器不支援語音朗讀');
         if (onEndCallback) onEndCallback();
@@ -1969,12 +2068,11 @@
       utterance.rate = parseFloat(effectiveRate.toFixed(2));
       utterance.pitch = tone.pitch;
 
-      const selectedVoiceVal = voiceSelect.value;
+      const selectedVoiceVal = voiceSelect ? voiceSelect.value : 'auto_recommended';
       const deviceInfo = detectDeviceAndOS();
 
       // Compatibility & Smart Modes:
       if (selectedVoiceVal === 'auto_recommended') {
-        // Smart device-adaptive selection
         const bestVoice = findBestVoiceForDevice(availableVoices, deviceInfo);
         if (bestVoice) {
           utterance.voice = bestVoice;
@@ -1984,7 +2082,6 @@
           utterance.voice = null;
         }
       } else if (selectedVoiceVal === 'compat_default' || !selectedVoiceVal) {
-        // High compatibility pure system default: let browser pick the best native English voice
         utterance.lang = 'en-US';
         utterance.voice = null;
       } else if (selectedVoiceVal === 'compat_us') {
@@ -2015,10 +2112,8 @@
 
       utterance.onend = finishExecution;
 
-      // Error handler with automatic compatibility retry
       utterance.onerror = (e) => {
         console.warn('SpeechSynthesis error:', e);
-        // If a specific voice failed (common on mobile WebKit/Android), retry once with pure system default
         if (utterance.voice) {
           const fallbackUtterance = new SpeechSynthesisUtterance(text);
           fallbackUtterance.lang = 'en-US';
@@ -2035,128 +2130,217 @@
       speechSynth.speak(utterance);
     }
 
-    /* Highlight reading card & smoothly scroll into view */
+    /* Stop all current reading actions */
+    function stopReading(resetHighlight = true) {
+      if (currentAudioElement) {
+        try {
+          currentAudioElement.pause();
+          currentAudioElement.currentTime = 0;
+        } catch (e) {}
+        currentAudioElement = null;
+      }
+
+      if ('speechSynthesis' in window) {
+        speechSynth.cancel();
+      }
+
+      isPlayingAll = false;
+      if (resetHighlight) {
+        clearHighlight();
+      }
+      updatePlayAllButtonUI();
+    }
+
+    /* Highlight Card & Smooth Scroll to Center */
     function highlightCard(indexInBatch) {
       clearHighlight();
       currentReadingIndexInBatch = indexInBatch;
       const card = document.getElementById(`card-${indexInBatch}`);
       if (card) {
         card.classList.add('reading-active');
-        const icon = document.getElementById(`speaker-icon-${indexInBatch}`);
-        if (icon) {
-          icon.className = "fa-solid fa-waveform-lines animate-bounce text-amber-700";
+        if (readingBadge) {
+          readingBadge.classList.remove('hidden');
+          readingBadge.classList.add('inline-flex');
         }
-        
-        // Smoothly scroll the screen to track the current reading sentence to center
-        card.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center'
-        });
+        // Smoothly auto-scroll card into comfortable center view
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-      readingBadge.classList.remove('hidden');
-      readingBadge.classList.add('inline-flex');
     }
 
-    /* Clear all active reading card highlights */
+    /* Clear Card Highlight */
     function clearHighlight() {
-      const cards = document.querySelectorAll('.felt-card');
-      cards.forEach(card => card.classList.remove('reading-active'));
-      const icons = document.querySelectorAll('[id^="speaker-icon-"]');
-      icons.forEach(ic => {
-        ic.className = "fa-solid fa-volume-high";
-      });
-      readingBadge.classList.add('hidden');
-      readingBadge.classList.remove('inline-flex');
+      if (currentReadingIndexInBatch >= 0) {
+        const card = document.getElementById(`card-${currentReadingIndexInBatch}`);
+        if (card) {
+          card.classList.remove('reading-active');
+        }
+      }
       currentReadingIndexInBatch = -1;
+      if (readingBadge) {
+        readingBadge.classList.add('hidden');
+        readingBadge.classList.remove('inline-flex');
+      }
+      // Reset any loading spinners on speaker icons
+      document.querySelectorAll('[id^="speaker-icon-"]').forEach(icon => {
+        icon.className = "fa-solid fa-volume-high text-sm";
+      });
     }
 
-    /* Stop speech engine and reading loops */
-    function stopReading() {
-      if (speechSynth) speechSynth.cancel();
-      isPlayingAll = false;
-      updatePlayAllButtonUI();
-      clearHighlight();
+    /* Initialize Group Select Dropdown */
+    function initGroupSelect() {
+      if (!groupSelect) return;
+      groupSelect.innerHTML = '';
+      for (let i = 0; i < totalGroups; i++) {
+        const opt = document.createElement('option');
+        opt.value = i;
+        const start = i * BATCH_SIZE + 1;
+        const end = Math.min((i + 1) * BATCH_SIZE, totalSentences);
+        opt.textContent = `第 ${i + 1} 組 (${start}-${end} 句)`;
+        groupSelect.appendChild(opt);
+      }
     }
 
+    /* Load Browser Voices (For fallback mode) */
     function loadVoices() {
       if (!('speechSynthesis' in window)) return;
       const allVoices = speechSynth.getVoices();
-      availableVoices = allVoices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
-      if (availableVoices.length === 0) availableVoices = allVoices;
-
-      const deviceInfo = detectDeviceAndOS();
-      const bestRecommendedVoice = findBestVoiceForDevice(availableVoices, deviceInfo);
-
-      voiceSelect.innerHTML = '';
-
-      // 1. Smart OS & Device Recommended Group
-      const smartGroup = document.createElement('optgroup');
-      smartGroup.label = `✨ 智慧系統推薦 (${deviceInfo.platformTag})`;
-
-      const optSmart = document.createElement('option');
-      optSmart.value = 'auto_recommended';
-      const bestVoiceName = bestRecommendedVoice ? bestRecommendedVoice.name : '原生標準清晰發音';
-      optSmart.textContent = `✨ 系統推薦最佳 (${deviceInfo.name}: ${bestVoiceName})`;
-      smartGroup.appendChild(optSmart);
-      voiceSelect.appendChild(smartGroup);
-
-      // 2. High compatibility preset group
-      const compatGroup = document.createElement('optgroup');
-      compatGroup.label = "🌐 相容通用模式 (跨系統備用)";
-
-      const optCompatDefault = document.createElement('option');
-      optCompatDefault.value = 'compat_default';
-      optCompatDefault.textContent = '🌐 系統最高相容 (標準發音)';
-
-      const optCompatUS = document.createElement('option');
-      optCompatUS.value = 'compat_us';
-      optCompatUS.textContent = '🇺🇸 美式相容預設 (en-US)';
-
-      const optCompatGB = document.createElement('option');
-      optCompatGB.value = 'compat_gb';
-      optCompatGB.textContent = '🇬🇧 英式相容預設 (en-GB)';
-
-      compatGroup.appendChild(optCompatDefault);
-      compatGroup.appendChild(optCompatUS);
-      compatGroup.appendChild(optCompatGB);
-      voiceSelect.appendChild(compatGroup);
-
-      // 3. Hardware / Browser Installed Voice List
-      if (availableVoices.length > 0) {
-        const hardwareGroup = document.createElement('optgroup');
-        hardwareGroup.label = `🗣️ 系統已安裝音色清單 (${deviceInfo.name})`;
-
-        availableVoices.forEach((voice, index) => {
-          const option = document.createElement('option');
-          option.value = `voice_${index}`;
-          // Clean display name with localized flags
-          const flag = voice.lang.includes('GB') ? '🇬🇧 ' : voice.lang.includes('US') ? '🇺🇸 ' : '🗣️ ';
-          // Star highlight for recommended match in the full list
-          const isBest = bestRecommendedVoice && (voice.name === bestRecommendedVoice.name);
-          option.textContent = `${flag}${voice.name} (${voice.lang})${isBest ? ' ★推薦' : ''}`;
-          hardwareGroup.appendChild(option);
-        });
-
-        voiceSelect.appendChild(hardwareGroup);
-      }
-
-      // Restore user's previous selection memory or default to smart auto recommendation
-      if (userSavedVoiceChoice && voiceSelect.querySelector(`option[value="${userSavedVoiceChoice}"]`)) {
-        voiceSelect.value = userSavedVoiceChoice;
-      } else {
-        voiceSelect.value = 'auto_recommended';
-      }
+      availableVoices = allVoices.filter(v => v.lang && v.lang.startsWith('en'));
     }
 
-    /* Initialize group jumping dropdown */
-    function initGroupSelect() {
-      groupSelect.innerHTML = '';
-      for (let i = 0; i < totalGroups; i++) {
-        const option = document.createElement('option');
-        option.value = i;
-        option.textContent = `第 ${i + 1} 組 (${i * BATCH_SIZE + 1} ~ ${Math.min((i + 1) * BATCH_SIZE, totalSentences)})`;
-        groupSelect.appendChild(option);
+    /* Render Current Batch of 10 Affirmation Cards */
+    function renderCurrentBatch() {
+      if (!sentenceListContainer) return;
+      stopReading(true);
+
+      const startIdx = currentGroupIndex * BATCH_SIZE;
+      const endIdx = Math.min(startIdx + BATCH_SIZE, totalSentences);
+      const currentBatch = affirmationsDatabase.slice(startIdx, endIdx);
+
+      // Update Group Indicator
+      if (currentGroupLabel) {
+        currentGroupLabel.textContent = `第 ${currentGroupIndex + 1} / ${totalGroups} 組`;
       }
+      if (groupSelect) {
+        groupSelect.value = currentGroupIndex;
+      }
+
+      sentenceListContainer.innerHTML = '';
+
+      currentBatch.forEach((item, index) => {
+        const globalIndex = startIdx + index + 1;
+        const padIdx = globalIndex < 10 ? `0${globalIndex}` : `${globalIndex}`;
+
+        const card = document.createElement('div');
+        card.id = `card-${index}`;
+        card.className = "felt-card p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all duration-300";
+
+        card.innerHTML = `
+          <div class="flex items-start gap-3.5 flex-1 min-w-0">
+            <!-- Stitched Badge Index -->
+            <div class="felt-badge w-9 h-9 sm:w-10 sm:h-10 shrink-0 flex items-center justify-center font-serif font-bold text-xs sm:text-sm text-amber-950 shadow-inner">
+              ${padIdx}
+            </div>
+
+            <!-- Content Area -->
+            <div class="space-y-2 flex-1 min-w-0">
+              <!-- English Sentence -->
+              <div class="text-base sm:text-lg md:text-xl font-semibold text-stone-800 tracking-tight leading-snug">
+                ${item.en}
+              </div>
+
+              <!-- IPA Phonetics (Enlarged & Prominent Display) -->
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#f4ece0] border border-[#d8c3ae] rounded-xl text-amber-900 font-mono text-base sm:text-lg md:text-xl tracking-wide shadow-inner">
+                <i class="fa-solid fa-volume-low text-xs text-amber-700/70"></i>
+                <span class="select-all font-medium">${item.ipa}</span>
+              </div>
+
+              <!-- Traditional Chinese Translation -->
+              <div id="zh-${index}" class="chinese-content ${showChineseTranslation ? '' : 'hidden'} text-xs sm:text-sm font-medium text-amber-950/80 bg-amber-50/70 border border-amber-200/80 px-3 py-1.5 rounded-lg">
+                <i class="fa-solid fa-seedling text-amber-700 mr-1.5"></i>${item.zh}
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons for Single Card -->
+          <div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+            <!-- Single Chinese Translation Toggle -->
+            <button onclick="toggleSingleChinese(${index})" title="查看中文翻譯" class="btn-metallic-subtle w-9 h-9 rounded-xl flex items-center justify-center text-stone-700 active:scale-95 transition">
+              <i class="fa-solid fa-language text-sm"></i>
+            </button>
+
+            <!-- Single Audio Read Button -->
+            <button onclick="speakSingle(${index})" title="朗讀此句 (Gemini AI 真人發音)" class="btn-gold-metallic px-3.5 py-2 rounded-xl flex items-center gap-2 text-xs sm:text-sm active:scale-95 transition">
+              <i id="speaker-icon-${index}" class="fa-solid fa-volume-high text-sm"></i>
+              <span class="hidden sm:inline">朗讀</span>
+            </button>
+          </div>
+        `;
+
+        sentenceListContainer.appendChild(card);
+      });
+    }
+
+    /* Device & OS Detection Helper */
+    function detectDeviceAndOS() {
+      const ua = navigator.userAgent || '';
+      if (/iPhone|iPad|iPod/i.test(ua)) {
+        return { name: 'Apple iOS', platformTag: 'iPhone/iPad', isApple: true };
+      }
+      if (/Macintosh|Mac OS X/i.test(ua)) {
+        return { name: 'Apple macOS', platformTag: 'Mac', isApple: true };
+      }
+      if (/Windows/i.test(ua)) {
+        return { name: 'Windows PC', platformTag: 'Windows', isWindows: true };
+      }
+      if (/Android/i.test(ua)) {
+        return { name: 'Android Device', platformTag: 'Android', isAndroid: true };
+      }
+      return { name: '通用設備', platformTag: '標準系統', isGeneric: true };
+    }
+
+    /* Find Best Voice for Current Device */
+    function findBestVoiceForDevice(voices, dev) {
+      if (!voices || voices.length === 0) return null;
+      if (dev.isApple) {
+        return voices.find(v => /Samantha|Daniel|Karen|Siri|Moira/i.test(v.name)) || voices[0];
+      }
+      if (dev.isWindows) {
+        return voices.find(v => /Natural|Jenny|Guy|Aria|David|Zira/i.test(v.name)) || voices[0];
+      }
+      if (dev.isAndroid) {
+        return voices.find(v => /Google|en-US/i.test(v.name)) || voices[0];
+      }
+      return voices[0];
+    }
+
+    /* Speed Control +/- Buttons */
+    if (btnSpeedDown) {
+      btnSpeedDown.addEventListener('click', () => {
+        if (currentPlaybackRate > 0.5) {
+          currentPlaybackRate = parseFloat((currentPlaybackRate - 0.1).toFixed(1));
+          if (speedDisplay) speedDisplay.textContent = `${currentPlaybackRate.toFixed(1)}x`;
+          showToast(`語速調整為 ${currentPlaybackRate.toFixed(1)}x`);
+        }
+      });
+    }
+
+    if (btnSpeedUp) {
+      btnSpeedUp.addEventListener('click', () => {
+        if (currentPlaybackRate < 2.0) {
+          currentPlaybackRate = parseFloat((currentPlaybackRate + 0.1).toFixed(1));
+          if (speedDisplay) speedDisplay.textContent = `${currentPlaybackRate.toFixed(1)}x`;
+          showToast(`語速調整為 ${currentPlaybackRate.toFixed(1)}x`);
+        }
+      });
+    }
+
+    /* Tone Style Change Listener */
+    if (toneSelect) {
+      toneSelect.addEventListener('change', (e) => {
+        currentTone = e.target.value;
+        const toneInfo = toneProfiles[currentTone] || toneProfiles.professional;
+        showToast(`已切換口吻風格：${toneInfo.name}`);
+      });
     }
 
     /* Read single sentence */
@@ -2172,7 +2356,7 @@
       highlightCard(indexInBatch);
       speakSentenceText(item.en, () => {
         clearHighlight();
-      });
+      }, indexInBatch);
     };
 
     /* Continuous play of the current 10 sentences */
@@ -2199,7 +2383,6 @@
         if (!isPlayingAll) return;
 
         if (currentItemIndex >= currentBatch.length) {
-          // Finished reading the 10 sentences
           stopReading();
           showToast('當前 10 句朗讀完畢！');
           return;
@@ -2210,13 +2393,12 @@
 
         speakSentenceText(sentenceToRead, () => {
           currentItemIndex++;
-          // Small pause between sentences for clarity
           setTimeout(() => {
             if (isPlayingAll) {
               speakNextInQueue();
             }
           }, 650);
-        });
+        }, currentItemIndex);
       }
 
       speakNextInQueue();
