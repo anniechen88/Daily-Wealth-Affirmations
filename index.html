@@ -513,20 +513,27 @@
           </div>
 
           <!-- 口吻風格選單 -->
-          <div class="flex items-center gap-2 bg-white/80 px-2.5 py-1.5 rounded-xl border border-[#ddcbba] shadow-sm">
-            <label for="toneSelect" class="font-bold text-stone-700 text-xs whitespace-nowrap flex items-center gap-1">
-              <i class="fa-solid fa-wand-magic-sparkles text-amber-700"></i>口吻風格:
-            </label>
-            <select id="toneSelect" class="bg-white border border-stone-300 rounded-lg px-2 py-1 text-stone-700 font-semibold focus:outline-none focus:ring-1 focus:ring-amber-500 text-xs shadow-sm cursor-pointer">
-              <option value="gentle">🌿 溫和緩慢 (冥想放鬆)</option>
-              <option value="professional" selected>💼 專業沉穩 (標準自信)</option>
-              <option value="uplifting">✨ 陽光振奮 (明亮肯定)</option>
-            </select>
-          </div>
+        <div class="flex items-center gap-2 bg-white/80 px-2.5 py-1.5 rounded-xl border border-[#ddcbba] shadow-sm">
+          <label for="toneSelect" class="font-bold text-stone-700 text-xs whitespace-nowrap flex items-center gap-1">
+            <i class="fa-solid fa-wand-magic-sparkles text-amber-700"></i>口吻風格:
+          </label>
+          <select id="toneSelect" class="bg-white border border-stone-300 rounded-lg px-2 py-1 text-stone-700 font-semibold focus:outline-none focus:ring-1 focus:ring-amber-500 text-xs shadow-sm cursor-pointer">
+            <option value="gentle">🌿 溫和緩慢 (冥想放鬆)</option>
+            <option value="professional" selected>💼 專業沉穩 (標準自信)</option>
+            <option value="uplifting">✨ 陽光振奮 (明亮肯定)</option>
+          </select>
         </div>
 
-        <!-- 語速微調控制列 (0.1x 單位微調) -->
-        <div class="flex items-center gap-2 bg-white/80 px-2.5 py-1.5 rounded-xl border border-[#ddcbba] shadow-sm ml-auto sm:ml-0">
+        <!-- API 金鑰管理按鈕 -->
+        <button id="btnOpenKeyModal" type="button" class="flex items-center gap-1.5 bg-white/80 hover:bg-white text-stone-700 hover:text-amber-900 px-3 py-1.5 rounded-xl border border-[#ddcbba] hover:border-amber-400 shadow-sm text-xs font-bold transition">
+          <i class="fa-solid fa-key text-amber-600"></i>
+          <span>API 金鑰:</span>
+          <span id="apiKeyStatusPill" class="text-[10px] px-2 py-0.5 rounded-full font-medium bg-stone-100 text-stone-600 border border-stone-300">未設定</span>
+        </button>
+      </div>
+
+      <!-- 語速微調控制列 (0.1x 單位微調) -->
+      <div class="flex items-center gap-2 bg-white/80 px-2.5 py-1.5 rounded-xl border border-[#ddcbba] shadow-sm ml-auto sm:ml-0">
           <span class="text-xs font-bold text-stone-700 flex items-center gap-1 whitespace-nowrap">
             <i class="fa-solid fa-gauge-high text-amber-700"></i> 語速:
           </span>
@@ -627,6 +634,57 @@
     </div>
 
   </main>
+
+  <!-- API Key Modal (使用者自填 Gemini API 金鑰彈窗) -->
+  <div id="apiKeyModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-250">
+    <div class="felt-card max-w-md w-full p-5 sm:p-6 bg-[#fdfbf7] border-2 border-dashed border-[#cda783] space-y-4 shadow-2xl relative">
+      <div class="flex items-center justify-between border-b border-dashed border-[#e0c8b3] pb-3">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-800">
+            <i class="fa-solid fa-key text-sm"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-stone-900 text-base font-serif">設定 Gemini API 金鑰</h3>
+            <p class="text-[11px] text-stone-500">自行填入金鑰即可啟用真人導師發音</p>
+          </div>
+        </div>
+        <button id="btnCloseKeyModal" type="button" class="text-stone-400 hover:text-stone-700 w-7 h-7 flex items-center justify-center rounded-lg hover:bg-stone-100 transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-xs text-stone-700 leading-relaxed">
+        <p class="bg-amber-50/80 border border-amber-200/90 text-amber-950 p-2.5 rounded-xl">
+          <i class="fa-solid fa-shield-halved text-amber-700 mr-1"></i>
+          金鑰僅儲存於您目前的本機瀏覽器（<code>localStorage</code>），不會上傳到任何第三方伺服器，安全不外洩。
+        </p>
+
+        <div class="space-y-1.5">
+          <label for="inputApiKey" class="font-bold text-stone-800 flex items-center justify-between">
+            <span>Google Gemini API Key:</span>
+            <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" class="text-amber-800 hover:underline flex items-center gap-1 font-normal text-[11px]">
+              免費獲取金鑰 <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+            </a>
+          </label>
+          <div class="relative">
+            <input id="inputApiKey" type="password" placeholder="AIzaSy..." class="w-full bg-white border border-[#d8c3ae] rounded-xl px-3 py-2 text-stone-900 font-mono text-xs focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-inner pr-9">
+            <button id="btnToggleKeyVisibility" type="button" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 text-xs">
+              <i id="iconKeyEye" class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-2 pt-2 border-t border-dashed border-[#e0c8b3]">
+        <button id="btnClearApiKey" type="button" class="btn-metallic-subtle px-3 py-1.5 rounded-lg text-xs font-semibold text-rose-700 border-rose-300 hover:bg-rose-50">
+          清除已存金鑰
+        </button>
+        <button id="btnSaveApiKey" type="button" class="btn-gold-metallic px-4 py-1.5 rounded-lg text-xs font-bold">
+          儲存並啟用真人發音
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Golden Crystal Floating Back-to-Top Button -->
   <button id="btnBackToTop" 
@@ -1839,10 +1897,108 @@
     const aiVoicePanel = document.getElementById('aiVoicePanel');
     const currentMentorBadge = document.getElementById('currentMentorBadge');
 
+    /* API Key Modal & State Management */
+    const apiKeyModal = document.getElementById('apiKeyModal');
+    const btnOpenKeyModal = document.getElementById('btnOpenKeyModal');
+    const btnCloseKeyModal = document.getElementById('btnCloseKeyModal');
+    const btnSaveApiKey = document.getElementById('btnSaveApiKey');
+    const btnClearApiKey = document.getElementById('btnClearApiKey');
+    const inputApiKey = document.getElementById('inputApiKey');
+    const apiKeyStatusPill = document.getElementById('apiKeyStatusPill');
+    const btnToggleKeyVisibility = document.getElementById('btnToggleKeyVisibility');
+    const iconKeyEye = document.getElementById('iconKeyEye');
+
+    const STORAGE_KEY_GEMINI = 'gemini_user_api_key';
+
+    function getStoredApiKey() {
+      return (localStorage.getItem(STORAGE_KEY_GEMINI) || '').trim();
+    }
+
+    function updateApiKeyStatusUI() {
+      const key = getStoredApiKey();
+      if (!apiKeyStatusPill) return;
+      if (key) {
+        apiKeyStatusPill.textContent = '已啟用';
+        apiKeyStatusPill.className = 'text-[10px] px-2 py-0.5 rounded-full font-bold bg-emerald-100 text-emerald-800 border border-emerald-300';
+      } else {
+        apiKeyStatusPill.textContent = '未設定';
+        apiKeyStatusPill.className = 'text-[10px] px-2 py-0.5 rounded-full font-medium bg-amber-50 text-amber-800 border border-amber-300';
+      }
+    }
+
+    function openKeyModal() {
+      if (!apiKeyModal) return;
+      inputApiKey.value = getStoredApiKey();
+      apiKeyModal.classList.remove('opacity-0', 'pointer-events-none');
+      apiKeyModal.classList.add('opacity-100');
+    }
+
+    function closeKeyModal() {
+      if (!apiKeyModal) return;
+      apiKeyModal.classList.add('opacity-0', 'pointer-events-none');
+      apiKeyModal.classList.remove('opacity-100');
+    }
+
+    if (btnOpenKeyModal) btnOpenKeyModal.addEventListener('click', openKeyModal);
+    if (btnCloseKeyModal) btnCloseKeyModal.addEventListener('click', closeKeyModal);
+    if (apiKeyModal) {
+      apiKeyModal.addEventListener('click', (e) => {
+        if (e.target === apiKeyModal) closeKeyModal();
+      });
+    }
+
+    if (btnToggleKeyVisibility) {
+      btnToggleKeyVisibility.addEventListener('click', () => {
+        if (inputApiKey.type === 'password') {
+          inputApiKey.type = 'text';
+          iconKeyEye.className = 'fa-solid fa-eye-slash';
+        } else {
+          inputApiKey.type = 'password';
+          iconKeyEye.className = 'fa-solid fa-eye';
+        }
+      });
+    }
+
+    if (btnSaveApiKey) {
+      btnSaveApiKey.addEventListener('click', () => {
+        const key = (inputApiKey.value || '').trim();
+        if (!key) {
+          showToast('請輸入有效的 Gemini API Key');
+          return;
+        }
+        localStorage.setItem(STORAGE_KEY_GEMINI, key);
+        updateApiKeyStatusUI();
+        closeKeyModal();
+        currentEngine = 'gemini_tts';
+        if (engineSelect) engineSelect.value = 'gemini_tts';
+        if (aiVoicePanel) aiVoicePanel.classList.remove('hidden');
+        showToast('API 金鑰已安全儲存，已啟用真人發音！');
+      });
+    }
+
+    if (btnClearApiKey) {
+      btnClearApiKey.addEventListener('click', () => {
+        localStorage.removeItem(STORAGE_KEY_GEMINI);
+        inputApiKey.value = '';
+        updateApiKeyStatusUI();
+        currentEngine = 'web_speech';
+        if (engineSelect) engineSelect.value = 'web_speech';
+        if (aiVoicePanel) aiVoicePanel.classList.add('hidden');
+        closeKeyModal();
+        showToast('已清除 API 金鑰，切換為本機離線發音');
+      });
+    }
+
     /* Engine Selector Listener */
     engineSelect.addEventListener('change', (e) => {
       currentEngine = e.target.value;
       if (currentEngine === 'gemini_tts') {
+        const key = getStoredApiKey();
+        if (!key) {
+          openKeyModal();
+          showToast('啟用真人發音前，請先填寫您的 Gemini API Key');
+          return;
+        }
         if (aiVoicePanel) aiVoicePanel.classList.remove('hidden');
         showToast('已啟用 Google Gemini 官方 TTS 真人發音');
       } else {
@@ -1934,8 +2090,13 @@
       return new Blob([buffer], { type: 'audio/wav' });
     }
 
-    /* Fetch Human-like TTS Audio from Gemini API with Exponential Backoff Retry */
+    /* Fetch Human-like TTS Audio with User-provided API Key */
     async function fetchGeminiTTSAudio(text, toneKey, voiceName) {
+      const apiKey = getStoredApiKey();
+      if (!apiKey) {
+        throw new Error('MISSING_API_KEY');
+      }
+
       const cacheKey = `${voiceName}_${toneKey}_${text}`;
       if (ttsAudioCache.has(cacheKey)) {
         return ttsAudioCache.get(cacheKey);
@@ -1944,9 +2105,7 @@
       const tone = toneProfiles[toneKey] || toneProfiles.professional;
       const promptText = `${tone.promptStyle}${text}`;
 
-      const apiKey = ""; // Canvas runtime automatically supplies the API key
-      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
-
+      const targetUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
       const payload = {
         contents: [{
           parts: [{ text: promptText }]
@@ -1967,14 +2126,15 @@
 
       for (let attempt = 0; attempt <= maxRetries; attempt++) {
         try {
-          const response = await fetch(apiUrl, {
+          const response = await fetch(targetUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
           });
 
           if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
+            const errData = await response.json().catch(() => ({}));
+            throw new Error(errData?.error?.message || `HTTP ${response.status}`);
           }
 
           const result = await response.json();
@@ -2005,6 +2165,14 @@
     /* Master Speech Function: Routes to Gemini AI TTS or Web Speech Fallback */
     function speakSentenceText(text, onEndCallback, currentCardIdx = -1) {
       if (currentEngine === 'gemini_tts') {
+        const userKey = getStoredApiKey();
+        if (!userKey) {
+          showToast('尚未填入 API Key，請先設定以啟動真人發音');
+          openKeyModal();
+          speakSentenceViaWebSpeech(text, onEndCallback);
+          return;
+        }
+
         stopReading(false); // Stop any currently playing audio
 
         // Visual spinner feedback on speaker icon if card is known
@@ -2041,8 +2209,13 @@
             });
           })
           .catch(err => {
-            console.warn('Gemini TTS API error, falling back to Web Speech:', err);
-            showToast('Gemini TTS 離線中，自動切換至相容發音');
+            console.warn('Gemini TTS API error:', err);
+            if (err.message === 'MISSING_API_KEY') {
+              openKeyModal();
+              showToast('請先填寫 API 金鑰以啟用真人語音');
+            } else {
+              showToast(`API 發音異常：${err.message.slice(0, 30)}...，已自動切換本機發音`);
+            }
             speakSentenceViaWebSpeech(text, onEndCallback);
           });
       } else {
@@ -2739,6 +2912,14 @@
       initGroupSelect();
       renderCurrentBatch();
       initGoldCanvas();
+      updateApiKeyStatusUI();
+
+      // If user hasn't set an API Key yet, default gracefully to local web speech
+      if (!getStoredApiKey()) {
+        currentEngine = 'web_speech';
+        if (engineSelect) engineSelect.value = 'web_speech';
+        if (aiVoicePanel) aiVoicePanel.classList.add('hidden');
+      }
 
       if ('speechSynthesis' in window) {
         loadVoices();
